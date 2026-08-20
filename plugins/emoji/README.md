@@ -9,6 +9,8 @@ keyboard.
 - **Search** the full Unicode emoji catalogue (3944 emojis, 9 groups) with a
   single search box - names and codepoints both match, with a live
   matches/total counter.
+- **A theme-aware panel**: the popout is framed by a hairline border and a soft
+  accent-tinted bed that recolours live with the active theme.
 - **Full keyboard control**: `← →` move across a row (wrapping at the edges),
   `↑ ↓` move between rows, `PgUp`/`PgDn` page the grid, `Home`/`End` jump to
   the first/last result, and `Enter` picks the highlighted emoji. `Esc` clears

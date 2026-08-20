@@ -46,8 +46,8 @@
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
       "mode": "0644",
-      "size": 21700,
-      "sha256": "c312a565ee7d1439755571a6ff991b7d767e26fa95c24092337af6582c686f48",
+      "size": 22083,
+      "sha256": "7ad3aa5f15ebde08d8cccbe17576f1e84b98a1b26a726db6ed1a69382ab7019f",
       "install": true
     },
     {

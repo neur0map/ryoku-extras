@@ -146,7 +146,7 @@
         "assets/preview-popout.png"
       ],
       "manifest": "product-manifest.json",
-      "manifestSha256": "fb4a6edb50849a3a74c055bd4b13bec53adb57e0d24b51ab916986b5a9cdc4cd",
+      "manifestSha256": "7f1394637f060aa1d6d20bff36f320adee1651243f0424d2c8b80acb9372b179",
       "official": false,
       "tagline": "Search and pick any emoji from your keyboard.",
       "icon": "emoji_emotions",

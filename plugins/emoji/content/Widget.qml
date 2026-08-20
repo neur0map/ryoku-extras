@@ -137,6 +137,17 @@ Item {
         stroke: 1.6
     }
 
+    // ── themed frame: a hairline border + accent-tinted bed that recolours
+    // live with the active theme, so the popout reads as a framed panel.
+    Rectangle {
+        visible: root.popout
+        anchors.fill: parent
+        radius: Motion.rSmall * 1.2 * root.s
+        color: Theme.frameBg
+        border.width: 1 * root.s
+        border.color: Theme.frameBorder
+    }
+
     Column {
         id: col
         visible: root.density !== "glyph"
