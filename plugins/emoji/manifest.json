@@ -1,0 +1,140 @@
+{
+  "id": "emoji",
+  "name": "Emoji",
+  "version": "1.0.0",
+  "author": "hypruser <hypruser@users.noreply.github.com>",
+  "description": "A quick emoji picker: search, arrow-key select, and copy or insert any emoji straight from your keyboard.",
+  "license": "MIT",
+  "tags": [
+    "emoji",
+    "clipboard",
+    "search",
+    "productivity",
+    "frame-popout"
+  ],
+  "official": false,
+  "entryPoints": {
+    "main": "service/Main.qml",
+    "content": "content/Widget.qml"
+  },
+  "files": [
+    {
+      "source": "assets/preview-popout.png",
+      "destination": "assets/preview-popout.png",
+      "mode": "0644",
+      "size": 426746,
+      "sha256": "b02ad08b11a3af74aa588ddeb22952f790ece2ebce86d05bbd909887b69b335f",
+      "install": false
+    },
+    {
+      "source": "bin/ryoku-emoji",
+      "destination": "bin/ryoku-emoji",
+      "mode": "0755",
+      "size": 1212,
+      "sha256": "35020e8607126bae56636c600390c6a3cac0cc51f80165bee298cca1112b5845",
+      "install": true
+    },
+    {
+      "source": "content/components/Chip.qml",
+      "destination": "content/components/Chip.qml",
+      "mode": "0644",
+      "size": 862,
+      "sha256": "64cc6d404448eb92d54db5c4f55412fa630da0286331cd44e2fef2ad7dcd2768",
+      "install": true
+    },
+    {
+      "source": "content/Widget.qml",
+      "destination": "content/Widget.qml",
+      "mode": "0644",
+      "size": 7752,
+      "sha256": "45ff159464fc537aba928eb33d2ec1505ea901bfe5e94cf1bb120f5184c5a8e5",
+      "install": true
+    },
+    {
+      "source": "data/emojis.json",
+      "destination": "data/emojis.json",
+      "mode": "0644",
+      "size": 237560,
+      "sha256": "6295940498d1563c85365ec155700ca7b274cbb3b964f75076840f5b1b4b92c6",
+      "install": true
+    },
+    {
+      "source": "service/Main.qml",
+      "destination": "service/Main.qml",
+      "mode": "0644",
+      "size": 3121,
+      "sha256": "50a4d3d9f5f7f29fef6b2c726a2ac82ca57377f4e3bccbdbc3bc2532ca89f730",
+      "install": true
+    }
+  ],
+  "commands": [
+    "bin/ryoku-emoji"
+  ],
+  "dependencies": {
+    "commands": [
+      "wl-copy"
+    ]
+  },
+  "capabilities": {
+    "densities": [
+      "glyph",
+      "compact",
+      "full"
+    ]
+  },
+  "hosts": [
+    "framePopout"
+  ],
+  "defaults": {
+    "host": "framePopout",
+    "framePopout": {
+      "edge": "bottom",
+      "align": "end"
+    },
+    "key": "m",
+    "icon": "extension",
+    "label": "Emoji"
+  },
+  "metadata": {
+    "settings": [
+      {
+        "key": "action",
+        "type": "choice",
+        "label": "On pick",
+        "group": "Behaviour",
+        "default": "copy",
+        "options": [
+          {
+            "value": "copy",
+            "label": "Copy to clipboard"
+          },
+          {
+            "value": "insert",
+            "label": "Type into the focused window"
+          }
+        ]
+      },
+      {
+        "key": "closeAfterPick",
+        "type": "toggle",
+        "label": "Close after picking",
+        "group": "Behaviour",
+        "default": true
+      },
+      {
+        "key": "columns",
+        "type": "slider",
+        "label": "Grid columns",
+        "group": "Grid",
+        "default": 8,
+        "min": 4,
+        "max": 16,
+        "step": 1,
+        "decimals": 0
+      }
+    ]
+  },
+  "schema": 1,
+  "category": "plugins",
+  "destination": "ryoku/plugins/emoji"
+}

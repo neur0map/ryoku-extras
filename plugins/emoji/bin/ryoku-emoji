@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# ryoku-emoji -- copy or insert an emoji. Compositor-independent by design:
+# it only ever talks to the Wayland clipboard (wl-copy) or the virtual-keyboard
+# protocol (wtype), never to a compositor's private IPC. It works on Hyprland,
+# niri, sway, river, and any other wlroots / Wayland compositor with these tools.
+#
+#   ryoku-emoji copy   <emoji>   put the emoji on the clipboard
+#   ryoku-emoji insert <emoji>   type the emoji into the focused window
+#
+# copy/insert overwrite the clipboard, which is what every OS emoji panel does.
+set -euo pipefail
+
+mode="${1:-copy}"
+emoji="${2:-}"
+
+case "$mode" in
+  copy)
+    if ! command -v wl-copy >/dev/null 2>&1; then
+      echo "ryoku-emoji: wl-copy is required" >&2
+      exit 1
+    fi
+    printf '%s' "$emoji" | wl-copy --type text/plain
+    ;;
+  insert)
+    printf '%s' "$emoji" | wl-copy --type text/plain
+    if command -v wtype >/dev/null 2>&1; then
+      # type the emoji text through the virtual keyboard so it lands in the
+      # focused window without any compositor-specific paste shortcut.
+      wtype "$emoji" >/dev/null 2>&1 || true
+    fi
+    ;;
+  *)
+    echo "usage: ryoku-emoji {copy|insert} <emoji>" >&2
+    exit 2
+    ;;
+esac
