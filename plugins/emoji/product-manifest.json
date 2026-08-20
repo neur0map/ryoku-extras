@@ -9,16 +9,16 @@
       "source": "README.md",
       "destination": "README.md",
       "mode": "0644",
-      "size": 5242,
-      "sha256": "4d29c14336ca4d6906592644f7e8fb47ba4bf5091637844d4b08e4d663890874",
+      "size": 5877,
+      "sha256": "a90ffc1ccae1ff49ccd4866f3847345914b5ac880b6fc69848f8c0b5428778f1",
       "install": false
     },
     {
       "source": "manifest.json",
       "destination": "manifest.json",
       "mode": "0644",
-      "size": 4426,
-      "sha256": "3921bbacdf49f64ecd3f0f07b8c2796c79920a99db1c809192643d4636a89bdf",
+      "size": 4596,
+      "sha256": "64e5a1bd61980ec78fc8c213317fb671958d20af1ad8ddd0b1679c16a037ac21",
       "install": true
     },
     {
@@ -49,8 +49,8 @@
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
       "mode": "0644",
-      "size": 22083,
-      "sha256": "7ad3aa5f15ebde08d8cccbe17576f1e84b98a1b26a726db6ed1a69382ab7019f",
+      "size": 22108,
+      "sha256": "17cfe0325cb0eb7471f6c25ad0c5e49cd40ac19d8f26727fe6bdd08ffbb7c07e",
       "install": true
     },
     {

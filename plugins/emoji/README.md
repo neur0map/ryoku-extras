@@ -16,9 +16,10 @@ keyboard.
   the first/last result, and `Enter` picks the highlighted emoji. `Esc` clears
   the search, and a second `Esc` closes the popout. The wheel over the grid
   nudges the selection too.
-- **Placeable anywhere**: the popout can sit at the **center of the bottom or
-  top edge** (the default), at a corner, or on a left/right edge - all from the
-  plugin's settings.
+- **A placeable frame popout**: it usually sits at the **middle of the screen**
+  so it lands exactly where you type, and it never closes on its own - it
+  stays until `Esc`, the keybind, or a pick takes it away. Placement is the
+  host's job, not a plugin setting (see below).
 - **`wl-copy` clipboard** under the hood, so copy works on every Wayland
   compositor (Hyprland, niri, sway, ...). No compositor-specific IPC is used.
 - Optional **type-into-window** mode (`insert`) that pastes the emoji into the
@@ -32,8 +33,17 @@ keyboard.
 ## Install
 
 - **Ryoku Settings -> Plugins -> Discover -> Emoji -> Install**, then enable it
-  as a **Frame popout** (super: `.` to toggle; or the plugins menu). The
-  default landing is the bottom-right of the frame with 8 columns.
+  as a **Frame popout** (`SUPER + .` to toggle, or the plugins menu). Fresh
+  installs land at the **middle of the screen** by default.
+
+## Host requirements
+
+The plugin asks the host to float a popout at the exact centre of the display
+(`framePopout.edge = "center"`) and to keep it open until the user closes it. A
+stock placement editor that reserves the centre of every edge cannot do this;
+the shell needs a `centered` popout mode and a non-auto-closing pin (see the
+handoff attached to PR #3). Where the host already supports centred popouts,
+no extra configuration is needed.
 
 ## How it plugs in
 
@@ -59,7 +69,7 @@ contains every fully-qualified Unicode 17.0 emoji, grouped by category.
 | Key               | Default          | Meaning                                            |
 | ----------------- | ---------------- | -------------------------------------------------- |
 | `action`          | `copy`           | What Enter does: `copy` (clipboard), `insert` (type into the window behind), or `both`. |
-| `closeAfterPick`  | `true`           | Close the popout after `copy` (insert modes close first either way, so the keystrokes reach the window behind). |
+| `closeAfterPick`  | `false`          | Close the popout after `copy` (insert modes close first either way, so the keystrokes reach the window behind). |
 | `resetOnOpen`     | `true`           | Clear the search and reset to "All" every time the popout opens. |
 | `columns`         | `8`              | Emoji grid columns (4-16).                          |
 | `rows`            | `5`              | Visible grid rows (2-10); the popout grows to match. |
@@ -68,8 +78,9 @@ contains every fully-qualified Unicode 17.0 emoji, grouped by category.
 | `showHint`        | `true`           | Show the hint footer and the live search/results counters. |
 
 **Where the popout sits** is handled entirely by the Hub's drag editor (Add-ons
-> Emoji): drag the "popout" chip along an edge and drop it at the start,
-centre, or end - there is no separate placement setting in the plugin on
+> Emoji): drag the "popout" chip freely and drop it in the middle of the stage
+to float it at the exact centre of the screen, or near an edge to dock it there
+(start / centre / end). There is no separate placement setting in the plugin on
 purpose. Fresh installs default to the middle of the screen.
 
 Settings are declared as the `metadata.settings` schema in `manifest.json`; the

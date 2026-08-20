@@ -10,8 +10,8 @@ import "components"
 // service (pluginApi.mainInstance); this file only reads it and forwards
 // picks. The popout host pins the width to `widthBudget`; everything scales
 // from it and from `s`. The surface floats on the host's popout blob, so the
-// design language here is one clean column of eyeliner type, a single inset
-// grid well, and nothing boxed inside a box.
+// design here is one clean column of eyeliner type, a single inset grid well,
+// and a hairline themed frame that recolours with the active theme.
 Item {
     id: root
 

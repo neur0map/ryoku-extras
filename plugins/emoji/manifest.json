@@ -3,7 +3,7 @@
   "name": "Emoji",
   "version": "1.0.0",
   "author": "hypruser <hypruser@users.noreply.github.com>",
-  "description": "A keyboard-first emoji picker: search, arrow-key selection with paging and wrapping, and a one-key pick that copies or inserts any emoji. Placeable at the center of any screen edge.",
+  "description": "A keyboard-first emoji picker: search, arrow-key selection with paging and wrapping, and a one-key pick that copies or inserts any emoji. Opens centred on the screen by default and stays open until you close it - the placeable frame popout ships its own 3,900+ emoji catalogue, themes with the wallpaper, and recolours its frame with the active theme.",
   "license": "MIT",
   "tags": [
     "emoji",
@@ -46,8 +46,8 @@
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
       "mode": "0644",
-      "size": 22083,
-      "sha256": "7ad3aa5f15ebde08d8cccbe17576f1e84b98a1b26a726db6ed1a69382ab7019f",
+      "size": 22108,
+      "sha256": "17cfe0325cb0eb7471f6c25ad0c5e49cd40ac19d8f26727fe6bdd08ffbb7c07e",
       "install": true
     },
     {
