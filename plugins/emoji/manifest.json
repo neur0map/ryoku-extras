@@ -3,7 +3,7 @@
   "name": "Emoji",
   "version": "1.0.0",
   "author": "hypruser <hypruser@users.noreply.github.com>",
-  "description": "A quick emoji picker: search, arrow-key select, and copy or insert any emoji straight from your keyboard.",
+  "description": "A keyboard-first emoji picker: search, arrow-key selection with paging and wrapping, and a one-key pick that copies or inserts any emoji. Placeable at the center of any screen edge.",
   "license": "MIT",
   "tags": [
     "emoji",
@@ -22,32 +22,32 @@
       "source": "assets/preview-popout.png",
       "destination": "assets/preview-popout.png",
       "mode": "0644",
-      "size": 426746,
-      "sha256": "b02ad08b11a3af74aa588ddeb22952f790ece2ebce86d05bbd909887b69b335f",
+      "size": 157531,
+      "sha256": "753b4d79a3c17af2ca49777be5ea53561d50462d6c45d8b30ca935337186f669",
       "install": false
     },
     {
       "source": "bin/ryoku-emoji",
       "destination": "bin/ryoku-emoji",
       "mode": "0755",
-      "size": 1212,
-      "sha256": "35020e8607126bae56636c600390c6a3cac0cc51f80165bee298cca1112b5845",
+      "size": 1516,
+      "sha256": "04c478cb59895c6eef30407c44efbb9c99eb0bd7b24d9640a0ee4526c2b95ff7",
       "install": true
     },
     {
       "source": "content/components/Chip.qml",
       "destination": "content/components/Chip.qml",
       "mode": "0644",
-      "size": 862,
-      "sha256": "64cc6d404448eb92d54db5c4f55412fa630da0286331cd44e2fef2ad7dcd2768",
+      "size": 1274,
+      "sha256": "7a35788c9241db4c6282553b2bb8c702f3c571412b214ff4bed9cde7a774186c",
       "install": true
     },
     {
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
       "mode": "0644",
-      "size": 7752,
-      "sha256": "45ff159464fc537aba928eb33d2ec1505ea901bfe5e94cf1bb120f5184c5a8e5",
+      "size": 21700,
+      "sha256": "c312a565ee7d1439755571a6ff991b7d767e26fa95c24092337af6582c686f48",
       "install": true
     },
     {
@@ -62,8 +62,8 @@
       "source": "service/Main.qml",
       "destination": "service/Main.qml",
       "mode": "0644",
-      "size": 3121,
-      "sha256": "50a4d3d9f5f7f29fef6b2c726a2ac82ca57377f4e3bccbdbc3bc2532ca89f730",
+      "size": 5228,
+      "sha256": "ff857cf22045131362d69a00e76b32e737149c7351c7b6fac935df44162247fc",
       "install": true
     }
   ],
@@ -88,8 +88,8 @@
   "defaults": {
     "host": "framePopout",
     "framePopout": {
-      "edge": "bottom",
-      "align": "end"
+      "edge": "center",
+      "align": "center"
     },
     "key": "m",
     "icon": "extension",
@@ -110,7 +110,11 @@
           },
           {
             "value": "insert",
-            "label": "Type into the focused window"
+            "label": "Type into the window behind"
+          },
+          {
+            "value": "both",
+            "label": "Insert and copy"
           }
         ]
       },
@@ -118,6 +122,13 @@
         "key": "closeAfterPick",
         "type": "toggle",
         "label": "Close after picking",
+        "group": "Behaviour",
+        "default": false
+      },
+      {
+        "key": "resetOnOpen",
+        "type": "toggle",
+        "label": "Start fresh on open",
         "group": "Behaviour",
         "default": true
       },
@@ -131,6 +142,42 @@
         "max": 16,
         "step": 1,
         "decimals": 0
+      },
+      {
+        "key": "rows",
+        "type": "slider",
+        "label": "Visible rows",
+        "group": "Grid",
+        "default": 5,
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "decimals": 0
+      },
+      {
+        "key": "cellSize",
+        "type": "slider",
+        "label": "Cell size",
+        "group": "Grid",
+        "default": 44,
+        "min": 24,
+        "max": 72,
+        "step": 1,
+        "decimals": 0
+      },
+      {
+        "key": "showGroupChips",
+        "type": "toggle",
+        "label": "Show category chips",
+        "group": "Display",
+        "default": true
+      },
+      {
+        "key": "showHint",
+        "type": "toggle",
+        "label": "Show hints and counters",
+        "group": "Display",
+        "default": true
       }
     ]
   },

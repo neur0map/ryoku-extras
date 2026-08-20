@@ -13,18 +13,31 @@ Item {
     property var results: []
     property bool loaded: false
     property string loadError: ""
-    readonly property string action: setting("action", "copy") === "insert" ? "insert" : "copy"
+
+    // "copy" (clipboard only) | "insert" (type into the window behind) |
+    // "both" (clipboard + type). Read fresh on every call so a setting change
+    // while the service is alive is picked up immediately.
+    function normalizeAction(mode) {
+        return (mode === "insert" || mode === "both") ? mode : "copy";
+    }
+    function actionMode() { return root.normalizeAction(setting("action", "copy")); }
+    function needsWindow(mode) { return mode === "insert" || mode === "both"; }
 
     function setting(k, def) {
         var s = pluginApi ? pluginApi.pluginSettings : null;
         if (!s || s[k] === undefined || s[k] === null || s[k] === "") return def;
         return s[k];
     }
-    function boolSetting(k, def) { var v = setting(k, def); return v === true || v === "true"; }
+    function boolSetting(k, def) {
+        var v = setting(k, def);
+        if (typeof v === "boolean") return v;
+        return v === "true" ? true : (v === "false" ? false : !!def);
+    }
 
     // The host assigns pluginApi after construction (PluginObjectSlot.configure),
     // so the catalogue load has to wait for it.
     onPluginApiChanged: if (pluginApi) root.load()
+
     function load() {
         var dir = pluginApi ? pluginApi.pluginDir : "";
         if (!dir) return;
@@ -38,10 +51,10 @@ Item {
 
     function digest(raw) {
         try {
-            var json = JSON.parse(raw);
+            var parsed = JSON.parse(raw);
             var out = [];
             var names = ["All"];
-            json.groups.forEach(function (g) {
+            parsed.groups.forEach(function (g) {
                 names.push(g.g);
                 g.subs.forEach(function (sub) {
                     sub.l.forEach(function (item) {
@@ -56,6 +69,13 @@ Item {
         } catch (e) {
             root.loadError = "parse: " + e;
         }
+    }
+
+    function count(name) {
+        if (!name || name === "All") return root.flat.length;
+        var n = 0, i;
+        for (i = 0; i < root.flat.length; i++) if (root.flat[i].g === name) n++;
+        return n;
     }
 
     function apply() {
@@ -75,10 +95,18 @@ Item {
         }
         root.results = res;
     }
+
     function setQuery(q) { root.query = q; root.apply(); }
     function setGroup(g) { root.group = g; root.apply(); }
 
-    function hostOpened() {}
+    // Where the popout sits is entirely the host's: the Hub's drag editor (and
+    // the shell's own defaults framePopout block) write edges/align straight
+    // into plugins.json, and PluginPopouts re-positions on every change. The
+    // plugin never overrides it, so the drag editor stays the single source of
+    // truth and there is no second, conflicting placement control.
+
+    function close() { closeProc.running = true; }
+    function clearQuery() { root.query = ""; root.group = "All"; root.apply(); }
 
     function act(mode, emoji) {
         var dir = pluginApi ? pluginApi.pluginDir : "";
@@ -88,17 +116,42 @@ Item {
     }
     Process {
         id: actProc
-        stderr: StdioCollector { onStreamFinished: console.warn("emoji: " + text.trim()) }
+        stderr: StdioCollector { onStreamFinished: if (text.trim().length > 0) console.warn("emoji: " + text.trim()) }
     }
 
     function pick(emoji) {
-        act(root.action, emoji);
-        if (root.boolSetting("closeAfterPick", true)) closeProc.running = true;
+        var mode = root.actionMode();
+        if (root.needsWindow(mode)) {
+            // Typing must land in whatever window the user was in BEFORE the
+            // popout took focus. Close the popout first, let the compositor
+            // hand focus back, then type into the now-focused window.
+            root._pendingEmoji = emoji;
+            root._pendingMode = mode;
+            root.close();
+        } else {
+            root.act(mode, emoji);
+            if (root.boolSetting("closeAfterPick", true)) root.close();
+        }
     }
-    function copyOnly(emoji) { act("copy", emoji); }
+    function copyOnly(emoji) { root.act("copy", emoji); }
+
+    property string _pendingEmoji: ""
+    property string _pendingMode: ""
+    Timer {
+        id: insertTimer
+        interval: 220
+        onTriggered: {
+            if (root._pendingMode !== "") {
+                root.act(root._pendingMode, root._pendingEmoji);
+                root._pendingEmoji = "";
+                root._pendingMode = "";
+            }
+        }
+    }
 
     Process {
         id: closeProc
         command: ["ryoku-shell", "plugin", "emoji"]
+        onExited: if (root._pendingMode !== "") insertTimer.start()
     }
 }

@@ -9,48 +9,48 @@
       "source": "README.md",
       "destination": "README.md",
       "mode": "0644",
-      "size": 3674,
-      "sha256": "ea1596fe017b34d67b131441508ce4c509a09de0d2d38d3b438581da389a2b72",
+      "size": 5099,
+      "sha256": "9e1fc9c8042e7d0d3237cfd133f3bf1d202909eb3aff9892a3bab0969299d582",
       "install": false
     },
     {
       "source": "manifest.json",
       "destination": "manifest.json",
       "mode": "0644",
-      "size": 3300,
-      "sha256": "879e113d42cc35019b10009bbfa145132340c610441695458fe36142b506381a",
+      "size": 4426,
+      "sha256": "a2d79100b1445dbc903995c1571a8f7704ebe58a3bcfb2749647fb504f79a22c",
       "install": true
     },
     {
       "source": "assets/preview-popout.png",
       "destination": "assets/preview-popout.png",
       "mode": "0644",
-      "size": 426746,
-      "sha256": "b02ad08b11a3af74aa588ddeb22952f790ece2ebce86d05bbd909887b69b335f",
+      "size": 157531,
+      "sha256": "753b4d79a3c17af2ca49777be5ea53561d50462d6c45d8b30ca935337186f669",
       "install": false
     },
     {
       "source": "bin/ryoku-emoji",
       "destination": "bin/ryoku-emoji",
       "mode": "0755",
-      "size": 1212,
-      "sha256": "35020e8607126bae56636c600390c6a3cac0cc51f80165bee298cca1112b5845",
+      "size": 1516,
+      "sha256": "04c478cb59895c6eef30407c44efbb9c99eb0bd7b24d9640a0ee4526c2b95ff7",
       "install": true
     },
     {
       "source": "content/components/Chip.qml",
       "destination": "content/components/Chip.qml",
       "mode": "0644",
-      "size": 862,
-      "sha256": "64cc6d404448eb92d54db5c4f55412fa630da0286331cd44e2fef2ad7dcd2768",
+      "size": 1274,
+      "sha256": "7a35788c9241db4c6282553b2bb8c702f3c571412b214ff4bed9cde7a774186c",
       "install": true
     },
     {
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
       "mode": "0644",
-      "size": 7752,
-      "sha256": "45ff159464fc537aba928eb33d2ec1505ea901bfe5e94cf1bb120f5184c5a8e5",
+      "size": 21700,
+      "sha256": "c312a565ee7d1439755571a6ff991b7d767e26fa95c24092337af6582c686f48",
       "install": true
     },
     {
@@ -65,8 +65,8 @@
       "source": "service/Main.qml",
       "destination": "service/Main.qml",
       "mode": "0644",
-      "size": 3121,
-      "sha256": "50a4d3d9f5f7f29fef6b2c726a2ac82ca57377f4e3bccbdbc3bc2532ca89f730",
+      "size": 5228,
+      "sha256": "ff857cf22045131362d69a00e76b32e737149c7351c7b6fac935df44162247fc",
       "install": true
     },
     {

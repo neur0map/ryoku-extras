@@ -1,23 +1,31 @@
 # Emoji
 
-A quick emoji picker for Ryoku. Open it from anywhere, type to search, arrow-key
-to select, and copy (or insert) any emoji without leaving your keyboard.
-
-![Emoji picker popout](assets/preview-popout.png)
+A keyboard-first emoji picker for Ryoku. Open it from anywhere, type to search,
+arrow-key to select, and copy (or insert) any emoji without leaving your
+keyboard.
 
 ## What it does
 
 - **Search** the full Unicode emoji catalogue (3944 emojis, 9 groups) with a
-  single search box - names and codepoints both match.
-- **Arrow keys** move a selection cursor around the grid; **Enter** copies (or
-  inserts) the highlighted emoji. Type any letter and it just goes into the
-  search box.
+  single search box - names and codepoints both match, with a live
+  matches/total counter.
+- **Full keyboard control**: `← →` move across a row (wrapping at the edges),
+  `↑ ↓` move between rows, `PgUp`/`PgDn` page the grid, `Home`/`End` jump to
+  the first/last result, and `Enter` picks the highlighted emoji. `Esc` clears
+  the search, and a second `Esc` closes the popout. The wheel over the grid
+  nudges the selection too.
+- **Placeable anywhere**: the popout can sit at the **center of the bottom or
+  top edge** (the default), at a corner, or on a left/right edge - all from the
+  plugin's settings.
 - **`wl-copy` clipboard** under the hood, so copy works on every Wayland
   compositor (Hyprland, niri, sway, ...). No compositor-specific IPC is used.
-- Optional **type-into-window** mode that pastes the emoji through the
-  virtual-keyboard protocol (`wtype`) instead of a compositor paste shortcut.
-- Category chips filter by emoji group; scroll a long result set with the wheel;
-  right-click a cell to force-copy.
+- Optional **type-into-window** mode (`insert`) that pastes the emoji into the
+  window you were using before the picker opened - the picker closes first so
+  the keystrokes land behind it, not in the search box. `insert + copy` does
+  both at once.
+- Category chips filter by emoji group (with per-group counts); a live readout
+  shows the highlighted emoji's name and position; right-click a cell to
+  force-copy.
 
 ## Install
 
@@ -46,11 +54,21 @@ contains every fully-qualified Unicode 17.0 emoji, grouped by category.
 
 ## Settings
 
-| Key               | Default | Meaning                                            |
-| ----------------- | ------- | -------------------------------------------------- |
-| `action`          | `copy`  | What Enter does: `copy` to clipboard or `insert` into the focused window. |
-| `closeAfterPick`  | `true`  | Close the popout after a pick.                     |
-| `columns`         | `8`     | Emoji grid columns (4-16).                         |
+| Key               | Default          | Meaning                                            |
+| ----------------- | ---------------- | -------------------------------------------------- |
+| `action`          | `copy`           | What Enter does: `copy` (clipboard), `insert` (type into the window behind), or `both`. |
+| `closeAfterPick`  | `true`           | Close the popout after `copy` (insert modes close first either way, so the keystrokes reach the window behind). |
+| `resetOnOpen`     | `true`           | Clear the search and reset to "All" every time the popout opens. |
+| `columns`         | `8`              | Emoji grid columns (4-16).                          |
+| `rows`            | `5`              | Visible grid rows (2-10); the popout grows to match. |
+| `cellSize`        | `44`             | Minimum cell size in px (24-72); cells grow to fill the width. |
+| `showGroupChips`  | `true`           | Show the category chips row (with per-group counts). |
+| `showHint`        | `true`           | Show the hint footer and the live search/results counters. |
+
+**Where the popout sits** is handled entirely by the Hub's drag editor (Add-ons
+> Emoji): drag the "popout" chip along an edge and drop it at the start,
+centre, or end - there is no separate placement setting in the plugin on
+purpose. Fresh installs default to the middle of the screen.
 
 Settings are declared as the `metadata.settings` schema in `manifest.json`; the
 shell renders the form in the plugin's menu and persists changes to
@@ -68,7 +86,7 @@ emoji/
   data/emojis.json          # generated emoji catalogue (Unicode 17.0)
   data/emoji-test.txt       # the source data set
   bin/ryoku-emoji           # compositor-independent copy/insert helper
-  assets/preview-popout.png # the README image
+  assets/preview-popout.png # the store preview image
 ```
 
 The catalogue can be regenerated from `data/emoji-test.txt`. The service and
