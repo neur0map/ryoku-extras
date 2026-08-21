@@ -1,9 +1,9 @@
 {
   "id": "emoji",
   "name": "Emoji",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "hypruser <hypruser@users.noreply.github.com>",
-  "description": "A keyboard-first emoji picker: search, arrow-key selection with paging and wrapping, and a one-key pick that copies or inserts any emoji. Opens centred on the screen by default and stays open until you close it - the placeable frame popout ships its own 3,900+ emoji catalogue, themes with the wallpaper, and recolours its frame with the active theme.",
+  "description": "A keyboard-first emoji picker: search, arrow-key selection with paging and wrapping, and a one-key pick that copies or inserts any emoji. A placeable frame popout that ships its own 3,900+ emoji catalogue, themes with the wallpaper, and recolours its frame with the active theme.",
   "license": "MIT",
   "tags": [
     "emoji",
@@ -30,8 +30,8 @@
       "source": "bin/ryoku-emoji",
       "destination": "bin/ryoku-emoji",
       "mode": "0755",
-      "size": 1516,
-      "sha256": "04c478cb59895c6eef30407c44efbb9c99eb0bd7b24d9640a0ee4526c2b95ff7",
+      "size": 1726,
+      "sha256": "9e07a4dac9d35bdabf130124cad311f4f87558aff540daef15dcde4919dc4b57",
       "install": true
     },
     {
@@ -46,8 +46,8 @@
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
       "mode": "0644",
-      "size": 22108,
-      "sha256": "17cfe0325cb0eb7471f6c25ad0c5e49cd40ac19d8f26727fe6bdd08ffbb7c07e",
+      "size": 22559,
+      "sha256": "5dd0b2b224e281687648d2c08005571f27aadf48e64fccfe88dda6fe21cf52e0",
       "install": true
     },
     {
@@ -62,8 +62,8 @@
       "source": "service/Main.qml",
       "destination": "service/Main.qml",
       "mode": "0644",
-      "size": 5228,
-      "sha256": "ff857cf22045131362d69a00e76b32e737149c7351c7b6fac935df44162247fc",
+      "size": 5360,
+      "sha256": "9b6d034eb58385bf35991d751ae06e4996e3e5f4709ad5666f9a52ca8b150323",
       "install": true
     }
   ],
@@ -72,7 +72,8 @@
   ],
   "dependencies": {
     "commands": [
-      "wl-copy"
+      "wl-copy",
+      "wtype"
     ]
   },
   "capabilities": {
@@ -88,10 +89,9 @@
   "defaults": {
     "host": "framePopout",
     "framePopout": {
-      "edge": "center",
+      "edge": "bottom",
       "align": "center"
     },
-    "key": "m",
     "icon": "extension",
     "label": "Emoji"
   },

@@ -127,7 +127,7 @@
     {
       "id": "emoji",
       "name": "Emoji",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "plugins/emoji",
       "author": "hypruser",
       "summary": "A keyboard-first emoji picker with search and arrow-key selection.",
@@ -146,7 +146,7 @@
         "assets/preview-popout.png"
       ],
       "manifest": "product-manifest.json",
-      "manifestSha256": "eda7611580d99e53a0868ba7637dedf3c73de94a4f5b81f415b1c85f0de41b4d",
+      "manifestSha256": "8a4f212d8382f6691db9d5a8385b826c493b0c813e35490bf17e8fca09420b44",
       "official": false,
       "tagline": "Search and pick any emoji from your keyboard.",
       "icon": "emoji_emotions",

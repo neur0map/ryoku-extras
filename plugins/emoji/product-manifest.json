@@ -2,23 +2,23 @@
   "schema": 1,
   "id": "emoji",
   "category": "plugins",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "destination": "ryoku/plugins/emoji",
   "files": [
     {
       "source": "README.md",
       "destination": "README.md",
       "mode": "0644",
-      "size": 5877,
-      "sha256": "a90ffc1ccae1ff49ccd4866f3847345914b5ac880b6fc69848f8c0b5428778f1",
+      "size": 9627,
+      "sha256": "677ab1960ef370e6ee945ca254431ef7b24ecc293170b6c44d8bacbf19dd8182",
       "install": false
     },
     {
       "source": "manifest.json",
       "destination": "manifest.json",
       "mode": "0644",
-      "size": 4596,
-      "sha256": "64e5a1bd61980ec78fc8c213317fb671958d20af1ad8ddd0b1679c16a037ac21",
+      "size": 4523,
+      "sha256": "59b9cd4ae42a07e2c5343ac0ddbe48d2daaff7eb69787f02ad6a5b91ff3e5486",
       "install": true
     },
     {
@@ -33,8 +33,8 @@
       "source": "bin/ryoku-emoji",
       "destination": "bin/ryoku-emoji",
       "mode": "0755",
-      "size": 1516,
-      "sha256": "04c478cb59895c6eef30407c44efbb9c99eb0bd7b24d9640a0ee4526c2b95ff7",
+      "size": 1726,
+      "sha256": "9e07a4dac9d35bdabf130124cad311f4f87558aff540daef15dcde4919dc4b57",
       "install": true
     },
     {
@@ -49,8 +49,8 @@
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
       "mode": "0644",
-      "size": 22108,
-      "sha256": "17cfe0325cb0eb7471f6c25ad0c5e49cd40ac19d8f26727fe6bdd08ffbb7c07e",
+      "size": 22559,
+      "sha256": "5dd0b2b224e281687648d2c08005571f27aadf48e64fccfe88dda6fe21cf52e0",
       "install": true
     },
     {
@@ -65,8 +65,8 @@
       "source": "service/Main.qml",
       "destination": "service/Main.qml",
       "mode": "0644",
-      "size": 5228,
-      "sha256": "ff857cf22045131362d69a00e76b32e737149c7351c7b6fac935df44162247fc",
+      "size": 5360,
+      "sha256": "9b6d034eb58385bf35991d751ae06e4996e3e5f4709ad5666f9a52ca8b150323",
       "install": true
     },
     {

@@ -33,12 +33,20 @@ case "$mode" in
     fi
     ;;
   both)
+    ok=1
     if command -v wl-copy >/dev/null 2>&1; then
       printf '%s' "$emoji" | wl-copy --type text/plain
+    else
+      echo "ryoku-emoji: wl-copy is required (copied nothing)" >&2
+      ok=0
     fi
     if command -v wtype >/dev/null 2>&1; then
       wtype "$emoji" >/dev/null 2>&1 || true
+    else
+      echo "ryoku-emoji: wtype is required (typed nothing)" >&2
+      ok=0
     fi
+    [ "$ok" -eq 1 ] || exit 1
     ;;
   *)
     echo "usage: ryoku-emoji {copy|insert|both} <emoji>" >&2

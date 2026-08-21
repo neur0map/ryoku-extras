@@ -89,8 +89,11 @@ Item {
         root.posView();
     }
     function pageMove(dir) {
-        var per = Math.max(1, Math.round(root.gridH / (root.cell + root.gap)));
-        root.moveSel(dir * per);
+        // a page = every fully visible ROW of cells. moveSel() steps items,
+        // so the visible row count must be scaled by the grid's column count
+        // or PgUp/PgDn crawl a few cells instead of flipping a page.
+        var rowsVisible = Math.max(1, Math.floor(root.gridH / (root.cell + root.gap)));
+        root.moveSel(dir * rowsVisible * root.cols);
     }
     function homeSel() { if (root.resultCount) root.sel = 0; root.posView(); }
     function endSel() { if (root.resultCount) root.sel = root.resultCount - 1; root.posView(); }
@@ -122,7 +125,9 @@ Item {
         ? root.columns
         : Math.max(1, Math.floor((root.usableW + root.gap) / (root.cell + root.gap)))
     readonly property real maxScreenH: density === "full" && screen && screen.height > 0 ? screen.height * 0.92 * s : 0
-    readonly property real gridH: Math.min(root.rows * (root.cell + root.gap),
+    // The well is the rows the user asked for PLUS the grid's own inner
+    // margins (GridView anchors.margins below), or the last row clips.
+    readonly property real gridH: Math.min(root.rows * (root.cell + root.gap) + 2 * root.gridMargin,
         maxScreenH > 0 ? maxScreenH : 560 * s)
     readonly property bool popout: density === "full"
 
@@ -202,19 +207,19 @@ Item {
                             root.service.setQuery("");
                     }
                 }
-                // All navigation happens here, in one place, and every arrow is
-                // accepted so nothing else (the caret, the grid, a popup) also
-                // reacts to the key - an arrow ONLY moves the selection to the
-                // emoji above/below/left/right. Up/down step a full row,
-                // left/right step a single cell and clamp at the row ends. The
-                // SearchField's own "moved" signal is unused: it double-moves.
+                // All navigation happens here and every arrow is accepted so
+                // nothing else (the caret, the grid, a popup) also reacts -
+                // an arrow ONLY moves the selection. Left/right step a single
+                // cell and clamp/wrap at row ends. Up/down arrive through
+                // SearchField's "moved" signal: its Keys.onUp/onDownPressed
+                // handlers consume those keys BEFORE the generic pressed ever
+                // fires, so onKeyPressed never sees them - scale by the grid's
+                // real column count here to land in the same column one row
+                // away.
+                onMoved: root.moveSel(delta * root.cols)
                 onKeyPressed: function (event) {
                     var k = event.key;
-                    // Up/down step by the grid's real column count, so they
-                    // always land exactly one row up/down in the SAME column.
-                    if (k === Qt.Key_Up) { root.moveSel(-root.cols); event.accepted = true; }
-                    else if (k === Qt.Key_Down) { root.moveSel(root.cols); event.accepted = true; }
-                    else if (k === Qt.Key_Left) { root.stepHoriz(-1); event.accepted = true; }
+                    if (k === Qt.Key_Left) { root.stepHoriz(-1); event.accepted = true; }
                     else if (k === Qt.Key_Right) { root.stepHoriz(1); event.accepted = true; }
                     else if (k === Qt.Key_PageUp) { root.pageMove(-1); event.accepted = true; }
                     else if (k === Qt.Key_PageDown) { root.pageMove(1); event.accepted = true; }
@@ -314,7 +319,7 @@ Item {
                 GridView {
                     id: grid
                     anchors.fill: parent
-                    anchors.margins: 8 * root.s
+                    anchors.margins: root.gridMargin
                     clip: true
                     boundsBehavior: Flickable.StopAtBounds
                     cellWidth: root.cell + root.gap
@@ -491,11 +496,13 @@ Item {
         }
     }
 
-    // focus search as soon as the popout opens, so SUPER+. -> type -> Enter.
+    // focus search as soon as the popout opens, so it is type-to-search
+    // immediately. resetOnOpen clears the query AND the group, so a category
+    // picked last time can never leave the next open staring at an empty set.
     onActiveChanged: {
         if (active && root.popout && search.input) {
             if (root.resetOnOpen && root.service)
-                root.service.setQuery("");
+                root.service.clearQuery();
             Qt.callLater(() => search.input.forceActiveFocus());
         }
     }

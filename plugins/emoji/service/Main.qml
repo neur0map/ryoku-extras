@@ -130,7 +130,9 @@ Item {
             root.close();
         } else {
             root.act(mode, emoji);
-            if (root.boolSetting("closeAfterPick", true)) root.close();
+            // manifest default: keep the popout open after a plain copy so
+            // users can pick several emojis in a row.
+            if (root.boolSetting("closeAfterPick", false)) root.close();
         }
     }
     function copyOnly(emoji) { root.act("copy", emoji); }
