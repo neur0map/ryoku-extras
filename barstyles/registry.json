@@ -40,6 +40,31 @@
       "screenshots": [],
       "manifest": "manifest.json",
       "manifestSha256": "b8e6d5be1d73557a7da36896cfe495efee0a2c9f67264739c535c52d0b2e9730"
+    },
+    {
+      "id": "imi",
+      "name": "Imi",
+      "version": "1.0.0",
+      "path": "barstyles/imi",
+      "author": "Ryoku Community (dodo986)",
+      "summary": "Material 3 Island Bar",
+      "description": "Material 3-Like design with morphing popouts, kanji workspaces, audio visualizer, and customizable widget pills.",
+      "tags": [
+        "top",
+        "material3",
+        "islands",
+        "morphing",
+        "customizable",
+        "visualizer"
+      ],
+      "accent": "#9ecaff",
+      "surface": "#141318",
+      "preview": "assets/preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "073892e5cb3e4bb58df5834de47a5da05df56d438ea239176b210f8f3f9d6c17",
+      "lastUpdated": "2025-08-23",
+      "official": false
     }
   ]
 }

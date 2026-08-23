@@ -1,0 +1,39 @@
+import ".."
+import "."
+import QtQuick
+import QtQuick.Layouts
+
+Item {
+    id: root
+    property int currentIndex: 0
+    property bool expanded: false
+    property color colToggled: Appearance.colors.colSecondaryContainer
+    default property alias data: tabBarColumn.data  
+    implicitHeight: tabBarColumn.implicitHeight
+    implicitWidth: tabBarColumn.implicitWidth
+    Layout.topMargin: Appearance.spacing.space300
+
+    Rectangle {
+        property real itemHeight: tabBarColumn.children[0]?.baseSize ?? 56
+        property real baseHighlightHeight: tabBarColumn.children[0]?.baseHighlightHeight ?? 56
+        anchors {
+            top: tabBarColumn.top
+            left: tabBarColumn.left
+            topMargin: itemHeight * root.currentIndex + (root.expanded ? 0 : ((itemHeight - baseHighlightHeight) / 2))
+        }
+        radius: Appearance.rounding.full
+        color: root.colToggled
+        implicitHeight: root.expanded ? itemHeight : baseHighlightHeight
+        implicitWidth: tabBarColumn?.children[root.currentIndex]?.visualWidth ?? 100
+
+        Behavior on anchors.topMargin {
+            animation: Appearance.animation.elementMoveSmall.numberAnimation.createObject(this)
+        }
+    }
+
+    ColumnLayout {
+        id: tabBarColumn
+        anchors.fill: parent
+        spacing: 0
+    }
+}
