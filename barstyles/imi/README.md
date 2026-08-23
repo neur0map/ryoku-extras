@@ -3,7 +3,7 @@
 A Material 3-inspired top bar style for **Ryoku Desktop Shell**.  
 Ported and adapted from the Immaterial Impulse dotfiles (end-4).
 
-Note to neuromap : i just realized that there are a couple unnecessary leftover qml files that since the bar is a heavily customized fork, it shouldnt be hard to see which files are trash, you can remove them yourself or lmk if you need me to do some changes. 
+Note to neuromap : i just realized that there are a couple unnecessary leftover qml files. since the bar is a heavily customized fork, it shouldnt be hard to see which files are trash, you can remove them yourself or lmk if you need me to do some changes. 
 
 ## Features
 
