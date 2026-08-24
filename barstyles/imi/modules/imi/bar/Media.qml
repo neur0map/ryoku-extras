@@ -22,7 +22,7 @@ Item {
     implicitHeight: vertical ? (rowr.implicitHeight + 8) : Appearance.sizes.baseBarHeight
     width: implicitWidth
     height: implicitHeight
-    visible: RyokuServices.Media.present
+    visible: true
 
     onVisibleChanged: RyokuServices.AudioBars.setActive(root, visible)
     Component.onCompleted: RyokuServices.AudioBars.setActive(root, visible)
@@ -97,8 +97,9 @@ Item {
         // Title · Artist (Single line, elided, dynamic font)
         StyledText {
             anchors.verticalCenter: parent.verticalCenter
-            width: Math.min(160, implicitWidth)
-            text: RyokuServices.Media.line || "No media"
+            width: (RyokuServices.Media.line) ? Math.min(160, implicitWidth) : 0
+            visible: RyokuServices.Media.line !== ""
+            text: RyokuServices.Media.line || ""
             elide: Text.ElideRight
             color: Appearance.colors.colOnSecondaryContainer
             font.pixelSize: Appearance.font.pixelSize.small

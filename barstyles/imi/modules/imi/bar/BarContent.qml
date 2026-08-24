@@ -14,6 +14,7 @@ import "bar_widget_source.js" as BarWidgetSource
 
 Item {
     id: root
+
     implicitHeight: Appearance.sizes.barHeight
     width: parent.width
     readonly property real barPadding: 0
