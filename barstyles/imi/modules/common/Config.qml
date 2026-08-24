@@ -1045,7 +1045,7 @@ Singleton {
 
                 property JsonObject layouts: JsonObject {
                     property list<string> leftLayout: ["leftSidebarButton", "activeWindow"]
-                    property list<string> middleLayout: ["visualizer", "media", "plugin:docker_plugin", "resources", "workspaces", "utilButtons", "clockWidget", "weatherBar", "plugin:discord_voice", "visualizer"]
+                    property list<string> middleLayout: ["visualizer", "media", "resources", "workspaces", "utilButtons", "clockWidget", "weatherBar", "visualizer"]
                     property list<string> rightLayout: ["submapIndicator", "privacyIndicator", "sysTray", "hyprlandXkbIndicator", "systemIcons"]
                 }
                 

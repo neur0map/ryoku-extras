@@ -1,4 +1,0 @@
-module DockerManagerPlugin
-singleton DockerService 1.0 DockerService.qml
-DockerWidget 1.0 DockerWidget.qml
-DockerPopup 1.0 DockerPopup.qml

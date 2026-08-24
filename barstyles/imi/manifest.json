@@ -217,8 +217,8 @@
       "source": "modules/common/Config.qml",
       "destination": "modules/common/Config.qml",
       "mode": "0644",
-      "size": 91890,
-      "sha256": "1d8fba05b2773291e8f39aa524aa071d5baef7617ab6421d0e43950828c610a4",
+      "size": 91842,
+      "sha256": "a3c600a53611beac6453ea90d3750771cd562ea74cba43ac42ca0fa9337a17ac",
       "install": true
     },
     {
@@ -507,118 +507,6 @@
       "mode": "0644",
       "size": 6574,
       "sha256": "b79c735b1f2b223e4a1a17f91818a4f7f8f74bfb7f57a4eb9f861b7d112986a2",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/BarWidget.qml",
-      "destination": "modules/common/plugins/bundled/discordVoice/BarWidget.qml",
-      "mode": "0644",
-      "size": 367,
-      "sha256": "50f4022477a7078c09dc52ff4560df88ec7f0281c8e0f2b4feed60a8ffb88919",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/DiscordGlyph.qml",
-      "destination": "modules/common/plugins/bundled/discordVoice/DiscordGlyph.qml",
-      "mode": "0644",
-      "size": 581,
-      "sha256": "01a625c12ec9c07e9be640ecc41c6d37409584acd361f00f2628ea4575b9bef6",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/DiscordVoicePopup.qml",
-      "destination": "modules/common/plugins/bundled/discordVoice/DiscordVoicePopup.qml",
-      "mode": "0644",
-      "size": 10020,
-      "sha256": "30a07369e36540665b05c6b76acbac14521e88b8ebc287177af0bf1bcad19818",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/ParticipantAvatar.qml",
-      "destination": "modules/common/plugins/bundled/discordVoice/ParticipantAvatar.qml",
-      "mode": "0644",
-      "size": 7985,
-      "sha256": "63bd7e4a9e59e7e6a1626ebd4184da84a1c33eba0b28818e6fbaa9f42406e123",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/ParticipantVisualState.js",
-      "destination": "modules/common/plugins/bundled/discordVoice/ParticipantVisualState.js",
-      "mode": "0644",
-      "size": 1078,
-      "sha256": "fa0676d1f690a2a604f7768ed0e7d8f454f271d27e497a5bccd155d95956e8f4",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/TaskbarGlyph.qml",
-      "destination": "modules/common/plugins/bundled/discordVoice/TaskbarGlyph.qml",
-      "mode": "0644",
-      "size": 654,
-      "sha256": "d7e0f963166b8854d2a6982d7dd4af331292d1494c133b43e3b8d8b0cbf727c0",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/Widget.qml",
-      "destination": "modules/common/plugins/bundled/discordVoice/Widget.qml",
-      "mode": "0644",
-      "size": 9428,
-      "sha256": "d63fa5764b128004eeb33ff51d3a1aeb97f0f8c50e4403c40f51e30e79ac5597",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/manifest.json",
-      "destination": "modules/common/plugins/bundled/discordVoice/manifest.json",
-      "mode": "0644",
-      "size": 2274,
-      "sha256": "7c408ad32e007a984a5727d9ea55f603bcb8d51b6379094d1fe7d679db8414eb",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/discordVoice/qmldir",
-      "destination": "modules/common/plugins/bundled/discordVoice/qmldir",
-      "mode": "0644",
-      "size": 1162,
-      "sha256": "5b46341def4121fd7e895e223707bfee7b3f16fc5b0b8cebcd2938f04cc6039d",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/docker/DockerPopup.qml",
-      "destination": "modules/common/plugins/bundled/docker/DockerPopup.qml",
-      "mode": "0644",
-      "size": 13871,
-      "sha256": "d096c806cf0ac4904f3c5dd3958726d97ef65354d4854e881def29a5cd4d360f",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/docker/DockerService.qml",
-      "destination": "modules/common/plugins/bundled/docker/DockerService.qml",
-      "mode": "0644",
-      "size": 9597,
-      "sha256": "d0607de8373241ae3c4dcc03657cff39c07395824d52b2f1c8c8d56a35579160",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/docker/DockerWidget.qml",
-      "destination": "modules/common/plugins/bundled/docker/DockerWidget.qml",
-      "mode": "0644",
-      "size": 4304,
-      "sha256": "be31a1f20d089e4d524624fd09ab7cbcb5671e7f2e16c1811fd17407f4711aed",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/docker/manifest.json",
-      "destination": "modules/common/plugins/bundled/docker/manifest.json",
-      "mode": "0644",
-      "size": 2123,
-      "sha256": "ff2e874eb588ed3b128e5a693de58785ff18fcea6294ad12432d365db4ef841a",
-      "install": true
-    },
-    {
-      "source": "modules/common/plugins/bundled/docker/qmldir",
-      "destination": "modules/common/plugins/bundled/docker/qmldir",
-      "mode": "0644",
-      "size": 139,
-      "sha256": "f0f5a25e9970256be45909b984b863e4df6840c093976ec3883ad4b8fdbcd47b",
       "install": true
     },
     {
@@ -1550,27 +1438,11 @@
       "install": true
     },
     {
-      "source": "modules/imi/bar/DiscordVoicePlugin.qml",
-      "destination": "modules/imi/bar/DiscordVoicePlugin.qml",
-      "mode": "0644",
-      "size": 2724,
-      "sha256": "703e3b1a06a664020d61bf71e30dd8401434807ca80073a1b838351219e28ee2",
-      "install": true
-    },
-    {
       "source": "modules/imi/bar/Divisor.qml",
       "destination": "modules/imi/bar/Divisor.qml",
       "mode": "0644",
       "size": 1229,
       "sha256": "aa72cd5d12cfe2473353b257f36d11e6eefc12c61127bbc2adaee83978a88239",
-      "install": true
-    },
-    {
-      "source": "modules/imi/bar/DockerPlugin.qml",
-      "destination": "modules/imi/bar/DockerPlugin.qml",
-      "mode": "0644",
-      "size": 4407,
-      "sha256": "2452f63229b5b74879861a676fc7169329b1ebf3b5ddac52dbc081fcb9254a59",
       "install": true
     },
     {
