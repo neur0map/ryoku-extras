@@ -238,27 +238,11 @@
       "install": true
     },
     {
-      "source": "modules/common/Images.qml",
-      "destination": "modules/common/Images.qml",
-      "mode": "0644",
-      "size": 1045,
-      "sha256": "3ef28cc401e02d2879f5dd003ca03e6e28244dd0b989db4532349d16cd395939",
-      "install": true
-    },
-    {
       "source": "modules/common/Persistent.qml",
       "destination": "modules/common/Persistent.qml",
       "mode": "0644",
       "size": 6735,
       "sha256": "26398cdfb1210829089410df7d2631d9067377e9b3ff6ef14890eef1cf713958",
-      "install": true
-    },
-    {
-      "source": "modules/common/WallpaperTransitions.qml",
-      "destination": "modules/common/WallpaperTransitions.qml",
-      "mode": "0644",
-      "size": 2027,
-      "sha256": "836bc7a57689eefe83ca067237f71890c8c6f1d471bf08646769eafef2ee8b81",
       "install": true
     },
     {
@@ -294,43 +278,11 @@
       "install": true
     },
     {
-      "source": "modules/common/functions/DateUtils.qml",
-      "destination": "modules/common/functions/DateUtils.qml",
-      "mode": "0644",
-      "size": 828,
-      "sha256": "e0071d626c1ed3b7e3472ce86347b51d5612e2516cacf7d9ba17c2168b174078",
-      "install": true
-    },
-    {
       "source": "modules/common/functions/FileUtils.qml",
       "destination": "modules/common/functions/FileUtils.qml",
       "mode": "0644",
       "size": 2040,
       "sha256": "51378999e796dd0d5f6360a45c076c6533efc2ffd423354cf0256a101e5abded",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/Fuzzy.qml",
-      "destination": "modules/common/functions/Fuzzy.qml",
-      "mode": "0644",
-      "size": 311,
-      "sha256": "e19ffb0d1224303309de92b8d53182eacb09ae6d67f7ff326086434f998a601d",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/Levendist.qml",
-      "destination": "modules/common/functions/Levendist.qml",
-      "mode": "0644",
-      "size": 362,
-      "sha256": "e656800bcd3c71d88d466232af55c58af8045ab6a5666acd2f056d00d2f25d07",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/NotificationUtils.qml",
-      "destination": "modules/common/functions/NotificationUtils.qml",
-      "mode": "0644",
-      "size": 5671,
-      "sha256": "46326c34ed5ba05f75b642f0689703665a90e583344f016d8c09c0c4617f45c1",
       "install": true
     },
     {
@@ -342,43 +294,11 @@
       "install": true
     },
     {
-      "source": "modules/common/functions/ObjectUtils.qml",
-      "destination": "modules/common/functions/ObjectUtils.qml",
-      "mode": "0644",
-      "size": 3231,
-      "sha256": "b2455148d718749ee17fcc25b3cfa82103ffa8efe0faef4af334a3dfb8c77b85",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/Session.qml",
-      "destination": "modules/common/functions/Session.qml",
-      "mode": "0644",
-      "size": 2198,
-      "sha256": "4b5360d5d2e3bf66e518b6dcd1e4172dfa49cf196046bb38eb93f67349e99394",
-      "install": true
-    },
-    {
       "source": "modules/common/functions/StringUtils.qml",
       "destination": "modules/common/functions/StringUtils.qml",
       "mode": "0644",
       "size": 10015,
       "sha256": "5329f3b6f407b97ff999cf15f79efd8f5c3d2675275c064e93a447a56ebeab68",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/cavaBands.js",
-      "destination": "modules/common/functions/cavaBands.js",
-      "mode": "0644",
-      "size": 3490,
-      "sha256": "454a7074fcd09e8b802c255e14fadf8a41cca526754f657b033131a26d3913bd",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/cheatsheetLayout.js",
-      "destination": "modules/common/functions/cheatsheetLayout.js",
-      "mode": "0644",
-      "size": 3543,
-      "sha256": "35514158b51d7e3f8698dfee3423403c845066def946dc46ede4025ef78370bc",
       "install": true
     },
     {
@@ -390,14 +310,6 @@
       "install": true
     },
     {
-      "source": "modules/common/functions/edge_snap.js",
-      "destination": "modules/common/functions/edge_snap.js",
-      "mode": "0644",
-      "size": 5353,
-      "sha256": "53411e8216b5c6ab30c41de137072f273717b38d80fa2ffb397620d4e8a625a9",
-      "install": true
-    },
-    {
       "source": "modules/common/functions/edit_mode.js",
       "destination": "modules/common/functions/edit_mode.js",
       "mode": "0644",
@@ -406,35 +318,11 @@
       "install": true
     },
     {
-      "source": "modules/common/functions/fuzzysort.js",
-      "destination": "modules/common/functions/fuzzysort.js",
-      "mode": "0644",
-      "size": 26484,
-      "sha256": "2db5e2b22940eaff937100fa08515a73dfb6ff31fe89ff5bd97b829233cf82a1",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/keybindOverrides.js",
-      "destination": "modules/common/functions/keybindOverrides.js",
-      "mode": "0644",
-      "size": 7827,
-      "sha256": "5855391d7344f30ea3ac96ca7a60e9640a3519d50cd81f9c4d52f2344961f800",
-      "install": true
-    },
-    {
       "source": "modules/common/functions/layout_ops.js",
       "destination": "modules/common/functions/layout_ops.js",
       "mode": "0644",
       "size": 9179,
       "sha256": "d202448d06487346f6dd77542ffb69c9ab4a0cd27f9765856c68c7f61fb554ff",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/levendist.js",
-      "destination": "modules/common/functions/levendist.js",
-      "mode": "0644",
-      "size": 3342,
-      "sha256": "204bd4c515ca0dc9f873b4cb7de37d75c5d84e5769c07561a4537ef9b8156c38",
       "install": true
     },
     {
@@ -451,22 +339,6 @@
       "mode": "0644",
       "size": 5252,
       "sha256": "d8430d0dc216342ae9de2f77b9541b14881d79149746b4932268e95c9099a588",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/monitorDetection.js",
-      "destination": "modules/common/functions/monitorDetection.js",
-      "mode": "0644",
-      "size": 1076,
-      "sha256": "3344dbb999bd7bf4cb780de0f20139b05c7ad16fb72ae866d8093f7377de7d51",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/notesStore.js",
-      "destination": "modules/common/functions/notesStore.js",
-      "mode": "0644",
-      "size": 4408,
-      "sha256": "1065fc1eae73435cf25b54909be1012fc276008bc573adc1459074eb06cd0497",
       "install": true
     },
     {
@@ -494,22 +366,6 @@
       "install": true
     },
     {
-      "source": "modules/common/functions/quick_toggle_layout.js",
-      "destination": "modules/common/functions/quick_toggle_layout.js",
-      "mode": "0644",
-      "size": 9396,
-      "sha256": "39a1939c0ac87e2065a4dabe04f5f0624df034f951de0e874be9fe5d90566a9b",
-      "install": true
-    },
-    {
-      "source": "modules/common/functions/screenSelection.js",
-      "destination": "modules/common/functions/screenSelection.js",
-      "mode": "0644",
-      "size": 1580,
-      "sha256": "c35686a1b70428b7771bf6ab46b1203512cfb0539cca7926308b18459c1a9686",
-      "install": true
-    },
-    {
       "source": "modules/common/functions/weatherForecast.js",
       "destination": "modules/common/functions/weatherForecast.js",
       "mode": "0644",
@@ -526,59 +382,11 @@
       "install": true
     },
     {
-      "source": "modules/common/functions/widget_nudge.js",
-      "destination": "modules/common/functions/widget_nudge.js",
-      "mode": "0644",
-      "size": 4315,
-      "sha256": "c229643fb1c409ddfdc4a45f7859058070d5b584beb37c43c94ec84c9434e30b",
-      "install": true
-    },
-    {
-      "source": "modules/common/models/AdaptedMaterialScheme.qml",
-      "destination": "modules/common/models/AdaptedMaterialScheme.qml",
-      "mode": "0644",
-      "size": 1977,
-      "sha256": "4cfe4ee0670e3b2a57e8d0033cc0a49d0a7362a1c8629296c68711212c19e7d3",
-      "install": true
-    },
-    {
       "source": "modules/common/models/AnimatedTabIndexPair.qml",
       "destination": "modules/common/models/AnimatedTabIndexPair.qml",
       "mode": "0644",
       "size": 647,
       "sha256": "e3d48da0f8b3b5c63ddfad673171dc6ff890637428e33a9466a705306d1b07a3",
-      "install": true
-    },
-    {
-      "source": "modules/common/models/FolderListModelWithHistory.qml",
-      "destination": "modules/common/models/FolderListModelWithHistory.qml",
-      "mode": "0644",
-      "size": 1444,
-      "sha256": "15d0e24023b85dc9a7d82ec0a9bc0ca58b9fe1e8e9b7f344da85b8ae4557b588",
-      "install": true
-    },
-    {
-      "source": "modules/common/models/IndexModel.qml",
-      "destination": "modules/common/models/IndexModel.qml",
-      "mode": "0644",
-      "size": 109,
-      "sha256": "fa62f595d34b88bde1cabc731d3784fc6563226e79e1efec8a03a14c1d56796e",
-      "install": true
-    },
-    {
-      "source": "modules/common/models/LauncherSearchResult.qml",
-      "destination": "modules/common/models/LauncherSearchResult.qml",
-      "mode": "0644",
-      "size": 1149,
-      "sha256": "d770267acaeb4b9a0995921c2bf72ba36ffd965bed01664bc93c8974bcaca468",
-      "install": true
-    },
-    {
-      "source": "modules/common/models/NestableObject.qml",
-      "destination": "modules/common/models/NestableObject.qml",
-      "mode": "0644",
-      "size": 129,
-      "sha256": "6718f9ded53dc12bf7af675e2b99433e0608390d94ea6f98b9005816b4bc0188",
       "install": true
     },
     {
@@ -2059,22 +1867,6 @@
       "mode": "0644",
       "size": 3403,
       "sha256": "6feb367a79ad0f52db6ed2116a30704ab164ef8a2e3d6ffd5e148952c819dee5",
-      "install": true
-    },
-    {
-      "source": "panelFamilies/ImmaterialImpulseFamily.qml",
-      "destination": "panelFamilies/ImmaterialImpulseFamily.qml",
-      "mode": "0644",
-      "size": 2046,
-      "sha256": "0aba85aa09eafc250dd3e7032e41785ac773519fbbfd9417b68dedaf8df4a4ea",
-      "install": true
-    },
-    {
-      "source": "panelFamilies/PanelLoader.qml",
-      "destination": "panelFamilies/PanelLoader.qml",
-      "mode": "0644",
-      "size": 159,
-      "sha256": "a4b3adce511e2ddb19a98cef1232c4577d9be8c141762142e369a59bf33779a3",
       "install": true
     },
     {
