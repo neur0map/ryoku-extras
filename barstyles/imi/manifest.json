@@ -425,8 +425,8 @@
       "source": "modules/common/plugins/BarWidgets.qml",
       "destination": "modules/common/plugins/BarWidgets.qml",
       "mode": "0644",
-      "size": 5782,
-      "sha256": "02d38a86d922824bba0455e63e0dd6423fd8479178804675038147167bba2108",
+      "size": 5235,
+      "sha256": "e6c8d26eb52481d938558e0efef07272ea70eb6f5076744797fa751fd4a3b7bb",
       "install": true
     },
     {
@@ -2265,8 +2265,8 @@
       "source": "services/TimerService.qml",
       "destination": "services/TimerService.qml",
       "mode": "0644",
-      "size": 105,
-      "sha256": "4cc04c8a375ad53770cce03ce4077eeb2e26a8791ab8b2507903f1365271acf2",
+      "size": 305,
+      "sha256": "dc4448435b6c792cab16d686e0db9c125accf10bbd49f2bc6de8b46d9633145a",
       "install": true
     },
     {
