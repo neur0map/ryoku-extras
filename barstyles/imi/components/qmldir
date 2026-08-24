@@ -1,4 +1,0 @@
-module components
-singleton ColorTheme ColorTheme.qml
-BarPill BarPill.qml
-CircularMeter CircularMeter.qml

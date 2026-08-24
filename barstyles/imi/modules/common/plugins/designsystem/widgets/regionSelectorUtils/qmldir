@@ -1,3 +1,0 @@
-module qs.modules.common.plugins.designsystem.widgets.regionSelectorUtils
-singleton ScreenshotAction 1.0 ScreenshotAction.qml
-TempScreenshotProcess 1.0 TempScreenshotProcess.qml
