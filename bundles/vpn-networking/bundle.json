@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "id": "vpn-networking",
+  "category": "bundles",
+  "version": "1.0.0",
+  "destination": "ryoku/bundles/vpn-networking",
+  "name": "VPN & Networking",
+  "description": "VPN basics and desktop clients for WireGuard, OpenVPN, IPsec/IKEv2, Proton VPN, Mullvad VPN, and Cloudflare WARP.",
+  "icon": "vpn_lock",
+  "accent": "#22c55e",
+  "preview": "assets/hero.png",
+  "screenshots": [
+    "assets/hero.png"
+  ],
+  "items": [
+    {
+      "type": "package",
+      "name": "wireguard-tools",
+      "detect": "wg",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Command-line tools for WireGuard VPN tunnels.",
+      "upstream": "https://www.wireguard.com"
+    },
+    {
+      "type": "package",
+      "name": "openvpn",
+      "detect": "openvpn",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "OpenVPN client and server for classic VPN profiles.",
+      "upstream": "https://openvpn.net/community/"
+    },
+    {
+      "type": "package",
+      "name": "networkmanager-openvpn",
+      "detect": "nm-openvpn-service",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "NetworkManager integration for OpenVPN profiles.",
+      "upstream": "https://networkmanager.dev"
+    },
+    {
+      "type": "package",
+      "name": "networkmanager-strongswan",
+      "detect": "nm-strongswan-service",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "NetworkManager integration for IPsec/IKEv2 VPNs through strongSwan.",
+      "upstream": "https://www.strongswan.org"
+    },
+    {
+      "type": "package",
+      "name": "proton-vpn-gtk-app",
+      "detect": "protonvpn-app",
+      "tier": "core",
+      "group": "Services / Clients",
+      "source": "official",
+      "summary": "Official Proton VPN GTK desktop client.",
+      "upstream": "https://protonvpn.com"
+    },
+    {
+      "type": "package",
+      "name": "mullvad-vpn-bin",
+      "detect": "mullvad-vpn",
+      "tier": "core",
+      "group": "Services / Clients",
+      "source": "aur",
+      "summary": "Mullvad VPN desktop client.",
+      "upstream": "https://mullvad.net"
+    },
+    {
+      "type": "package",
+      "name": "cloudflare-warp-bin",
+      "detect": "warp-cli",
+      "tier": "core",
+      "group": "Services / Clients",
+      "source": "aur",
+      "summary": "Cloudflare WARP client and CLI for 1.1.1.1/WARP networking.",
+      "upstream": "https://developers.cloudflare.com/warp-client/"
+    }
+  ],
+  "files": [
+    {
+      "source": "README.md",
+      "destination": "README.md",
+      "mode": "0644",
+      "size": 1259,
+      "sha256": "f1610217ca259275ad4f75c39031213d71da6f1e038f08a85e91b14da76f684c",
+      "install": true
+    },
+    {
+      "source": "assets/hero.png",
+      "destination": "assets/hero.png",
+      "mode": "0644",
+      "size": 20753,
+      "sha256": "e7c633f5194d5bd4e535aee8147fefb1cb362161e40b85440088946c5c021da5",
+      "install": false
+    }
+  ]
+}
