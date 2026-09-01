@@ -655,6 +655,43 @@
       "icon": "movie"
     },
     {
+      "id": "spiceflow",
+      "name": "Spiceflow",
+      "version": "1.0.0",
+      "path": "bundles/spiceflow",
+      "author": "Rayyan",
+      "summary": "wallpaper · Spotify · uninterrupted",
+      "description": "Make Comfy Spotify follow Ryoku's wallpaper palette without renderer reloads or interrupted playback. RyoStore installs it inactive; run spiceflow enable when ready.",
+      "tags": [
+        "spotify",
+        "spicetify",
+        "wallpaper colors"
+      ],
+      "accent": "#65d3ff",
+      "surface": "#101820",
+      "preview": "assets/preview.png",
+      "screenshots": [
+        "assets/preview.png"
+      ],
+      "manifest": "bundle.json",
+      "manifestSha256": "b2c8969b27e7797b93380e6306e43a453249df2d29d342d7560917a0a505c128",
+      "components": [
+        {
+          "type": "script",
+          "name": "spiceflow",
+          "detect": "spiceflow",
+          "tier": "core",
+          "interactive": false,
+          "summary": "Playback-safe live wallpaper colors for Spicetify and Comfy."
+        }
+      ],
+      "tagline": "wallpaper · Spotify · uninterrupted",
+      "sources": "GitHub / GPL-3.0-or-later",
+      "icon": "palette",
+      "official": false,
+      "lastUpdated": "2026-09-01"
+    },
+    {
       "id": "cachyos-layer",
       "name": "CachyOS Layer",
       "version": "1.0.0",

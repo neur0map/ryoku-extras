@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "spiceflow",
+  "category": "bundles",
+  "version": "1.0.0",
+  "destination": "ryoku/bundles/spiceflow",
+  "name": "Spiceflow",
+  "description": "Make Comfy Spotify follow Ryoku's wallpaper palette without renderer reloads or interrupted playback. RyoStore installs it inactive; run spiceflow enable when ready.",
+  "icon": "palette",
+  "accent": "#65d3ff",
+  "preview": "assets/preview.png",
+  "screenshots": [
+    "assets/preview.png"
+  ],
+  "items": [
+    {
+      "type": "script",
+      "name": "spiceflow",
+      "detect": "spiceflow",
+      "tier": "core",
+      "interactive": false,
+      "source": "git",
+      "summary": "Playback-safe live wallpaper colors for Spicetify and Comfy.",
+      "upstream": "https://github.com/Sipper1236/spiceflow"
+    }
+  ],
+  "files": [
+    {
+      "source": "README.md",
+      "destination": "README.md",
+      "mode": "0644",
+      "size": 556,
+      "sha256": "f2811dbc1399f5aa259fef96104d503d4225d66119db3dbb8e2691f7155e2610",
+      "install": false
+    },
+    {
+      "source": "assets/preview.png",
+      "destination": "assets/preview.png",
+      "mode": "0644",
+      "size": 1369819,
+      "sha256": "8d1821fa3ab7a46b872a83d63754b98cd0d774e671e2d315074c83c51fbbb798",
+      "install": false
+    },
+    {
+      "source": "installers/spiceflow.sh",
+      "destination": "installers/spiceflow.sh",
+      "mode": "0755",
+      "size": 731,
+      "sha256": "22a829610017a48c41179b48505fd84934aa8b7487bb3340a0c7f8e6acf373ba",
+      "install": false
+    }
+  ]
+}
