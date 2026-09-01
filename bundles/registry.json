@@ -674,7 +674,7 @@
         "assets/preview.png"
       ],
       "manifest": "bundle.json",
-      "manifestSha256": "b2c8969b27e7797b93380e6306e43a453249df2d29d342d7560917a0a505c128",
+      "manifestSha256": "c5634fd256107bad78961408dc75a3e6e7cc88b58ed7862c5df5915dcda281b5",
       "components": [
         {
           "type": "script",

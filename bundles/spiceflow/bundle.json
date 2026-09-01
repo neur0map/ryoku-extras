@@ -46,7 +46,7 @@
       "destination": "installers/spiceflow.sh",
       "mode": "0755",
       "size": 731,
-      "sha256": "22a829610017a48c41179b48505fd84934aa8b7487bb3340a0c7f8e6acf373ba",
+      "sha256": "7cb8334fca75ee2c55504589e3570217a964916b83554a0b6c3cc5c8922c42fb",
       "install": false
     }
   ]

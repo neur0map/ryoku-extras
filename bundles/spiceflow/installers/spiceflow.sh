@@ -8,7 +8,7 @@ if ryoku-cmd-present spiceflow; then
   exit 0
 fi
 
-commit=4e9a6708b4dff8bfa3adecf1573a64493dfbf0b5
+commit=6d564b75ec63cbed3919e041d0cd8feebe89dca5
 work=$(mktemp -d)
 trap 'rm -rf -- "$work"' EXIT
 
