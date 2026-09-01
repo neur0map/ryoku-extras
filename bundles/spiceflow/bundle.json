@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "destination": "ryoku/bundles/spiceflow",
   "name": "Spiceflow",
-  "description": "Make Comfy Spotify follow Ryoku's wallpaper palette without renderer reloads or interrupted playback. RyoStore installs it inactive; run spiceflow enable when ready.",
+  "description": "Make Comfy Spotify follow Ryoku or Pop!_OS/Pywal wallpaper palettes without renderer reloads or interrupted playback. RyoStore installs it inactive; run spiceflow enable when ready.",
   "icon": "palette",
   "accent": "#65d3ff",
   "preview": "assets/preview.png",
