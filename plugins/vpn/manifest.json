@@ -1,31 +1,43 @@
 {
   "id": "vpn",
   "name": "VPN",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": "neur0map <hello@ryoku.dev>",
-  "description": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
+  "description": "Watch and switch your VPN from the bar: a Tailscale switch with the tunnel's dossier, and your NetworkManager VPN and WireGuard profiles, in a bar panel or a desktop card.",
   "license": "MIT",
   "official": false,
   "tags": [
     "vpn",
     "network",
+    "tailscale",
     "bar-widget",
     "desktop-widget"
   ],
   "entryPoints": {
     "main": "service/Main.qml",
-    "content": "content/Widget.qml"
+    "content": "content/Widget.qml",
+    "panel": "content/Panel.qml"
   },
   "files": [
     "content/Glyph.qml",
     "content/Card.qml",
+    "content/InfoRow.qml",
     "assets/preview-widget.png",
     "assets/preview-desktop.png"
   ],
+  "panel": {
+    "width": 320
+  },
   "capabilities": {
     "densities": [
       "glyph",
       "compact"
+    ],
+    "network": [
+      "login.tailscale.com"
+    ],
+    "privileged": [
+      "pkexec tailscale set --operator"
     ]
   },
   "hosts": [
@@ -42,7 +54,10 @@
   },
   "dependencies": {
     "commands": [
-      "nmcli"
+      "tailscale",
+      "nmcli",
+      "wl-copy",
+      "xdg-open"
     ]
   },
   "metadata": {
@@ -50,25 +65,30 @@
       {
         "key": "poll",
         "type": "int",
-        "label": "Poll seconds",
+        "label": "Refresh seconds",
         "group": "VPN",
-        "default": 5,
-        "min": 2,
+        "default": 10,
+        "min": 3,
         "max": 60
       },
       {
-        "key": "showName",
-        "type": "toggle",
-        "label": "Show connection name",
+        "key": "barLabel",
+        "type": "choice",
+        "label": "Beside the mark",
         "group": "VPN",
-        "default": true
+        "default": "name",
+        "options": [
+          { "value": "none", "label": "Nothing" },
+          { "value": "name", "label": "Name" },
+          { "value": "ip", "label": "IP address" }
+        ]
       },
       {
-        "key": "types",
-        "type": "text",
-        "label": "Connection types",
+        "key": "confirmOff",
+        "type": "toggle",
+        "label": "Ask before turning off an exit-node VPN",
         "group": "VPN",
-        "default": "vpn,wireguard,tun"
+        "default": true
       }
     ]
   }

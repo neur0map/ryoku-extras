@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "vpn",
   "category": "plugins",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "destination": "ryoku/plugins/vpn",
   "files": [
     {
@@ -16,9 +16,9 @@
     {
       "source": "README.md",
       "destination": "README.md",
-      "sha256": "0f911f28f175327e448c54b3c9367bef06e34da183858097233d056caff1f940",
+      "sha256": "16a13daf4dea10d5040fda3e9e990e6ee5f43480cda63651972e7a35fc6ed6db",
       "mode": "0644",
-      "size": 1964,
+      "size": 4572,
       "install": false
     },
     {
@@ -40,41 +40,57 @@
     {
       "source": "content/Card.qml",
       "destination": "content/Card.qml",
-      "sha256": "325db3d05e1c7ebafa3b67b9def204da6e94daf8e6d375a86db2240e86ad18cb",
+      "sha256": "15283c34f91afae9818244c8ec4c9cf691beb165f6077be8b9515f0eec107b9e",
       "mode": "0644",
-      "size": 7826,
+      "size": 14346,
       "install": true
     },
     {
       "source": "content/Glyph.qml",
       "destination": "content/Glyph.qml",
-      "sha256": "830b5d7e0752d4f3265642d2d601f6b87722e55b00b99bcde669b15e223c1e97",
+      "sha256": "9b8703fd3adef1560aa9f53c5ee07a26ba862595f3e063cfdbdb1c4ff0d36be5",
       "mode": "0644",
-      "size": 4167,
+      "size": 3921,
+      "install": true
+    },
+    {
+      "source": "content/InfoRow.qml",
+      "destination": "content/InfoRow.qml",
+      "sha256": "75e4b5c02fb92121b2787b32fa0a4da63c65599ac90dc50d624dfbe60c414214",
+      "mode": "0644",
+      "size": 2893,
+      "install": true
+    },
+    {
+      "source": "content/Panel.qml",
+      "destination": "content/Panel.qml",
+      "sha256": "0ca1e6e135d1142178b3d104773f8fc0d71d86ced122d3dd71fcf68881705268",
+      "mode": "0644",
+      "size": 15288,
       "install": true
     },
     {
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
-      "sha256": "f0eeef698001a0263fa0a2e101feaf724950e938a468ff82a3f2bd0de9ee1d45",
+      "sha256": "438e62c1185a3ae6433dbf898397bf9da3bee0015bce20a27ce5c72611b082dc",
       "mode": "0644",
-      "size": 1138,
+      "size": 1303,
       "install": true
     },
     {
       "source": "manifest.json",
       "destination": "manifest.json",
-      "sha256": "d62f86dfa1ea2767c057220fcf49842c4ca704ea0c50ef471f3e7a6f1cb2d04a",
+      "sha256": "af8cf7da1c281b130d7973fc1c9ccbea5aba043fbff95d2fc272eb7d65c13b77",
       "mode": "0644",
-      "size": 1467,
+      "size": 2010,
       "install": true
     },
     {
       "source": "service/Main.qml",
       "destination": "service/Main.qml",
-      "sha256": "513ced5e618e584cb7cd8babaac53df657db463f263604b77b9a11391df2721a",
+      "sha256": "02725bbdb386da47fc16c4273137e6da77634b7cd823fb7d7dfe8a108a5a1b7f",
       "mode": "0644",
-      "size": 8085,
+      "size": 20304,
       "install": true
     }
   ]

@@ -4,10 +4,10 @@ import QtQuick
 import QtQuick.Controls
 import Ryoku.PluginKit.Singletons
 
-// The bar face: a single Material mark that flips with the live VPN state, with
-// the connection name beside it when there is room. A click toggles the VPN
-// through the service; hover names the connection. Colour comes from the kit
-// Theme so the mark matches the bar ink on any scheme, nothing is hardcoded.
+// The bar face: a single Material mark that flips with the live VPN state, the
+// bar text beside it when there is room. A left click opens the plugin's bar
+// panel; it never mutates the network. Colour comes from the kit Theme so the
+// mark matches the bar ink on any scheme, nothing is hardcoded.
 Item {
     id: root
 
@@ -21,22 +21,20 @@ Item {
 
     readonly property var service: pluginApi ? pluginApi.mainInstance : null
     readonly property bool connected: service ? service.connected : false
-    readonly property bool showName: service ? service.showName : true
-    readonly property string connName: service ? service.name : ""
+    readonly property string barText: service ? service.barText : ""
+    readonly property string headline: service ? service.headline : ""
 
-    // The name rides beside the mark when it is asked for and there is a live
-    // connection to name. Compact always shows it; glyph only when showName is on.
-    readonly property bool nameShown: connName.length > 0
-        && (density === "compact" || (density === "glyph" && showName))
+    // The bar text rides beside the mark when the service has one to show.
+    readonly property bool textShown: barText.length > 0
 
     // Mark sizing tracks the bar's inner height so the ligature centres like a
-    // native bar glyph. gap sits between the mark and the name.
+    // native bar glyph. gap sits between the mark and the text.
     readonly property real mark: 19
     readonly property real gap: 6
-    // Cap the name so a long connection cannot run the bar glyph off its budget.
-    readonly property real nameMax: Math.max(60, (widthBudget > 0 ? widthBudget : 220) - mark - gap)
+    // Cap the text so a long name cannot run the bar glyph off its budget.
+    readonly property real textMax: Math.max(60, (widthBudget > 0 ? widthBudget : 220) - mark - gap)
 
-    implicitWidth: glyph.implicitWidth + (nameShown ? gap + nameLabel.width : 0)
+    implicitWidth: glyph.implicitWidth + (textShown ? gap + barLabel.width : 0)
     implicitHeight: Math.max(mark + 3, glyph.implicitHeight)
 
     Text {
@@ -58,16 +56,16 @@ Item {
     }
 
     Text {
-        id: nameLabel
+        id: barLabel
         anchors.verticalCenter: parent.verticalCenter
         x: glyph.x + glyph.implicitWidth + root.gap
-        visible: root.nameShown
-        text: root.connName
+        visible: root.textShown
+        text: root.barText
         color: Theme.cream
         font.family: Theme.mono
         font.pixelSize: 11
         elide: Text.ElideRight
-        width: Math.min(implicitWidth, root.nameMax)
+        width: Math.min(implicitWidth, root.textMax)
     }
 
     HoverHandler { id: hover }
@@ -75,12 +73,12 @@ Item {
     MouseArea {
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
-        onClicked: if (root.service) root.service.toggle()
+        // The sanctioned pattern: a click opens the bar panel; the panel owns
+        // every mutation, so no network state ever changes from the bar mark.
+        onClicked: if (root.pluginApi) root.pluginApi.togglePanel()
     }
 
-    // Hover text naming the connection. The kit ships no tooltip, so this is a
-    // Theme-styled QtQuick.Controls ToolTip: the active VPN and how a click acts,
-    // or a prompt to reconnect the last one.
+    // Hover text: what is connected, and that a click opens the panel.
     ToolTip {
         id: tip
         parent: root
@@ -89,10 +87,8 @@ Item {
         delay: 350
         visible: hover.hovered
         text: root.connected
-            ? qsTr("VPN: %1 (click to disconnect)").arg(root.connName)
-            : ((root.service && root.service.lastVpn.length > 0)
-                ? qsTr("VPN off (click to connect %1)").arg(root.service.lastVpn)
-                : qsTr("No VPN connection"))
+            ? qsTr("VPN: %1 (click for details)").arg(root.headline.length > 0 ? root.headline : qsTr("connected"))
+            : qsTr("VPN off (click for details)")
         background: Rectangle {
             color: Theme.panelBot
             border.color: Theme.border

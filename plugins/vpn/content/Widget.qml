@@ -4,9 +4,11 @@ import QtQuick
 import Ryoku.PluginKit.Singletons
 
 // The VPN widget's one adaptive view, by density: on the bar (`glyph`) a single
-// mark with the connection name; on the wallpaper (`compact`) a card that
-// opens from the state line into the details worth knowing. The host sets
-// pluginApi, density, s, widthBudget, active; both faces read the same service.
+// mark with the bar text, whose click opens the plugin's bar panel; on the
+// wallpaper (`compact`) a card that folds open into the tunnel's details. The
+// bar panel itself is a separate entry point (content/Panel.qml) the host mounts
+// under the glyph. The host sets pluginApi, density, s, widthBudget, active on
+// this root; both faces read the same service through pluginApi.mainInstance.
 Item {
     id: root
 

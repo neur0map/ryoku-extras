@@ -158,14 +158,15 @@
     {
       "id": "vpn",
       "name": "VPN",
-      "version": "1.1.0",
+      "version": "2.0.0",
       "path": "plugins/vpn",
       "author": "neur0map <hello@ryoku.dev>",
-      "summary": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
-      "description": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
+      "summary": "Watch and switch your VPN from the bar: a Tailscale switch with the tunnel's dossier, and your NetworkManager VPN and WireGuard profiles,...",
+      "description": "Watch and switch your VPN from the bar: a Tailscale switch with the tunnel's dossier, and your NetworkManager VPN and WireGuard profiles, in a bar panel or a desktop card.",
       "tags": [
         "vpn",
         "network",
+        "tailscale",
         "bar-widget",
         "desktop-widget"
       ],
@@ -177,9 +178,9 @@
         "assets/preview-desktop.png"
       ],
       "manifest": "product-manifest.json",
-      "manifestSha256": "1c3257d807ae29e48a9b46e8cb04e99c42fd02d4b0d96513ea35595ef707950e",
+      "manifestSha256": "58a721b7939cf9b9d173bc770d3cc9c4627e0f9e6376cd2bc2d080614c287194",
       "official": false,
-      "tagline": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
+      "tagline": "Watch and switch your VPN from the bar: a Tailscale switch with the tunnel's dossier, and your NetworkManager VPN and WireGuard profiles,...",
       "icon": "vpn_lock",
       "hosts": [
         "topbarGlyph",
