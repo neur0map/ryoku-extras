@@ -44,25 +44,25 @@
       "tags": [
         "keyboard",
         "keys",
-        "overlay",                                                                                                                  
-        "hyprland",                                                                                                                 
-        "topbarGlyph"                                                                                                               
-      ],                                                                                                                            
-      "accent": "#38bdf8",                                                                                                          
-      "surface": "#101010",                                                                                                         
-      "preview": "assets/preview-widget.png",                                                                                       
-      "screenshots": [                                                                                                              
-        "assets/preview-widget.png"                                                                                                 
-      ],                                                                                                                            
-      "manifest": "product-manifest.json",                                                                                          
-      "manifestSha256": "dec73cf3b39ec45b0e0ed3ce07f124d24ec42a6e3de4867552a9aeacf84ab7a8",                                         
-      "official": false,                                                                                                            
-      "tagline": "Shows the keys you press on screen in a customizable overlay.",                                                   
-      "icon": "keyboard",                                                                                                           
-      "hosts": [                                                                                                                    
-        "topbarGlyph"                                                                                                               
-      ],                                                                                                                            
-      "lastUpdated": "2026-08-20"                                                                                                   
+        "overlay",
+        "hyprland",
+        "topbarGlyph"
+      ],
+      "accent": "#38bdf8",
+      "surface": "#101010",
+      "preview": "assets/preview-widget.png",
+      "screenshots": [
+        "assets/preview-widget.png"
+      ],
+      "manifest": "product-manifest.json",
+      "manifestSha256": "4e76be0010ad8c5b1d156d17148363f679928d7403cc98a28d37c11f508c4d8c",
+      "official": false,
+      "tagline": "Shows the keys you press on screen in a customizable overlay.",
+      "icon": "keyboard",
+      "hosts": [
+        "topbarGlyph"
+      ],
+      "lastUpdated": "2026-08-20"
     },
     {
       "id": "market",
