@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "id": "developer-essentials",
+  "category": "bundles",
+  "version": "1.0.0",
+  "destination": "ryoku/bundles/developer-essentials",
+  "name": "Developer Essentials",
+  "description": "A practical workstation bootstrap for developers: Arch build basics, Git and GitHub CLI, fast shell search tools, terminal workflow helpers, C/C++ build and debug tools, major language runtimes, Docker, and Visual Studio Code.",
+  "icon": "code",
+  "accent": "#38bdf8",
+  "preview": "assets/hero.png",
+  "screenshots": [
+    "assets/hero.png"
+  ],
+  "items": [
+    {
+      "type": "package",
+      "name": "base-devel",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Arch's essential build toolchain group for compiling AUR packages and local projects.",
+      "upstream": "https://archlinux.org/groups/x86_64/base-devel/"
+    },
+    {
+      "type": "package",
+      "name": "git",
+      "detect": "git",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Distributed version control for source code and collaboration.",
+      "upstream": "https://git-scm.com"
+    },
+    {
+      "type": "package",
+      "name": "github-cli",
+      "detect": "gh",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "GitHub's command-line client for pull requests, issues, releases, and auth.",
+      "upstream": "https://cli.github.com"
+    },
+    {
+      "type": "package",
+      "name": "curl",
+      "detect": "curl",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "HTTP and protocol transfer tool used by installers, APIs, and scripts.",
+      "upstream": "https://curl.se"
+    },
+    {
+      "type": "package",
+      "name": "wget",
+      "detect": "wget",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Reliable command-line downloader for scripts and mirrors.",
+      "upstream": "https://www.gnu.org/software/wget/"
+    },
+    {
+      "type": "package",
+      "name": "jq",
+      "detect": "jq",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "JSON processor for shell pipelines, API work, and config inspection.",
+      "upstream": "https://jqlang.github.io/jq/"
+    },
+    {
+      "type": "package",
+      "name": "ripgrep",
+      "detect": "rg",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Fast recursive text search tuned for source trees.",
+      "upstream": "https://github.com/BurntSushi/ripgrep"
+    },
+    {
+      "type": "package",
+      "name": "fd",
+      "detect": "fd",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Fast, friendly file finder for terminal workflows.",
+      "upstream": "https://github.com/sharkdp/fd"
+    },
+    {
+      "type": "package",
+      "name": "fzf",
+      "detect": "fzf",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Fuzzy finder for files, history, processes, and custom shell pickers.",
+      "upstream": "https://github.com/junegunn/fzf"
+    },
+    {
+      "type": "package",
+      "name": "tmux",
+      "detect": "tmux",
+      "tier": "core",
+      "group": "Core",
+      "source": "official",
+      "summary": "Terminal multiplexer for persistent sessions and split-pane workflows.",
+      "upstream": "https://github.com/tmux/tmux"
+    },
+    {
+      "type": "package",
+      "name": "cmake",
+      "detect": "cmake",
+      "tier": "core",
+      "group": "Build / Debug",
+      "source": "official",
+      "summary": "Cross-platform build system generator used by C, C++, and native projects.",
+      "upstream": "https://cmake.org"
+    },
+    {
+      "type": "package",
+      "name": "ninja",
+      "detect": "ninja",
+      "tier": "core",
+      "group": "Build / Debug",
+      "source": "official",
+      "summary": "Small, fast build executor commonly paired with CMake and Meson.",
+      "upstream": "https://ninja-build.org"
+    },
+    {
+      "type": "package",
+      "name": "gdb",
+      "detect": "gdb",
+      "tier": "core",
+      "group": "Build / Debug",
+      "source": "official",
+      "summary": "GNU debugger for native applications and low-level troubleshooting.",
+      "upstream": "https://www.sourceware.org/gdb/"
+    },
+    {
+      "type": "package",
+      "name": "clang",
+      "detect": "clang",
+      "tier": "core",
+      "group": "Build / Debug",
+      "source": "official",
+      "summary": "LLVM C/C++ compiler and tooling suite.",
+      "upstream": "https://clang.llvm.org"
+    },
+    {
+      "type": "package",
+      "name": "lldb",
+      "detect": "lldb",
+      "tier": "core",
+      "group": "Build / Debug",
+      "source": "official",
+      "summary": "LLVM debugger for C, C++, Rust, Swift, and other native code.",
+      "upstream": "https://lldb.llvm.org"
+    },
+    {
+      "type": "package",
+      "name": "python",
+      "detect": "python",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "Python runtime and standard library for scripting, apps, and tooling.",
+      "upstream": "https://www.python.org"
+    },
+    {
+      "type": "package",
+      "name": "python-pip",
+      "detect": "pip",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "Python package installer for virtual environments and developer tools.",
+      "upstream": "https://pip.pypa.io"
+    },
+    {
+      "type": "package",
+      "name": "nodejs",
+      "detect": "node",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "JavaScript runtime for web apps, CLIs, and build tooling.",
+      "upstream": "https://nodejs.org"
+    },
+    {
+      "type": "package",
+      "name": "bun",
+      "detect": "bun",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "Fast JavaScript runtime, package manager, bundler, and test runner.",
+      "upstream": "https://bun.sh"
+    },
+    {
+      "type": "package",
+      "name": "npm",
+      "detect": "npm",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "Node package manager for JavaScript and TypeScript ecosystems.",
+      "upstream": "https://www.npmjs.com"
+    },
+    {
+      "type": "package",
+      "name": "rustup",
+      "detect": "rustup",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "Rust toolchain installer and version manager.",
+      "upstream": "https://rustup.rs"
+    },
+    {
+      "type": "package",
+      "name": "go",
+      "detect": "go",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "Go compiler, standard tools, and runtime for services and CLIs.",
+      "upstream": "https://go.dev"
+    },
+    {
+      "type": "package",
+      "name": "jdk-openjdk",
+      "detect": "java",
+      "tier": "core",
+      "group": "Languages / tooling",
+      "source": "official",
+      "summary": "OpenJDK Java runtime and compiler for JVM development.",
+      "upstream": "https://openjdk.org"
+    },
+    {
+      "type": "package",
+      "name": "docker",
+      "detect": "docker",
+      "tier": "core",
+      "group": "Containers",
+      "source": "official",
+      "summary": "Container engine for local services, integration tests, and deployment images.",
+      "upstream": "https://www.docker.com"
+    },
+    {
+      "type": "package",
+      "name": "docker-compose",
+      "detect": "docker-compose",
+      "tier": "core",
+      "group": "Containers",
+      "source": "official",
+      "summary": "Compose plugin for multi-container development environments.",
+      "upstream": "https://docs.docker.com/compose/"
+    },
+    {
+      "type": "package",
+      "name": "visual-studio-code-bin",
+      "detect": "code",
+      "tier": "core",
+      "group": "Editor",
+      "source": "aur",
+      "summary": "Microsoft Visual Studio Code editor with the official marketplace build.",
+      "upstream": "https://code.visualstudio.com"
+    }
+  ],
+  "files": [
+    {
+      "source": "README.md",
+      "destination": "README.md",
+      "mode": "0644",
+      "size": 2569,
+      "sha256": "44fdc36ac9266c4a54bd8c5434e4ab53e56be531c1bc35ae0da3dfdcbf50f199",
+      "install": true
+    },
+    {
+      "source": "assets/hero.png",
+      "destination": "assets/hero.png",
+      "mode": "0644",
+      "size": 22194,
+      "sha256": "9dd5eb535d79b33df4475a7f44b3b4780b650aa9c806b845364558b3d5abdf73",
+      "install": false
+    }
+  ]
+}

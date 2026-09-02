@@ -733,6 +733,267 @@
       ],
       "tagline": "kernel · tuning · schedulers · proton",
       "sources": "CachyOS repo / Arch"
+    },
+    {
+      "id": "developer-essentials",
+      "name": "Developer Essentials",
+      "version": "1.0.0",
+      "path": "bundles/developer-essentials",
+      "author": "Ryoku Team",
+      "summary": "build · debug · runtimes · containers",
+      "description": "A practical workstation bootstrap for developers: Arch build basics, Git and GitHub CLI, fast shell search tools, terminal workflow helpers, C/C++ build and debug tools, major language runtimes, Docker, and Visual Studio Code.",
+      "tags": [
+        "developer tools",
+        "runtimes",
+        "containers"
+      ],
+      "accent": "#38bdf8",
+      "surface": "#101010",
+      "preview": "assets/hero.png",
+      "screenshots": [
+        "assets/hero.png"
+      ],
+      "manifest": "bundle.json",
+      "manifestSha256": "ec28b1698712235629a102babb0b17ac16ead2a203eb1229768c435a68a91da4",
+      "components": [
+        {
+          "type": "package",
+          "name": "base-devel",
+          "detect": "base-devel",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Arch's essential build toolchain group for compiling AUR packages and local projects."
+        },
+        {
+          "type": "package",
+          "name": "git",
+          "detect": "git",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Distributed version control for source code and collaboration."
+        },
+        {
+          "type": "package",
+          "name": "github-cli",
+          "detect": "gh",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "GitHub's command-line client for pull requests, issues, releases, and auth."
+        },
+        {
+          "type": "package",
+          "name": "curl",
+          "detect": "curl",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "HTTP and protocol transfer tool used by installers, APIs, and scripts."
+        },
+        {
+          "type": "package",
+          "name": "wget",
+          "detect": "wget",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Reliable command-line downloader for scripts and mirrors."
+        },
+        {
+          "type": "package",
+          "name": "jq",
+          "detect": "jq",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "JSON processor for shell pipelines, API work, and config inspection."
+        },
+        {
+          "type": "package",
+          "name": "ripgrep",
+          "detect": "rg",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Fast recursive text search tuned for source trees."
+        },
+        {
+          "type": "package",
+          "name": "fd",
+          "detect": "fd",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Fast, friendly file finder for terminal workflows."
+        },
+        {
+          "type": "package",
+          "name": "fzf",
+          "detect": "fzf",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Fuzzy finder for files, history, processes, and custom shell pickers."
+        },
+        {
+          "type": "package",
+          "name": "tmux",
+          "detect": "tmux",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Terminal multiplexer for persistent sessions and split-pane workflows."
+        },
+        {
+          "type": "package",
+          "name": "cmake",
+          "detect": "cmake",
+          "tier": "core",
+          "group": "Build / Debug",
+          "interactive": false,
+          "summary": "Cross-platform build system generator used by C, C++, and native projects."
+        },
+        {
+          "type": "package",
+          "name": "ninja",
+          "detect": "ninja",
+          "tier": "core",
+          "group": "Build / Debug",
+          "interactive": false,
+          "summary": "Small, fast build executor commonly paired with CMake and Meson."
+        },
+        {
+          "type": "package",
+          "name": "gdb",
+          "detect": "gdb",
+          "tier": "core",
+          "group": "Build / Debug",
+          "interactive": false,
+          "summary": "GNU debugger for native applications and low-level troubleshooting."
+        },
+        {
+          "type": "package",
+          "name": "clang",
+          "detect": "clang",
+          "tier": "core",
+          "group": "Build / Debug",
+          "interactive": false,
+          "summary": "LLVM C/C++ compiler and tooling suite."
+        },
+        {
+          "type": "package",
+          "name": "lldb",
+          "detect": "lldb",
+          "tier": "core",
+          "group": "Build / Debug",
+          "interactive": false,
+          "summary": "LLVM debugger for C, C++, Rust, Swift, and other native code."
+        },
+        {
+          "type": "package",
+          "name": "python",
+          "detect": "python",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "Python runtime and standard library for scripting, apps, and tooling."
+        },
+        {
+          "type": "package",
+          "name": "python-pip",
+          "detect": "pip",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "Python package installer for virtual environments and developer tools."
+        },
+        {
+          "type": "package",
+          "name": "nodejs",
+          "detect": "node",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "JavaScript runtime for web apps, CLIs, and build tooling."
+        },
+        {
+          "type": "package",
+          "name": "bun",
+          "detect": "bun",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "Fast JavaScript runtime, package manager, bundler, and test runner."
+        },
+        {
+          "type": "package",
+          "name": "npm",
+          "detect": "npm",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "Node package manager for JavaScript and TypeScript ecosystems."
+        },
+        {
+          "type": "package",
+          "name": "rustup",
+          "detect": "rustup",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "Rust toolchain installer and version manager."
+        },
+        {
+          "type": "package",
+          "name": "go",
+          "detect": "go",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "Go compiler, standard tools, and runtime for services and CLIs."
+        },
+        {
+          "type": "package",
+          "name": "jdk-openjdk",
+          "detect": "java",
+          "tier": "core",
+          "group": "Languages / tooling",
+          "interactive": false,
+          "summary": "OpenJDK Java runtime and compiler for JVM development."
+        },
+        {
+          "type": "package",
+          "name": "docker",
+          "detect": "docker",
+          "tier": "core",
+          "group": "Containers",
+          "interactive": false,
+          "summary": "Container engine for local services, integration tests, and deployment images."
+        },
+        {
+          "type": "package",
+          "name": "docker-compose",
+          "detect": "docker-compose",
+          "tier": "core",
+          "group": "Containers",
+          "interactive": false,
+          "summary": "Compose plugin for multi-container development environments."
+        },
+        {
+          "type": "package",
+          "name": "visual-studio-code-bin",
+          "detect": "code",
+          "tier": "core",
+          "group": "Editor",
+          "interactive": false,
+          "summary": "Microsoft Visual Studio Code editor with the official marketplace build."
+        }
+      ],
+      "tagline": "build · debug · runtimes · containers",
+      "sources": "pacman / AUR",
+      "icon": "code"
     }
   ]
 }
