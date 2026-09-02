@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime
 import hashlib
 import importlib.util
 import json
@@ -16,6 +17,12 @@ SPEC = importlib.util.spec_from_file_location("validate_store", MODULE_PATH)
 validate_store = importlib.util.module_from_spec(SPEC)
 assert SPEC and SPEC.loader
 SPEC.loader.exec_module(validate_store)
+
+PACK_PATH = Path(__file__).parents[1] / "tools" / "pack-product.py"
+PACK_SPEC = importlib.util.spec_from_file_location("pack_product", PACK_PATH)
+pack_product = importlib.util.module_from_spec(PACK_SPEC)
+assert PACK_SPEC and PACK_SPEC.loader
+PACK_SPEC.loader.exec_module(pack_product)
 
 CATEGORIES = (
     "rices", "lockscreens", "barstyles", "fastfetch", "plugins", "bundles",
@@ -526,6 +533,126 @@ class MigratedCatalogueTest(unittest.TestCase):
                     entry.get("components"),
                     validate_store.normalized_bundle_components(manifest),
                 )
+
+
+def build_plugin_source(root: Path, product_id: str = "demo") -> dict:
+    """A plugin product on disk plus a registry that names it, ready to pack.
+
+    manifestSha256 is a placeholder; pack_product.pack_product overwrites it.
+    """
+    product = root / "plugins" / product_id
+    payload = {
+        "README.md": b"# Demo\n",
+        "manifest.json": b'{"id": "demo"}\n',
+        "service/Main.qml": b"import QtQuick\nItem {}\n",
+        "content/Widget.qml": b"import QtQuick\nItem {}\n",
+        "assets/preview.png": b"fixture preview",
+        "assets/shot.png": b"fixture screenshot",
+        "assets/sample.png": b"fixture sample",
+        "bin/demo-tool": b"#!/usr/bin/env bash\necho demo\n",
+    }
+    for relative, data in payload.items():
+        target = product / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+    os.chmod(product / "bin" / "demo-tool", 0o755)
+    entry = {
+        "id": product_id,
+        "name": "Demo",
+        "version": "2.0.0",
+        "path": f"plugins/{product_id}",
+        "author": "Ryoku Team",
+        "summary": "Fixture summary",
+        "description": "Fixture description",
+        "tags": ["bar-widget"],
+        "accent": "#cdc4ba",
+        "surface": "#101010",
+        "preview": "assets/preview.png",
+        "screenshots": ["assets/shot.png"],
+        "manifest": "product-manifest.json",
+        "manifestSha256": "0" * 64,
+        "official": False,
+        "hosts": ["topbarGlyph"],
+        "lastUpdated": "2020-01-01",
+    }
+    write_json(root / "plugins" / "registry.json", {"schema": 1, "plugins": [entry]})
+    return entry
+
+
+class PackProductTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temp = tempfile.TemporaryDirectory()
+        self.root = Path(self.temp.name)
+        build_plugin_source(self.root)
+
+    def tearDown(self) -> None:
+        self.temp.cleanup()
+
+    def rows(self) -> dict[str, dict]:
+        manifest = json.loads(
+            (self.root / "plugins" / "demo" / "product-manifest.json").read_text("utf-8")
+        )
+        return {row["source"]: row for row in manifest["files"]}
+
+    def test_packed_product_validates(self) -> None:
+        pack_product.pack_product(self.root, "plugins", "demo")
+        self.assertEqual(validate_store.validate_tree(self.root, ("plugins",)), [])
+
+    def test_manifest_shape_matches_conventions(self) -> None:
+        manifest = pack_product.pack_product(self.root, "plugins", "demo")
+        self.assertEqual(manifest["schema"], 1)
+        self.assertEqual(manifest["destination"], "ryoku/plugins/demo")
+        self.assertEqual(manifest["version"], "2.0.0")
+        sources = [row["source"] for row in manifest["files"]]
+        self.assertEqual(sources, sorted(sources))
+        self.assertNotIn("product-manifest.json", sources)
+        for row in manifest["files"]:
+            self.assertEqual(row["destination"], row["source"])
+
+    def test_install_flags_and_modes(self) -> None:
+        pack_product.pack_product(self.root, "plugins", "demo")
+        rows = self.rows()
+        self.assertFalse(rows["README.md"]["install"])  # documentation
+        self.assertFalse(rows["assets/preview.png"]["install"])  # preview
+        self.assertFalse(rows["assets/shot.png"]["install"])  # screenshot
+        self.assertTrue(rows["assets/sample.png"]["install"])  # ordinary asset
+        self.assertTrue(rows["manifest.json"]["install"])
+        self.assertTrue(rows["content/Widget.qml"]["install"])
+        self.assertEqual(rows["bin/demo-tool"]["mode"], "0755")  # shebang + exec bit
+        self.assertTrue(rows["bin/demo-tool"]["install"])
+        for source in ("README.md", "manifest.json", "assets/preview.png"):
+            self.assertEqual(rows[source]["mode"], "0644")
+
+    def test_registry_hash_tracks_manifest(self) -> None:
+        pack_product.pack_product(self.root, "plugins", "demo")
+        registry = json.loads((self.root / "plugins" / "registry.json").read_text("utf-8"))
+        entry = registry["plugins"][0]
+        self.assertEqual(
+            entry["manifestSha256"],
+            digest(self.root / "plugins" / "demo" / "product-manifest.json"),
+        )
+
+    def test_repack_is_byte_identical(self) -> None:
+        pack_product.pack_product(self.root, "plugins", "demo")
+        manifest_path = self.root / "plugins" / "demo" / "product-manifest.json"
+        registry_path = self.root / "plugins" / "registry.json"
+        before = (manifest_path.read_bytes(), registry_path.read_bytes())
+        pack_product.pack_product(self.root, "plugins", "demo")
+        after = (manifest_path.read_bytes(), registry_path.read_bytes())
+        self.assertEqual(before, after)
+
+    def test_touch_updates_only_last_updated(self) -> None:
+        pack_product.pack_product(self.root, "plugins", "demo")
+        registry_path = self.root / "plugins" / "registry.json"
+        before = json.loads(registry_path.read_text("utf-8"))["plugins"][0]
+        pack_product.pack_product(self.root, "plugins", "demo", touch=True)
+        after = json.loads(registry_path.read_text("utf-8"))["plugins"][0]
+        self.assertEqual(after["lastUpdated"], datetime.date.today().isoformat())
+        self.assertEqual(after["manifestSha256"], before["manifestSha256"])
+
+    def test_unsupported_category_is_rejected(self) -> None:
+        with self.assertRaises(ValueError):
+            pack_product.pack_product(self.root, "decors", "demo")
 
 
 
