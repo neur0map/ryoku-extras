@@ -158,29 +158,32 @@
     {
       "id": "vpn",
       "name": "VPN",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "path": "plugins/vpn",
       "author": "neur0map <hello@ryoku.dev>",
-      "summary": "Toggle your NetworkManager VPN from the top bar and watch its live connection state.",
-      "description": "Toggle your NetworkManager VPN from the top bar and watch its live connection state.",
+      "summary": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
+      "description": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
       "tags": [
         "vpn",
         "network",
-        "bar-widget"
+        "bar-widget",
+        "desktop-widget"
       ],
       "accent": "#8f8378",
       "surface": "#101010",
       "preview": "assets/preview-widget.png",
       "screenshots": [
-        "assets/preview-widget.png"
+        "assets/preview-widget.png",
+        "assets/preview-desktop.png"
       ],
       "manifest": "product-manifest.json",
-      "manifestSha256": "322d6c052b25157b9e81de6b05b82bccdfa396b7810b98cbe82ffd1007bf1856",
+      "manifestSha256": "1c3257d807ae29e48a9b46e8cb04e99c42fd02d4b0d96513ea35595ef707950e",
       "official": false,
-      "tagline": "Toggle your NetworkManager VPN from the top bar and watch its live connection state.",
+      "tagline": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
       "icon": "vpn_lock",
       "hosts": [
-        "topbarGlyph"
+        "topbarGlyph",
+        "desktopWidget"
       ],
       "lastUpdated": "2026-09-02"
     },

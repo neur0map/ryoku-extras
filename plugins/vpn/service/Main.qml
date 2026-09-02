@@ -54,6 +54,24 @@ Item {
     property string name: ""
     // Last VPN NAME seen up, so a click can bring it back after it drops.
     property string lastVpn: ""
+    // Details of the active VPN, for the desktop card: nmcli TYPE, the device
+    // it rides, its addresses, its DNS, and when it came up (this daemon's
+    // first sighting, not NetworkManager's clock).
+    property string type: ""
+    property string device: ""
+    property string ip4: ""
+    property string ip6: ""
+    property string dns: ""
+    property double since: 0
+    readonly property string uptime: {
+        clock.tick;
+        if (!connected || since <= 0) return "";
+        var s = Math.max(0, Math.floor((Date.now() - since) / 1000));
+        var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
+        return h > 0 ? h + "h " + m + "m" : (m > 0 ? m + "m" : s + "s");
+    }
+    // a one-minute pulse so `uptime` re-derives without a poll
+    Timer { id: clock; property int tick: 0; interval: 30000; running: svc.connected; repeat: true; onTriggered: tick++ }
 
     // Split one nmcli terse line on unescaped ':'. Terse mode backslash-escapes
     // ':' and '\' inside a field, so a plain split would mangle a NAME with a
@@ -86,7 +104,7 @@ Item {
     function _apply(text) {
         var lines = String(text).split("\n");
         var found = false;
-        var vpnName = "";
+        var vpnName = "", vpnType = "", vpnDev = "";
         for (var i = 0; i < lines.length; i++) {
             if (lines[i].trim().length === 0)
                 continue;
@@ -96,13 +114,49 @@ Item {
             if (nm.length > 0 && _isVpnType(ty)) {
                 found = true;
                 vpnName = nm;
+                vpnType = ty;
+                vpnDev = f.length > 2 ? f[2] : "";
                 break;
             }
         }
+        if (found && (!connected || name !== vpnName))
+            since = Date.now();
         connected = found;
         name = found ? vpnName : "";
-        if (found)
+        type = found ? vpnType : "";
+        device = found ? vpnDev : "";
+        if (found) {
             lastVpn = vpnName;
+            if (vpnDev.length > 0 && !detailProc.running) {
+                _detail = "";
+                detailProc.command = ["nmcli", "-t", "-f", "IP4.ADDRESS,IP6.ADDRESS,IP4.DNS", "device", "show", vpnDev];
+                detailProc.running = true;
+            }
+        } else {
+            ip4 = ""; ip6 = ""; dns = ""; since = 0;
+        }
+    }
+
+    // The device's addresses: the first IPv4, the first non-link-local IPv6,
+    // and the DNS servers, out of nmcli's terse `device show`.
+    property string _detail: ""
+    Process {
+        id: detailProc
+        stdout: StdioCollector { onStreamFinished: svc._detail = text }
+        onExited: svc._applyDetail(svc._detail)
+    }
+    function _applyDetail(text) {
+        var v4 = "", v6 = "", servers = [];
+        var lines = String(text).split("\n");
+        for (var i = 0; i < lines.length; i++) {
+            var f = _fields(lines[i]);
+            if (f.length < 2) continue;
+            var key = f[0], val = f.slice(1).join(":");
+            if (key.indexOf("IP4.ADDRESS") === 0 && v4 === "") v4 = val;
+            else if (key.indexOf("IP6.ADDRESS") === 0 && v6 === "" && val.indexOf("fe80:") !== 0) v6 = val;
+            else if (key.indexOf("IP4.DNS") === 0) servers.push(val);
+        }
+        ip4 = v4; ip6 = v6; dns = servers.join(", ");
     }
 
     // Poll: read the active connections. active-first, terse, three columns.

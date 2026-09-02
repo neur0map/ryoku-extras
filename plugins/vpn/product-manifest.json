@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "vpn",
   "category": "plugins",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "destination": "ryoku/plugins/vpn",
   "files": [
     {
@@ -22,6 +22,14 @@
       "install": false
     },
     {
+      "source": "assets/preview-desktop.png",
+      "destination": "assets/preview-desktop.png",
+      "sha256": "9fb8b0b203abe715dec6347728859c36d93679b037222c02f8725031663912f5",
+      "mode": "0644",
+      "size": 187613,
+      "install": false
+    },
+    {
       "source": "assets/preview-widget.png",
       "destination": "assets/preview-widget.png",
       "sha256": "7f06135117d1ee94e1665f04c193d87bc9abdfdc72e2e277cd4a32707404e9ad",
@@ -30,27 +38,43 @@
       "install": false
     },
     {
+      "source": "content/Card.qml",
+      "destination": "content/Card.qml",
+      "sha256": "325db3d05e1c7ebafa3b67b9def204da6e94daf8e6d375a86db2240e86ad18cb",
+      "mode": "0644",
+      "size": 7826,
+      "install": true
+    },
+    {
+      "source": "content/Glyph.qml",
+      "destination": "content/Glyph.qml",
+      "sha256": "830b5d7e0752d4f3265642d2d601f6b87722e55b00b99bcde669b15e223c1e97",
+      "mode": "0644",
+      "size": 4167,
+      "install": true
+    },
+    {
       "source": "content/Widget.qml",
       "destination": "content/Widget.qml",
-      "sha256": "83781e6f980d7dbd581bd07ba444ac62ecc26aa6866b3a7b9b39a165312edbf8",
+      "sha256": "f0eeef698001a0263fa0a2e101feaf724950e938a468ff82a3f2bd0de9ee1d45",
       "mode": "0644",
-      "size": 4227,
+      "size": 1138,
       "install": true
     },
     {
       "source": "manifest.json",
       "destination": "manifest.json",
-      "sha256": "97fe917e967ee6f76d451ffe30c6476467b9fb6b158db1eb33f13435b6646bef",
+      "sha256": "d62f86dfa1ea2767c057220fcf49842c4ca704ea0c50ef471f3e7a6f1cb2d04a",
       "mode": "0644",
-      "size": 1056,
+      "size": 1467,
       "install": true
     },
     {
       "source": "service/Main.qml",
       "destination": "service/Main.qml",
-      "sha256": "c7466af580a1499c8af6488a23c17f91c7ca832a6e8534f1777e3b8b3c8f6c2f",
+      "sha256": "513ced5e618e584cb7cd8babaac53df657db463f263604b77b9a11391df2721a",
       "mode": "0644",
-      "size": 5604,
+      "size": 8085,
       "install": true
     }
   ]

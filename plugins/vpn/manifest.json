@@ -1,36 +1,75 @@
 {
   "id": "vpn",
   "name": "VPN",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "neur0map <hello@ryoku.dev>",
-  "description": "Toggle your NetworkManager VPN from the top bar and watch its live connection state.",
+  "description": "Toggle your NetworkManager VPN from the bar, or keep a card on the desktop that opens into the tunnel's details.",
   "license": "MIT",
   "official": false,
-  "tags": ["vpn", "network", "bar-widget"],
+  "tags": [
+    "vpn",
+    "network",
+    "bar-widget",
+    "desktop-widget"
+  ],
   "entryPoints": {
     "main": "service/Main.qml",
     "content": "content/Widget.qml"
   },
   "files": [
-    "assets/preview-widget.png"
+    "content/Glyph.qml",
+    "content/Card.qml",
+    "assets/preview-widget.png",
+    "assets/preview-desktop.png"
   ],
   "capabilities": {
-    "densities": ["glyph", "compact"]
+    "densities": [
+      "glyph",
+      "compact"
+    ]
   },
-  "hosts": ["topbarGlyph"],
+  "hosts": [
+    "topbarGlyph",
+    "desktopWidget"
+  ],
   "defaults": {
     "host": "topbarGlyph",
+    "desktopWidget": {
+      "bg": "none"
+    },
     "icon": "vpn_lock",
     "label": "VPN"
   },
   "dependencies": {
-    "commands": ["nmcli"]
+    "commands": [
+      "nmcli"
+    ]
   },
   "metadata": {
     "settings": [
-      { "key": "poll", "type": "int", "label": "Poll seconds", "group": "VPN", "default": 5, "min": 2, "max": 60 },
-      { "key": "showName", "type": "toggle", "label": "Show connection name", "group": "VPN", "default": true },
-      { "key": "types", "type": "text", "label": "Connection types", "group": "VPN", "default": "vpn,wireguard,tun" }
+      {
+        "key": "poll",
+        "type": "int",
+        "label": "Poll seconds",
+        "group": "VPN",
+        "default": 5,
+        "min": 2,
+        "max": 60
+      },
+      {
+        "key": "showName",
+        "type": "toggle",
+        "label": "Show connection name",
+        "group": "VPN",
+        "default": true
+      },
+      {
+        "key": "types",
+        "type": "text",
+        "label": "Connection types",
+        "group": "VPN",
+        "default": "vpn,wireguard,tun"
+      }
     ]
   }
 }
