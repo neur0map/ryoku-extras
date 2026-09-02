@@ -1112,6 +1112,96 @@
       "tagline": "firefox · chromium · privacy browsers",
       "sources": "pacman / AUR",
       "icon": "travel_explore"
+    },
+    {
+      "id": "vpn-networking",
+      "name": "VPN & Networking",
+      "version": "1.0.0",
+      "path": "bundles/vpn-networking",
+      "author": "Ryoku Team",
+      "summary": "wireguard · openvpn · vpn clients",
+      "description": "VPN basics and desktop clients for WireGuard, OpenVPN, IPsec/IKEv2, Proton VPN, Mullvad VPN, and Cloudflare WARP.",
+      "tags": [
+        "vpn",
+        "networking",
+        "privacy"
+      ],
+      "accent": "#22c55e",
+      "surface": "#101010",
+      "preview": "assets/hero.png",
+      "screenshots": [
+        "assets/hero.png"
+      ],
+      "manifest": "bundle.json",
+      "manifestSha256": "d22e0efc84d9d70a46649d6d5973dfac0839048b30ec794a881c08b6af1e97bc",
+      "components": [
+        {
+          "type": "package",
+          "name": "wireguard-tools",
+          "detect": "wg",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "Command-line tools for WireGuard VPN tunnels."
+        },
+        {
+          "type": "package",
+          "name": "openvpn",
+          "detect": "openvpn",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "OpenVPN client and server for classic VPN profiles."
+        },
+        {
+          "type": "package",
+          "name": "networkmanager-openvpn",
+          "detect": "nm-openvpn-service",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "NetworkManager integration for OpenVPN profiles."
+        },
+        {
+          "type": "package",
+          "name": "networkmanager-strongswan",
+          "detect": "nm-strongswan-service",
+          "tier": "core",
+          "group": "Core",
+          "interactive": false,
+          "summary": "NetworkManager integration for IPsec/IKEv2 VPNs through strongSwan."
+        },
+        {
+          "type": "package",
+          "name": "proton-vpn-gtk-app",
+          "detect": "protonvpn-app",
+          "tier": "core",
+          "group": "Services / Clients",
+          "interactive": false,
+          "summary": "Official Proton VPN GTK desktop client."
+        },
+        {
+          "type": "package",
+          "name": "mullvad-vpn-bin",
+          "detect": "mullvad-vpn",
+          "tier": "core",
+          "group": "Services / Clients",
+          "interactive": false,
+          "summary": "Mullvad VPN desktop client."
+        },
+        {
+          "type": "package",
+          "name": "cloudflare-warp-bin",
+          "detect": "warp-cli",
+          "tier": "core",
+          "group": "Services / Clients",
+          "interactive": false,
+          "summary": "Cloudflare WARP client and CLI for 1.1.1.1/WARP networking."
+        }
+      ],
+      "tagline": "wireguard · openvpn · vpn clients",
+      "sources": "pacman / AUR",
+      "icon": "vpn_lock"
     }
   ]
 }
