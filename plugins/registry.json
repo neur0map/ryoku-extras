@@ -123,6 +123,35 @@
         "desktopWidget"
       ],
       "lastUpdated": "2026-08-12"
+    },
+    {
+      "id": "vpn",
+      "name": "VPN",
+      "version": "1.0.0",
+      "path": "plugins/vpn",
+      "author": "neur0map <hello@ryoku.dev>",
+      "summary": "Toggle your NetworkManager VPN from the top bar and watch its live connection state.",
+      "description": "Toggle your NetworkManager VPN from the top bar and watch its live connection state.",
+      "tags": [
+        "vpn",
+        "network",
+        "bar-widget"
+      ],
+      "accent": "#8f8378",
+      "surface": "#101010",
+      "preview": "assets/preview-widget.png",
+      "screenshots": [
+        "assets/preview-widget.png"
+      ],
+      "manifest": "product-manifest.json",
+      "manifestSha256": "322d6c052b25157b9e81de6b05b82bccdfa396b7810b98cbe82ffd1007bf1856",
+      "official": false,
+      "tagline": "Toggle your NetworkManager VPN from the top bar and watch its live connection state.",
+      "icon": "vpn_lock",
+      "hosts": [
+        "topbarGlyph"
+      ],
+      "lastUpdated": "2026-09-02"
     }
   ]
 }

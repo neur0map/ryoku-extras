@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "id": "vpn",
+  "category": "plugins",
+  "version": "1.0.0",
+  "destination": "ryoku/plugins/vpn",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "8a7d40314e0d657fa3f9f969f2fdbbb5e0ca58cc8b756a0c3d8258878c1b31c3",
+      "mode": "0644",
+      "size": 1065,
+      "install": false
+    },
+    {
+      "source": "README.md",
+      "destination": "README.md",
+      "sha256": "0f911f28f175327e448c54b3c9367bef06e34da183858097233d056caff1f940",
+      "mode": "0644",
+      "size": 1964,
+      "install": false
+    },
+    {
+      "source": "assets/preview-widget.png",
+      "destination": "assets/preview-widget.png",
+      "sha256": "7f06135117d1ee94e1665f04c193d87bc9abdfdc72e2e277cd4a32707404e9ad",
+      "mode": "0644",
+      "size": 51983,
+      "install": false
+    },
+    {
+      "source": "content/Widget.qml",
+      "destination": "content/Widget.qml",
+      "sha256": "83781e6f980d7dbd581bd07ba444ac62ecc26aa6866b3a7b9b39a165312edbf8",
+      "mode": "0644",
+      "size": 4227,
+      "install": true
+    },
+    {
+      "source": "manifest.json",
+      "destination": "manifest.json",
+      "sha256": "97fe917e967ee6f76d451ffe30c6476467b9fb6b158db1eb33f13435b6646bef",
+      "mode": "0644",
+      "size": 1056,
+      "install": true
+    },
+    {
+      "source": "service/Main.qml",
+      "destination": "service/Main.qml",
+      "sha256": "c7466af580a1499c8af6488a23c17f91c7ca832a6e8534f1777e3b8b3c8f6c2f",
+      "mode": "0644",
+      "size": 5604,
+      "install": true
+    }
+  ]
+}
