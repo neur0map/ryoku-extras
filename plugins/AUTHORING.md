@@ -1,7 +1,8 @@
 # Writing a plugin
 
 A Ryoku plugin ships content the shell mounts into a host: a draggable tile on
-the wallpaper, or a popout that melts out of the screen frame on hover. You
+the wallpaper, a popout that melts out of the screen frame on hover, or a single
+mark on the QS Bar. You
 write two things - a service and a content view - and declare which hosts you
 support. The shell owns the surface, the placement, the motion, the focus, and
 the input region. You never touch any of that.
@@ -39,7 +40,7 @@ cp -r plugins/template plugins/my-plugin
 | `entryPoints` | The QML files the shell loads (see below). |
 | `files` | Extra files the install must fetch (helpers, assets) beyond the entry points. |
 | `capabilities.densities` | Which densities your content draws (see Density). |
-| `hosts` | The hosts your content supports: `desktopWidget`, `framePopout`. |
+| `hosts` | The hosts your content supports: `desktopWidget`, `framePopout`, `topbarGlyph`. |
 | `defaults` | Where it lands when first enabled (see Hosts). |
 | `commands` | Executables the plugin ships, e.g. `["bin/ryoku-foo"]`. |
 | `dependencies.commands` | Commands that must be present on the system. |
@@ -74,6 +75,10 @@ host; settings are a schema (below), not a hand-written page.
   right-clicks for its menu. Rendered at `compact` density.
 - **`framePopout`** - a popout that slides out of a screen edge on hover (or a
   plugins-menu key). Rendered at `full` density.
+- **`topbarGlyph`** - a single mark on the QS Bar (the top bar). The user adds it
+  from the bar's add-widget picker; a community bar widget also shows under QS Bar
+  Settings > Community, with its author, a switch, and its settings. Rendered at
+  `glyph` density.
 
 `defaults` is where the plugin lands when first enabled, plus its menu identity:
 
@@ -95,7 +100,8 @@ host; settings are a schema (below), not a hand-written page.
   that toggles a frame popout.
 - `icon` / `label` - the plugin's mark and name in menus and Settings.
 
-Declare only the hosts that make sense. Photo Frame is `desktopWidget` only.
+Declare only the hosts that make sense. Photo Frame is `desktopWidget` only; a
+bar widget is `topbarGlyph` only.
 
 ## Density
 
@@ -103,10 +109,12 @@ The host picks a density and sets it on your content. Today:
 
 - `desktopWidget` -> `compact`
 - `framePopout` -> `full`
+- `topbarGlyph` -> `glyph`
 
-`glyph` is a reserved single-mark density for tight contexts. Branch on
-`density` for the ones you draw, and list them in `capabilities.densities`. A
-desktop-only plugin only needs `["compact"]`.
+`glyph` is the single-mark density the QS Bar host renders at: one tight mark,
+no room for a full layout. Branch on `density` for the ones you draw, and list
+them in `capabilities.densities`. A desktop-only plugin only needs `["compact"]`;
+a bar widget only needs `["glyph"]`.
 
 ## The properties the shell sets
 
@@ -275,8 +283,45 @@ Settings -> Plugins -> Discover:
 }
 ```
 
-`official: false` for community plugins. Keep `path` as `plugins/<id>`, `hosts`
-in sync with the manifest, and `lastUpdated` in `YYYY-MM-DD`.
+Keep `path` as `plugins/<id>`, `hosts` in sync with the manifest, and
+`lastUpdated` in `YYYY-MM-DD`. A few fields decide how the Store files it:
+
+- `tags` classify it by surface. A bar widget carries `"bar-widget"`; a desktop
+  plugin carries `"desktop-widget"` and/or `"frame-popout"`. The Store's
+  ALL / BAR / DESKTOP subtabs filter on this and on `hosts`.
+- `hosts` is copied from the manifest. It is what tells the shell, and the Store
+  filter, whether the plugin is a bar mark, a desktop tile, or both.
+- `official: true` is for plugins the Ryoku team maintains. Community plugins
+  leave it `false` (or omit it). A community plugin shows this warning in the
+  Store detail and under QS Bar Settings > Community, verbatim:
+
+  > Community plugin. Ryoku does not review or maintain it: it runs inside your
+  > shell with your permissions, so inspect its code before you trust it.
+
+## Share a widget from your desktop
+
+Built a widget in your own shell? You do not have to hand-write any of the above.
+From the desktop:
+
+- `ryoku plugin export <id>` copies the installed plugin into your Documents
+  folder (`ryoku-plugins/<id>/`, or `~/ryoku-plugins/<id>/`), writes its
+  `product-manifest.json` and a ready `registry-entry.json` (`official: false`),
+  and inits a git repo. Inspect it, tidy the README, drop in a real preview.
+- `ryoku plugin share <id>` goes the rest of the way: with `gh` logged in it
+  forks this repo, adds `plugins/<id>/`, upserts the registry entry, and opens
+  the pull request for you (it prints the URL). Without `gh` it opens the
+  submission form prefilled.
+
+Prefer to do it by hand? Drop the folder in `plugins/<id>/`, add its registry
+entry, then regenerate the manifest and hash with the packer:
+
+```
+tools/pack-product.py plugins/<id> --touch
+```
+
+It rewrites `plugins/<id>/product-manifest.json` (per-file sha256, size, and
+mode) and updates the entry's `manifestSha256` (and `lastUpdated`, with
+`--touch`). Then run `tests/validate-catalogue.sh` and open your PR.
 
 ## Before you submit
 
@@ -288,6 +333,8 @@ in sync with the manifest, and `lastUpdated` in `YYYY-MM-DD`.
       renders, drags, resizes, and every setting works, with a clean shell log.
 - [ ] Listed in `plugins/registry.json` with `path`, `hosts`, and `lastUpdated`
       correct.
+- [ ] Regenerated `product-manifest.json` and its `manifestSha256` with
+      `tools/pack-product.py plugins/<id>` after any file change.
 - [ ] `tests/validate-catalogue.sh` passes from the repo root.
 
 Then open your PR.

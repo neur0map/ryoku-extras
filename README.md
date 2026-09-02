@@ -11,7 +11,7 @@ index. An item is invisible to the desktop until it is listed in that registry.
 | Catalogue | What it holds | Where it shows up |
 | --- | --- | --- |
 | `rices/` | Whole-desktop looks: window style, shell skin, colour mode, wallpaper | Settings -> Appearance -> Rices |
-| `plugins/` | Shell plugins: desktop widgets and frame popouts | Settings -> Add-ons -> Plugins |
+| `plugins/` | Shell plugins: desktop widgets, frame popouts, and QS Bar widgets | Settings -> Add-ons -> Plugins |
 | `colorschemes/` | Colour schemes | Settings -> Colour scheme -> Download |
 | `lockscreens/` | Lockscreen looks | Settings -> Lockscreen |
 | `decors/` | Poster / ornament art for the desktop | Settings -> Appearance |
@@ -51,3 +51,6 @@ Deep, per-catalogue authoring references live beside each catalogue
 - **Run the check before you push:** `tests/validate-catalogue.sh`. CI runs it on
   every push and pull request, so a dangling reference never reaches a user as a
   failed install.
+- **Plugins carry a per-file `product-manifest.json`.** After any change to a
+  plugin's files, regenerate it and its registry hash with
+  `tools/pack-product.py plugins/<id>`.

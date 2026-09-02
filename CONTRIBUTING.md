@@ -22,7 +22,7 @@ manifest fields:
 
 | You are adding | Start from | Full guide |
 | --- | --- | --- |
-| A shell plugin (widget / popout) | `plugins/template/` | [`plugins/AUTHORING.md`](plugins/AUTHORING.md) |
+| A shell plugin (desktop, popout, or QS Bar widget) | `plugins/template/` | [`plugins/AUTHORING.md`](plugins/AUTHORING.md) |
 | A rice (whole-desktop look) | Save current setup in Settings | [`rices/AUTHORING.md`](rices/AUTHORING.md) |
 | A colour scheme | `colorschemes/template/` | [`colorschemes/AUTHORING.md`](colorschemes/AUTHORING.md) |
 | A bundle (tool set) | `bundles/the-ricer/` | [`bundles/README.md`](bundles/README.md) |
@@ -33,6 +33,11 @@ manifest fields:
 
 A colour scheme is the simplest: add `colorschemes/<name>/` following an existing
 scheme's layout, then add its entry to `colorschemes/registry.json`.
+
+Built a plugin in your own shell? `ryoku plugin export <id>` writes a ready folder
+and `registry-entry.json`, and `ryoku plugin share <id>` opens the pull request for
+you (with `gh` logged in) or prefills the submission form. Doing it by hand instead,
+regenerate the plugin's manifest and hash with `tools/pack-product.py plugins/<id>`.
 
 ## Two ways to submit
 
