@@ -24,6 +24,52 @@ cp -r plugins/template plugins/my-plugin
 5. **Test it locally** (see below) - enable it in your shell and confirm it
    renders and behaves, then work the **Before you submit** checklist and PR.
 
+## Rules
+
+A plugin runs unsandboxed inside the user's shell, so every plugin follows the
+same eleven rules. Ryoku writes them into a scaffolded plugin's `AGENTS.md`, and
+Ryostore CI **will** run `ryoku plugin validate` on every plugin PR and block on
+the rules it can check.
+
+- **R1 Place.** A plugin is one folder named after its id, authored under
+  `$(xdg-user-dir DOCUMENTS)/ryoku-plugins/<id>/` (fallback
+  `~/ryoku-plugins/<id>/`); `ryoku plugin new <id>` creates it there. Never write
+  into `~/.local/share/ryoku/plugins/` (the receipt-owned install root) or
+  `~/.config/quickshell/` (the shipped shell).
+- **R2 Shape.** `manifest.json` at the root; `service/Main.qml` (logic, no UI);
+  `content/Widget.qml` (the one view); optional `content/Panel.qml` (a bar
+  panel); `README.md`; `LICENSE`; `assets/preview-widget.png` (a real capture);
+  scripts only under `bin/` with a shebang and the exec bit. Every extra file is
+  listed in manifest `files`.
+- **R3 Id.** Lowercase `[a-z0-9][a-z0-9-]*`, unique, and not a built-in widget
+  id.
+- **R4 Imports.** Only `QtQuick*`, `Quickshell*`, `Ryoku.PluginKit`,
+  `Ryoku.PluginKit.Singletons`, and files inside the plugin folder. Never
+  `shell.*`, `Ryoku.Ui*` internals, or a relative import that climbs out of the
+  folder.
+- **R5 Settings.** Declared in `metadata.settings`; read through
+  `pluginApi.pluginSettings` behind a default; written only through
+  `pluginApi.saveSetting(key, value)`. Never edit `shell.json` or `plugins.json`
+  directly.
+- **R6 Commands.** Every external program is in the plugin's own `bin/` or listed
+  in `dependencies.commands`. No `sudo`, `doas`, `su`. A privileged action is
+  allowed only through `pkexec`, only on an explicit click, only when listed in
+  manifest `capabilities.privileged` (exact command strings) and explained in the
+  README.
+- **R7 Network.** Every host the plugin talks to is listed in
+  `capabilities.network`. No `curl … | sh`, no downloading and running code.
+- **R8 Files.** Write only under `pluginApi.stateDir`
+  (`$XDG_STATE_HOME/ryoku/plugins/<id>`), `$XDG_CACHE_HOME/ryoku/plugins/<id>`,
+  or a temp dir. Never touch `~/.ssh`, `/etc`, shell rc files, or another
+  plugin's folder.
+- **R9 Shell.** No `sh -c` with a string built from settings or program output;
+  pass argv arrays.
+- **R10 Secrets and binaries.** No tokens, keys or credentials in the tree; no
+  compiled binaries (ELF/Mach-O/`.so`) and no symlinks; scripts only.
+- **R11 Honesty.** `official` is never `true` for a community plugin; `author` is
+  `Name <mail>`; the README says what runs, what it reads, what it writes, and
+  every privileged or network capability.
+
 ## The manifest
 
 `manifest.json` describes the plugin.
@@ -336,5 +382,7 @@ mode) and updates the entry's `manifestSha256` (and `lastUpdated`, with
 - [ ] Regenerated `product-manifest.json` and its `manifestSha256` with
       `tools/pack-product.py plugins/<id>` after any file change.
 - [ ] `tests/validate-catalogue.sh` passes from the repo root.
+- [ ] `ryoku plugin validate <dir>` passes with no blocking findings; Ryostore
+      CI will run it on your PR.
 
 Then open your PR.
