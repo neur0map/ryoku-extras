@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "id": "web-browsers",
+  "category": "bundles",
+  "version": "1.0.0",
+  "destination": "ryoku/bundles/web-browsers",
+  "name": "Web Browsers",
+  "description": "A browser shelf for daily use, web development, privacy testing, and Chromium/Firefox compatibility checks: Firefox, Firefox Developer Edition, Chromium, Brave, LibreWolf, and Zen Browser.",
+  "icon": "travel_explore",
+  "accent": "#f97316",
+  "preview": "assets/hero.png",
+  "screenshots": [
+    "assets/hero.png"
+  ],
+  "items": [
+    {
+      "type": "package",
+      "name": "firefox",
+      "detect": "firefox",
+      "tier": "core",
+      "group": "Browsers",
+      "source": "official",
+      "summary": "Mozilla's stable Firefox browser.",
+      "upstream": "https://www.mozilla.org/firefox/"
+    },
+    {
+      "type": "package",
+      "name": "firefox-developer-edition",
+      "detect": "firefox-developer-edition",
+      "tier": "core",
+      "group": "Browsers",
+      "source": "official",
+      "summary": "Firefox preview build with developer-focused tools and early web platform features.",
+      "upstream": "https://www.mozilla.org/firefox/developer/"
+    },
+    {
+      "type": "package",
+      "name": "chromium",
+      "detect": "chromium",
+      "tier": "core",
+      "group": "Browsers",
+      "source": "official",
+      "summary": "Open-source Chromium browser and web runtime.",
+      "upstream": "https://www.chromium.org/chromium-projects/"
+    },
+    {
+      "type": "package",
+      "name": "brave-bin",
+      "detect": "brave",
+      "tier": "core",
+      "group": "Browsers",
+      "source": "aur",
+      "summary": "Brave browser with built-in privacy protections and ad blocking.",
+      "upstream": "https://brave.com"
+    },
+    {
+      "type": "package",
+      "name": "librewolf",
+      "detect": "librewolf",
+      "tier": "core",
+      "group": "Browsers",
+      "source": "official",
+      "summary": "Privacy-hardened Firefox fork with telemetry removed.",
+      "upstream": "https://librewolf.net"
+    },
+    {
+      "type": "package",
+      "name": "zen-browser-bin",
+      "detect": "zen-browser",
+      "tier": "core",
+      "group": "Browsers",
+      "source": "aur",
+      "summary": "Zen Browser, a Firefox-based browser focused on a calmer, more customizable UI.",
+      "upstream": "https://zen-browser.app"
+    }
+  ],
+  "files": [
+    {
+      "source": "README.md",
+      "destination": "README.md",
+      "mode": "0644",
+      "size": 1101,
+      "sha256": "5a5ec1ecb098a7f446707b2d30270254221d23490e1766c726bcb7537a490bf9",
+      "install": true
+    },
+    {
+      "source": "assets/hero.png",
+      "destination": "assets/hero.png",
+      "mode": "0644",
+      "size": 20544,
+      "sha256": "818204bede397aadd1d0d9e50586bfaa99a7b03635e49270319a14314203d12a",
+      "install": false
+    }
+  ]
+}

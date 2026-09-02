@@ -1031,6 +1031,87 @@
       "tagline": "build · debug · runtimes · containers",
       "sources": "pacman / AUR",
       "icon": "code"
+    },
+    {
+      "id": "web-browsers",
+      "name": "Web Browsers",
+      "version": "1.0.0",
+      "path": "bundles/web-browsers",
+      "author": "Ryoku Team",
+      "summary": "firefox · chromium · privacy browsers",
+      "description": "A browser shelf for daily use, web development, privacy testing, and Chromium/Firefox compatibility checks: Firefox, Firefox Developer Edition, Chromium, Brave, LibreWolf, and Zen Browser.",
+      "tags": [
+        "browsers",
+        "web",
+        "privacy"
+      ],
+      "accent": "#f97316",
+      "surface": "#101010",
+      "preview": "assets/hero.png",
+      "screenshots": [
+        "assets/hero.png"
+      ],
+      "manifest": "bundle.json",
+      "manifestSha256": "a2c7a47ec69b85062ed03cf5fe6d0e57d27d5ab89f8622c0e6984b729945b5e4",
+      "components": [
+        {
+          "type": "package",
+          "name": "firefox",
+          "detect": "firefox",
+          "tier": "core",
+          "group": "Browsers",
+          "interactive": false,
+          "summary": "Mozilla's stable Firefox browser."
+        },
+        {
+          "type": "package",
+          "name": "firefox-developer-edition",
+          "detect": "firefox-developer-edition",
+          "tier": "core",
+          "group": "Browsers",
+          "interactive": false,
+          "summary": "Firefox preview build with developer-focused tools and early web platform features."
+        },
+        {
+          "type": "package",
+          "name": "chromium",
+          "detect": "chromium",
+          "tier": "core",
+          "group": "Browsers",
+          "interactive": false,
+          "summary": "Open-source Chromium browser and web runtime."
+        },
+        {
+          "type": "package",
+          "name": "brave-bin",
+          "detect": "brave",
+          "tier": "core",
+          "group": "Browsers",
+          "interactive": false,
+          "summary": "Brave browser with built-in privacy protections and ad blocking."
+        },
+        {
+          "type": "package",
+          "name": "librewolf",
+          "detect": "librewolf",
+          "tier": "core",
+          "group": "Browsers",
+          "interactive": false,
+          "summary": "Privacy-hardened Firefox fork with telemetry removed."
+        },
+        {
+          "type": "package",
+          "name": "zen-browser-bin",
+          "detect": "zen-browser",
+          "tier": "core",
+          "group": "Browsers",
+          "interactive": false,
+          "summary": "Zen Browser, a Firefox-based browser focused on a calmer, more customizable UI."
+        }
+      ],
+      "tagline": "firefox · chromium · privacy browsers",
+      "sources": "pacman / AUR",
+      "icon": "travel_explore"
     }
   ]
 }
