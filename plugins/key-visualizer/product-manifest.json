@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "key-visualizer",
+  "category": "plugins",
+  "version": "0.1.0",
+  "destination": "ryoku/plugins/key-visualizer",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "7eb1fe40aea184fe3fd0b1190002c815ce0295da62fbad0435e9d71758f71d0c",
+      "mode": "0644",
+      "size": 1065,
+      "install": false
+    },
+    {
+      "source": "README.md",
+      "destination": "README.md",
+      "sha256": "ad3e5bd1b5685d20bb1b5a7f06f8b499b7b086c0dd21f04305b11e2aeabbd8c4",
+      "mode": "0644",
+      "size": 1618,
+      "install": false
+    },
+    {
+      "source": "assets/preview-widget.png",
+      "destination": "assets/preview-widget.png",
+      "sha256": "ae3d52ea7c07c1a4687f6e8fc3849a8041f7ae690a298748d3dbc8f621752f6f",
+      "mode": "0644",
+      "size": 5808,
+      "install": false
+    },
+    {
+      "source": "content/Widget.qml",
+      "destination": "content/Widget.qml",
+      "sha256": "23e263873dfdecb6e9ef7e627e1ceb8e7910ead5e035b10fada74fae8a0f44e9",
+      "mode": "0644",
+      "size": 2464,
+      "install": true
+    },
+    {
+      "source": "key-visualizer.lua",
+      "destination": "key-visualizer.lua",
+      "sha256": "19cd2a778b2cbfdb6a957e0848b467c9570d441327612df32da47cf83f7b76ba",
+      "mode": "0644",
+      "size": 5069,
+      "install": true
+    },
+    {
+      "source": "manifest.json",
+      "destination": "manifest.json",
+      "sha256": "dec73cf3b39ec45b0e0ed3ce07f124d24ec42a6e3de4867552a9aeacf84ab7a8",
+      "mode": "0644",
+      "size": 3439,
+      "install": true
+    },
+    {
+      "source": "service/Main.qml",
+      "destination": "service/Main.qml",
+      "sha256": "43fabb7c94ff440c2457dd8af697db79194fc3bf043d93695915f09f4eb07e83",
+      "mode": "0644",
+      "size": 11958,
+      "install": true
+    }
+  ]
+}
