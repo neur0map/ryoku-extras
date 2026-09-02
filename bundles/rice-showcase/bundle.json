@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "id": "rice-showcase",
+  "category": "bundles",
+  "version": "1.0.0",
+  "destination": "ryoku/bundles/rice-showcase",
+  "name": "Rice Showcase",
+  "description": "Terminal toys and visual tools for showing off a desktop rice: Matrix rain, bonsai, audio visualizers, system readouts, ASCII banners, and classic terminal animations.",
+  "icon": "auto_awesome",
+  "accent": "#a855f7",
+  "preview": "assets/hero.png",
+  "screenshots": [
+    "assets/hero.png"
+  ],
+  "items": [
+    {
+      "type": "package",
+      "name": "cmatrix",
+      "detect": "cmatrix",
+      "tier": "core",
+      "group": "Terminal demos",
+      "source": "official",
+      "summary": "Classic Matrix-style terminal rain for screenshots and demo loops.",
+      "upstream": "https://github.com/abishekvashok/cmatrix"
+    },
+    {
+      "type": "package",
+      "name": "cbonsai",
+      "detect": "cbonsai",
+      "tier": "core",
+      "group": "Terminal demos",
+      "source": "official",
+      "summary": "Animated terminal bonsai tree for cozy rice showcases.",
+      "upstream": "https://gitlab.com/jallbrit/cbonsai"
+    },
+    {
+      "type": "package",
+      "name": "cava",
+      "detect": "cava",
+      "tier": "core",
+      "group": "Visualizers",
+      "source": "official",
+      "summary": "Terminal audio visualizer for music-driven desktop shots.",
+      "upstream": "https://github.com/karlstav/cava"
+    },
+    {
+      "type": "package",
+      "name": "fastfetch",
+      "detect": "fastfetch",
+      "tier": "core",
+      "group": "System readouts",
+      "source": "official",
+      "summary": "Fast system info readout for rice screenshots and terminal layouts.",
+      "upstream": "https://github.com/fastfetch-cli/fastfetch"
+    },
+    {
+      "type": "package",
+      "name": "btop",
+      "detect": "btop",
+      "tier": "core",
+      "group": "System readouts",
+      "source": "official",
+      "summary": "Polished terminal resource monitor that looks good in screenshots.",
+      "upstream": "https://github.com/aristocratos/btop"
+    },
+    {
+      "type": "package",
+      "name": "figlet",
+      "detect": "figlet",
+      "tier": "core",
+      "group": "Text effects",
+      "source": "official",
+      "summary": "Large ASCII banners for terminal headers and demos.",
+      "upstream": "http://www.figlet.org"
+    },
+    {
+      "type": "package",
+      "name": "lolcat",
+      "detect": "lolcat",
+      "tier": "core",
+      "group": "Text effects",
+      "source": "official",
+      "summary": "Rainbow text coloring for commands, banners, and pipes.",
+      "upstream": "https://github.com/busyloop/lolcat"
+    },
+    {
+      "type": "package",
+      "name": "toilet",
+      "detect": "toilet",
+      "tier": "core",
+      "group": "Text effects",
+      "source": "official",
+      "summary": "Colorful terminal banners and ASCII text effects.",
+      "upstream": "http://caca.zoy.org/wiki/toilet"
+    },
+    {
+      "type": "package",
+      "name": "cowsay",
+      "detect": "cowsay",
+      "tier": "core",
+      "group": "Terminal toys",
+      "source": "official",
+      "summary": "Classic speech-bubble terminal toy for playful rice demos.",
+      "upstream": "https://github.com/tnalpgge/rank-amateur-cowsay"
+    },
+    {
+      "type": "package",
+      "name": "sl",
+      "detect": "sl",
+      "tier": "core",
+      "group": "Terminal toys",
+      "source": "official",
+      "summary": "Steam locomotive terminal animation for quick demo flair.",
+      "upstream": "https://github.com/mtoyoda/sl"
+    },
+    {
+      "type": "package",
+      "name": "pipes.sh",
+      "detect": "pipes.sh",
+      "tier": "optional",
+      "group": "Terminal demos",
+      "source": "aur",
+      "summary": "Animated terminal pipes screensaver for showcase loops.",
+      "upstream": "https://github.com/pipeseroni/pipes.sh"
+    },
+    {
+      "type": "package",
+      "name": "tty-clock",
+      "detect": "tty-clock",
+      "tier": "optional",
+      "group": "Terminal demos",
+      "source": "aur",
+      "summary": "Large terminal clock for clean desktop screenshots.",
+      "upstream": "https://github.com/xorg62/tty-clock"
+    },
+    {
+      "type": "package",
+      "name": "asciiquarium",
+      "detect": "asciiquarium",
+      "tier": "optional",
+      "group": "Terminal demos",
+      "source": "official",
+      "summary": "Animated ASCII aquarium for whimsical terminal showcases.",
+      "upstream": "https://robobunny.com/projects/asciiquarium/html/"
+    }
+  ],
+  "files": [
+    {
+      "source": "README.md",
+      "destination": "README.md",
+      "mode": "0644",
+      "size": 1332,
+      "sha256": "aacfbca0453208c70443a73a9acd94eb2ad7524819a60e2408fb8a4ae159ed63",
+      "install": true
+    },
+    {
+      "source": "assets/hero.png",
+      "destination": "assets/hero.png",
+      "mode": "0644",
+      "size": 20338,
+      "sha256": "cdb977fac1a84e66182cf871b83b37809f9e0b8f8cc5d75519bd5913c299265d",
+      "install": false
+    }
+  ]
+}

@@ -1202,6 +1202,150 @@
       "tagline": "wireguard · openvpn · vpn clients",
       "sources": "pacman / AUR",
       "icon": "vpn_lock"
+    },
+    {
+      "id": "rice-showcase",
+      "name": "Rice Showcase",
+      "version": "1.0.0",
+      "path": "bundles/rice-showcase",
+      "author": "Ryoku Team",
+      "summary": "cmatrix · bonsai · visualizers",
+      "description": "Terminal toys and visual tools for showing off a desktop rice: Matrix rain, bonsai, audio visualizers, system readouts, ASCII banners, and classic terminal animations.",
+      "tags": [
+        "ricing",
+        "terminal",
+        "showcase"
+      ],
+      "accent": "#a855f7",
+      "surface": "#101010",
+      "preview": "assets/hero.png",
+      "screenshots": [
+        "assets/hero.png"
+      ],
+      "manifest": "bundle.json",
+      "manifestSha256": "c861e32ad3100af96cf047c59ec370170b64e16a41547bdf8dd281cd37fb5b89",
+      "components": [
+        {
+          "type": "package",
+          "name": "cmatrix",
+          "detect": "cmatrix",
+          "tier": "core",
+          "group": "Terminal demos",
+          "interactive": false,
+          "summary": "Classic Matrix-style terminal rain for screenshots and demo loops."
+        },
+        {
+          "type": "package",
+          "name": "cbonsai",
+          "detect": "cbonsai",
+          "tier": "core",
+          "group": "Terminal demos",
+          "interactive": false,
+          "summary": "Animated terminal bonsai tree for cozy rice showcases."
+        },
+        {
+          "type": "package",
+          "name": "cava",
+          "detect": "cava",
+          "tier": "core",
+          "group": "Visualizers",
+          "interactive": false,
+          "summary": "Terminal audio visualizer for music-driven desktop shots."
+        },
+        {
+          "type": "package",
+          "name": "fastfetch",
+          "detect": "fastfetch",
+          "tier": "core",
+          "group": "System readouts",
+          "interactive": false,
+          "summary": "Fast system info readout for rice screenshots and terminal layouts."
+        },
+        {
+          "type": "package",
+          "name": "btop",
+          "detect": "btop",
+          "tier": "core",
+          "group": "System readouts",
+          "interactive": false,
+          "summary": "Polished terminal resource monitor that looks good in screenshots."
+        },
+        {
+          "type": "package",
+          "name": "figlet",
+          "detect": "figlet",
+          "tier": "core",
+          "group": "Text effects",
+          "interactive": false,
+          "summary": "Large ASCII banners for terminal headers and demos."
+        },
+        {
+          "type": "package",
+          "name": "lolcat",
+          "detect": "lolcat",
+          "tier": "core",
+          "group": "Text effects",
+          "interactive": false,
+          "summary": "Rainbow text coloring for commands, banners, and pipes."
+        },
+        {
+          "type": "package",
+          "name": "toilet",
+          "detect": "toilet",
+          "tier": "core",
+          "group": "Text effects",
+          "interactive": false,
+          "summary": "Colorful terminal banners and ASCII text effects."
+        },
+        {
+          "type": "package",
+          "name": "cowsay",
+          "detect": "cowsay",
+          "tier": "core",
+          "group": "Terminal toys",
+          "interactive": false,
+          "summary": "Classic speech-bubble terminal toy for playful rice demos."
+        },
+        {
+          "type": "package",
+          "name": "sl",
+          "detect": "sl",
+          "tier": "core",
+          "group": "Terminal toys",
+          "interactive": false,
+          "summary": "Steam locomotive terminal animation for quick demo flair."
+        },
+        {
+          "type": "package",
+          "name": "pipes.sh",
+          "detect": "pipes.sh",
+          "tier": "optional",
+          "group": "Terminal demos",
+          "interactive": false,
+          "summary": "Animated terminal pipes screensaver for showcase loops."
+        },
+        {
+          "type": "package",
+          "name": "tty-clock",
+          "detect": "tty-clock",
+          "tier": "optional",
+          "group": "Terminal demos",
+          "interactive": false,
+          "summary": "Large terminal clock for clean desktop screenshots."
+        },
+        {
+          "type": "package",
+          "name": "asciiquarium",
+          "detect": "asciiquarium",
+          "tier": "optional",
+          "group": "Terminal demos",
+          "interactive": false,
+          "summary": "Animated ASCII aquarium for whimsical terminal showcases."
+        }
+      ],
+      "tagline": "cmatrix · bonsai · visualizers",
+      "sources": "pacman / AUR",
+      "icon": "auto_awesome"
     }
   ]
 }
