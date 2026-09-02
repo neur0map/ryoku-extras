@@ -431,10 +431,15 @@ class MigratedCatalogueTest(unittest.TestCase):
         registry = json.loads(
             (root / "plugins" / "registry.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(
-            [entry["id"] for entry in registry["plugins"]],
-            ["obsidian", "market", "photo-frame", "stargate"],
-        )
+        ids = [entry["id"] for entry in registry["plugins"]]
+        # the shipped four are always listed; community plugins join them
+        for shipped in ("obsidian", "market", "photo-frame", "stargate"):
+            self.assertIn(shipped, ids)
+        self.assertEqual(len(ids), len(set(ids)), "duplicate plugin id")
+        for entry in registry["plugins"]:
+            with self.subTest(plugin=entry["id"]):
+                self.assertIn("official", entry, "every plugin says whether Ryoku wrote it")
+                self.assertTrue(entry.get("hosts"), "every plugin names its hosts")
         for entry in registry["plugins"]:
             with self.subTest(plugin=entry["id"]):
                 self.assertEqual(entry["manifest"], "product-manifest.json")
