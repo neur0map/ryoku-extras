@@ -754,7 +754,7 @@
         "assets/hero.png"
       ],
       "manifest": "bundle.json",
-      "manifestSha256": "4bbc2b060e8f6600c5e5be3947ca1183d553dd5e2caabca0c698ae9f9205cc5e",
+      "manifestSha256": "c861e32ad3100af96cf047c59ec370170b64e16a41547bdf8dd281cd37fb5b89",
       "components": [
         {
           "type": "package",

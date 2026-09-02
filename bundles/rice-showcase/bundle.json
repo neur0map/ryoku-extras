@@ -139,7 +139,7 @@
       "detect": "asciiquarium",
       "tier": "optional",
       "group": "Terminal demos",
-      "source": "aur",
+      "source": "official",
       "summary": "Animated ASCII aquarium for whimsical terminal showcases.",
       "upstream": "https://robobunny.com/projects/asciiquarium/html/"
     }
