@@ -505,6 +505,14 @@
       "size": 1611371,
       "sha256": "777f6318838ae311cf8ebc94ca612761236486239d38d678e91ccd7fd242a522",
       "install": false
+    },
+    {
+      "source": "screenshots/1.webp",
+      "destination": "screenshots/1.webp",
+      "mode": "0644",
+      "size": 544698,
+      "sha256": "108ecf5af24a4b63e14d0e6fddfad09671f61f2f79557c5037d9174bd2c868f4",
+      "install": false
     }
   ]
 }
