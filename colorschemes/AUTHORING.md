@@ -93,6 +93,7 @@ Add a row to the `themes` array. Keep this key order:
 | `surface` | `#rrggbb`, your `mSurface` (tile background) |
 | `source` | upstream URL (optional, for imported schemes) |
 | `preview` | raw URL to a preview image (optional) |
+| `wallpapers` | list of raw URLs to the scheme's own wallpapers (optional); the store lands them in the user's wallpaper library on install, so pin them to a commit, not a branch |
 | `dark` / `light` | the same block(s) as the scheme file, inline |
 
 The row embeds `dark`/`light` so the desktop installs from the registry alone;
