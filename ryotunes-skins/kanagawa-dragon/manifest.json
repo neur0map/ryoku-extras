@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "kanagawa-dragon",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/kanagawa-dragon",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "a60625f725427792489568ae174e52362688ce901d6a5d758b5bba54e2f96e7a",
+      "mode": "0644",
+      "size": 839,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "ac2892a69c76e4541eb47000cee2cbf35483acc3b39f5cf63d318e5fdd1d53c8",
+      "mode": "0644",
+      "size": 188169,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "5646a9d794f492bb5d1eb6248b7f320abdb4e9c4b63e69b4d1c2806edd03bf11",
+      "mode": "0644",
+      "size": 775,
+      "install": true
+    }
+  ]
+}

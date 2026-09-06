@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "gruvbox-dark-hard",
+  "name": "Gruvbox Dark Hard",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Gruvbox Dark Hard for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#1d2021",
+      "paperLift": "#3c3836",
+      "ink": "#ebdbb2",
+      "inkDim": "#d5c4a1",
+      "bone": "#ebdbb2",
+      "inkOnBone": "#1d2021",
+      "sun": "#83a598",
+      "alert": "#fb4934"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

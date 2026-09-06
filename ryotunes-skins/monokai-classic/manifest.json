@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "monokai-classic",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/monokai-classic",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "659b8ffbf683a613d60159616c6120b61ecfd3ce78a3117315f1a1353437886f",
+      "mode": "0644",
+      "size": 814,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "1cf57ff032beca636a7bc11786a20f879a6133c72a4d1678a9042337ffb65f79",
+      "mode": "0644",
+      "size": 183080,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "2c301d730adcbddc1fa39c3bc33f0314a5820bbf338a9b3c5ab762923e1e9d55",
+      "mode": "0644",
+      "size": 539,
+      "install": true
+    }
+  ]
+}

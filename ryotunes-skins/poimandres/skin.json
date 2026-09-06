@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "poimandres",
+  "name": "Poimandres",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Poimandres for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#1b1e28",
+      "paperLift": "#303340",
+      "ink": "#e4f0fb",
+      "inkDim": "#a6accd",
+      "bone": "#e4f0fb",
+      "inkOnBone": "#1b1e28",
+      "sun": "#add7ff",
+      "alert": "#d0679d"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

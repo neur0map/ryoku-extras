@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "catppuccin-latte",
+  "name": "Catppuccin Latte",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Catppuccin Latte for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "light",
+  "modes": {
+    "light": {
+      "paper": "#eff1f5",
+      "paperLift": "#ccd0da",
+      "ink": "#4c4f69",
+      "inkDim": "#5c5f77",
+      "bone": "#4c4f69",
+      "inkOnBone": "#eff1f5",
+      "sun": "#7287fd",
+      "alert": "#d20f39"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

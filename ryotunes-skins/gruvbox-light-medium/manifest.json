@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "gruvbox-light-medium",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/gruvbox-light-medium",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "2a1b94a11a1ec87f17db2dc543331f1ec4d903da80b4cd086acb6f70c1249434",
+      "mode": "0644",
+      "size": 851,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "b2948a0a75a116c69e6b1c32eab9ca0cbb8767e51800289f546f24d50c227d7f",
+      "mode": "0644",
+      "size": 196037,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "7aa49950e675dd04a366b20b8530a73b17f29606cf9523a2b27066f46222785f",
+      "mode": "0644",
+      "size": 556,
+      "install": true
+    }
+  ]
+}

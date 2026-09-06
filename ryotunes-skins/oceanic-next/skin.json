@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "oceanic-next",
+  "name": "Oceanic Next",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Oceanic Next for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#1b2b34",
+      "paperLift": "#343d46",
+      "ink": "#d8dee9",
+      "inkDim": "#d8dee9",
+      "bone": "#d8dee9",
+      "inkOnBone": "#1b2b34",
+      "sun": "#6699cc",
+      "alert": "#ec5f67"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

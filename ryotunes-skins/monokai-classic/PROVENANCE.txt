@@ -1,0 +1,21 @@
+Skin: Monokai Classic (monokai-classic)
+Provider: Ryoku
+Upstream palette: Monokai <https://monokai.pro>
+Source: Ryoku colour-scheme catalogue (colorschemes/monokai-classic)
+        https://raw.githubusercontent.com/neur0map/ryostore/main/colorschemes/Monokai%20Classic/preview.jpg
+License: CC0-1.0
+
+Derived by tools/import-ryotunes-skins.py, mapping the Noctalia palette
+onto Ryotunes' eight skin roles, per mode:
+  paper     = mSurface
+  paperLift = mSurfaceVariant or mHover, whichever is closest in
+              luminance to mSurface without equalling it
+  ink       = mOnSurface
+  inkDim    = mOnSurfaceVariant
+  bone      = mOnSurface
+  inkOnBone = mSurface
+  sun       = mPrimary
+  alert     = mError
+
+Only the eight colour roles are set; type, shape, motion and decor are
+left to Ryotunes' Paper defaults.

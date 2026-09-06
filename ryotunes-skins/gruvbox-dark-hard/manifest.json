@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "gruvbox-dark-hard",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/gruvbox-dark-hard",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "d2b5b28d9050f71fc0f4c9abbd26a9474696b65ff9f820777617390b97f6b7bc",
+      "mode": "0644",
+      "size": 839,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "c15346badf001880d839b471f92af1ab874dfa38a1047f2f8b91a2712e1caf67",
+      "mode": "0644",
+      "size": 193236,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "803d37a734e94526d9830009182ce5b4a75c0b8d6a722bb14a41ca26268ec6ca",
+      "mode": "0644",
+      "size": 545,
+      "install": true
+    }
+  ]
+}

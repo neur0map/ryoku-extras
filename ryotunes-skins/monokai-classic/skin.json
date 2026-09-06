@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "monokai-classic",
+  "name": "Monokai Classic",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Monokai Classic for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#221f22",
+      "paperLift": "#2d2a2e",
+      "ink": "#fcfcfa",
+      "inkDim": "#939293",
+      "bone": "#fcfcfa",
+      "inkOnBone": "#221f22",
+      "sun": "#a9dc76",
+      "alert": "#ff6188"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

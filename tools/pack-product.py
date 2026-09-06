@@ -5,12 +5,13 @@ Usage:
     tools/pack-product.py <category>/<id> [--touch]
     e.g. tools/pack-product.py plugins/vpn --touch
 
-Only the ``plugins`` category is supported. It is the sole catalogue category
-that ships a per-file ``product-manifest.json`` (schema 1, with ``destination``
-and a ``files`` array); every other category installs differently and has no such
-manifest to reproduce, so generalising this tool would be guesswork. The
-supported destination convention is likewise only established for plugins
-(``ryoku/plugins/<id>``). Revisit when a second category adopts the same manifest.
+Two categories ship a per-file manifest (schema 1, with ``destination`` and a
+``files`` array) that this tool reproduces: ``plugins`` (manifest
+``product-manifest.json``, destination ``ryoku/plugins/<id>``) and
+``ryotunes-skins`` (manifest ``manifest.json``, destination
+``ryoku/ryotunes-skins/<id>``). Both name their manifest file in the registry
+entry's ``manifest`` field. Every other category installs differently and has no
+such manifest to reproduce, so generalising further would be guesswork.
 
 The manifest is derived to match the convention already in the tree, verified by
 repacking the four existing plugins byte for byte:
@@ -42,7 +43,7 @@ import sys
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SUPPORTED_CATEGORY = "plugins"
+SUPPORTED_CATEGORIES = ("plugins", "ryotunes-skins")
 
 
 def _load_validator():
@@ -117,10 +118,10 @@ def build_manifest(product: Path, entry: dict, category: str) -> dict:
 
 
 def pack_product(root: Path, category: str, product_id: str, touch: bool = False) -> dict:
-    if category != SUPPORTED_CATEGORY:
+    if category not in SUPPORTED_CATEGORIES:
         raise ValueError(
-            f"unsupported category {category!r}: only {SUPPORTED_CATEGORY!r} products "
-            "carry a product-manifest.json"
+            f"unsupported category {category!r}: only "
+            f"{', '.join(map(repr, SUPPORTED_CATEGORIES))} carry a product-manifest.json"
         )
     registry_path = root / category / "registry.json"
     registry = _read_json(registry_path)
@@ -149,9 +150,9 @@ def pack_product(root: Path, category: str, product_id: str, touch: bool = False
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Build a plugin product-manifest.json and refresh its registry hash",
+        description="Build a product manifest and refresh its registry hash",
     )
-    parser.add_argument("product", help="<category>/<id>, e.g. plugins/vpn")
+    parser.add_argument("product", help="<category>/<id>, e.g. plugins/vpn or ryotunes-skins/nord-light")
     parser.add_argument(
         "--touch",
         action="store_true",
@@ -176,7 +177,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"pack-product: {error}", file=sys.stderr)
         return 1
 
-    print(f"{category}/{product_id}: wrote product-manifest.json ({len(manifest['files'])} files)")
+    print(f"{category}/{product_id}: wrote manifest ({len(manifest['files'])} files)")
     return 0
 
 

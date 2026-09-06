@@ -1,0 +1,34 @@
+{
+  "format": 1,
+  "id": "solarized",
+  "name": "Solarized",
+  "author": "Noctalia",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Solarized for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#002b36",
+      "paperLift": "#073642",
+      "ink": "#839496",
+      "inkDim": "#657b83",
+      "bone": "#839496",
+      "inkOnBone": "#002b36",
+      "sun": "#b58900",
+      "alert": "#dc322f"
+    },
+    "light": {
+      "paper": "#fdf6e3",
+      "paperLift": "#eee8d5",
+      "ink": "#657b83",
+      "inkDim": "#839496",
+      "bone": "#657b83",
+      "inkOnBone": "#fdf6e3",
+      "sun": "#b58900",
+      "alert": "#dc322f"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

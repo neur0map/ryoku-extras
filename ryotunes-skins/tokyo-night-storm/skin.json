@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "tokyo-night-storm",
+  "name": "Tokyo Night Storm",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Tokyo Night Storm for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#24283b",
+      "paperLift": "#343b58",
+      "ink": "#a9b1d6",
+      "inkDim": "#9aa5ce",
+      "bone": "#a9b1d6",
+      "inkOnBone": "#24283b",
+      "sun": "#7aa2f7",
+      "alert": "#f7768e"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

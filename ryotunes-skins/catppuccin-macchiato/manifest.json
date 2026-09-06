@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "catppuccin-macchiato",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/catppuccin-macchiato",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "5b94ddbcd088cef646f87044823f03862f53ddadaf0963dc5bbd23454cb59b26",
+      "mode": "0644",
+      "size": 858,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "53333fdba204a48251f7433e54dbebc615d21f652d275f02a6106eb7c917aea4",
+      "mode": "0644",
+      "size": 192357,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "7eb332edff3ef1fdcea6579750a4fb8f3bc79e318c0c1b93a7a60fdbdbdfff9a",
+      "mode": "0644",
+      "size": 554,
+      "install": true
+    }
+  ]
+}

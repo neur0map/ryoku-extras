@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "oceanic-next",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/oceanic-next",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "1a1a376346089a298d647bd493e504c054eac381a894f735e37b3ed829b7fc86",
+      "mode": "0644",
+      "size": 844,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "63d0a97398d6b57cb4db2d8a334cf7a3b6f32ec96c599646a88398452c06e4ed",
+      "mode": "0644",
+      "size": 192731,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "40d0d20dceaecf62018fc365fc29b9880098c5119fbcc166bead202a8ca41972",
+      "mode": "0644",
+      "size": 530,
+      "install": true
+    }
+  ]
+}

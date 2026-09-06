@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "everforest-dark-hard",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/everforest-dark-hard",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "a63d6539994edd21df10d4ef8f5da681fcdc8a554619d62c368c8de304457d2a",
+      "mode": "0644",
+      "size": 857,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "d8955fbe2668f39dca076fa6a6bfbeb88182d46bceb319f461091f98cf02989c",
+      "mode": "0644",
+      "size": 189087,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "02149e058f01e54def6c741930ed9ed991c69c8154a151d99a86dca753aa4165",
+      "mode": "0644",
+      "size": 554,
+      "install": true
+    }
+  ]
+}

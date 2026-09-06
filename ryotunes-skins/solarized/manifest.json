@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "solarized",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/solarized",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "2ca8111c80981a693f9384ec59bb2c441ab6a8741a3994b963c07e0e06646322",
+      "mode": "0644",
+      "size": 812,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "ce7738eb86395b5e4e2f68a04c73267dc1cfe72576ccbb8afd5b3f76e3afdeeb",
+      "mode": "0644",
+      "size": 175808,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "91e2089c626f04889dcbcb357b05b04a5cbcb409fba08e059eff415935bf2054",
+      "mode": "0644",
+      "size": 757,
+      "install": true
+    }
+  ]
+}

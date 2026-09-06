@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "catppuccin-lavender",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/catppuccin-lavender",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "0be4b6eece58554d81da696a9614c86132bb7f4487af6d7838bb80836c53a42e",
+      "mode": "0644",
+      "size": 857,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "4a7616c3465ca8fecdf140c71d414b63a55c71bc6f6155e4f62621f3ecf9d066",
+      "mode": "0644",
+      "size": 195180,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "f7b6da3ad80869737e478019c0227a13c1822f09dc2edb050098dd2225c13aed",
+      "mode": "0644",
+      "size": 787,
+      "install": true
+    }
+  ]
+}

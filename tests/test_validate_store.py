@@ -26,7 +26,7 @@ PACK_SPEC.loader.exec_module(pack_product)
 
 CATEGORIES = (
     "rices", "lockscreens", "barstyles", "fastfetch", "plugins", "bundles",
-    "decors", "launcher-images", "fastfetch-emblems",
+    "decors", "launcher-images", "fastfetch-emblems", "ryotunes-skins",
 )
 
 
@@ -39,7 +39,62 @@ def write_json(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
 
 
+def build_skin_product(root: Path, product_id: str = "demo") -> tuple[Path, dict]:
+    """A valid ryotunes-skins product, its manifest built by the real pack tool."""
+    product = root / "ryotunes-skins" / product_id
+    product.mkdir(parents=True, exist_ok=True)
+    skin = {
+        "format": 1,
+        "id": product_id,
+        "name": "Demo",
+        "author": "Ryoku",
+        "version": "1.0.0",
+        "license": "CC0-1.0",
+        "description": "Demo skin.",
+        "default": "dark",
+        "modes": {
+            "dark": {
+                "paper": "#101010", "paperLift": "#1a1a1a", "ink": "#e6e6e6",
+                "inkDim": "#b0b0b0", "bone": "#e6e6e6", "inkOnBone": "#101010",
+                "sun": "#e2342a", "alert": "#d33b32",
+            }
+        },
+        "accent": "artwork",
+        "wash": 1.0,
+    }
+    write_json(product / "skin.json", skin)
+    (product / "LICENSE").write_text("CC0-1.0\n", encoding="utf-8")
+    (product / "PROVENANCE.txt").write_text("Demo provenance.\n", encoding="utf-8")
+    (product / "preview.png").write_bytes(b"fixture preview")
+    mode = skin["modes"][skin["default"]]
+    entry = {
+        "id": product_id,
+        "name": "Demo",
+        "version": "1.0.0",
+        "path": f"ryotunes-skins/{product_id}",
+        "author": "Ryoku",
+        "summary": "Demo skin",
+        "description": "Demo skin.",
+        "tags": ["dark", "ryoku", "colorscheme"],
+        "accent": mode["sun"],
+        "surface": mode["paper"],
+        "preview": "preview.png",
+        "screenshots": [],
+        "manifest": "manifest.json",
+        "manifestSha256": "0" * 64,
+        "lastUpdated": "2020-01-01",
+    }
+    write_json(root / "ryotunes-skins" / "registry.json", {"schema": 1, "ryotunes-skins": [entry]})
+    pack_product.pack_product(root, "ryotunes-skins", product_id)
+    entry = json.loads(
+        (root / "ryotunes-skins" / "registry.json").read_text(encoding="utf-8")
+    )["ryotunes-skins"][0]
+    return product, entry
+
+
 def build_product(root: Path, category: str, product_id: str = "demo") -> tuple[Path, dict]:
+    if category == "ryotunes-skins":
+        return build_skin_product(root, product_id)
     product = root / category / product_id
     content = product / "content" / "Widget.qml"
     preview = product / "assets" / "preview.png"
@@ -537,6 +592,98 @@ class MigratedCatalogueTest(unittest.TestCase):
                 self.assertEqual(
                     entry.get("components"),
                     validate_store.normalized_bundle_components(manifest),
+                )
+
+
+class RyotunesSkinsTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temp = tempfile.TemporaryDirectory()
+        self.root = Path(self.temp.name)
+        self.product, self.entry = build_skin_product(self.root, "demo")
+
+    def tearDown(self) -> None:
+        self.temp.cleanup()
+
+    def write_registry(self) -> None:
+        write_json(
+            self.root / "ryotunes-skins" / "registry.json",
+            {"schema": 1, "ryotunes-skins": [self.entry]},
+        )
+
+    def errors(self) -> list[str]:
+        self.write_registry()
+        return validate_store.validate_tree(self.root, ("ryotunes-skins",))
+
+    def test_valid_skin_product_passes(self) -> None:
+        self.assertEqual(self.errors(), [])
+
+    def test_registry_accent_must_match_default_mode_sun(self) -> None:
+        self.entry["accent"] = "#00ff00"
+        self.assertIn(
+            "ryotunes-skins/demo: registry accent must equal the default mode's sun",
+            self.errors(),
+        )
+
+    def test_registry_surface_must_match_default_mode_paper(self) -> None:
+        self.entry["surface"] = "#00ff00"
+        self.assertIn(
+            "ryotunes-skins/demo: registry surface must equal the default mode's paper",
+            self.errors(),
+        )
+
+    def test_skin_json_must_install(self) -> None:
+        manifest_path = self.product / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        for row in manifest["files"]:
+            if row["source"] == "skin.json":
+                row["install"] = False
+        write_json(manifest_path, manifest)
+        self.entry["manifestSha256"] = digest(manifest_path)
+        self.assertIn(
+            "ryotunes-skins/demo: skin.json must be declared with install true",
+            self.errors(),
+        )
+
+    def test_skin_id_must_equal_folder(self) -> None:
+        skin_path = self.product / "skin.json"
+        skin = json.loads(skin_path.read_text(encoding="utf-8"))
+        skin["id"] = "not-demo"
+        write_json(skin_path, skin)
+        self.write_registry()
+        pack_product.pack_product(self.root, "ryotunes-skins", "demo")
+        errors = validate_store.validate_tree(self.root, ("ryotunes-skins",))
+        self.assertIn(
+            "ryotunes-skins/demo: skin.json id must equal the folder name 'demo'",
+            errors,
+        )
+
+    def test_pack_is_byte_stable(self) -> None:
+        self.write_registry()
+        manifest_path = self.product / "manifest.json"
+        registry_path = self.root / "ryotunes-skins" / "registry.json"
+        pack_product.pack_product(self.root, "ryotunes-skins", "demo")
+        before = (manifest_path.read_bytes(), registry_path.read_bytes())
+        pack_product.pack_product(self.root, "ryotunes-skins", "demo")
+        self.assertEqual(before, (manifest_path.read_bytes(), registry_path.read_bytes()))
+
+    def test_real_catalogue_validates(self) -> None:
+        root = MODULE_PATH.parent.parent
+        self.assertEqual(validate_store.validate_tree(root, ("ryotunes-skins",)), [])
+        registry = json.loads(
+            (root / "ryotunes-skins" / "registry.json").read_text(encoding="utf-8")
+        )
+        ids = [entry["id"] for entry in registry["ryotunes-skins"]]
+        self.assertEqual(len(ids), 20)
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertIn("tokyo-night-storm", ids)
+        for entry in registry["ryotunes-skins"]:
+            with self.subTest(skin=entry["id"]):
+                self.assertEqual(entry["manifest"], "manifest.json")
+                manifest = json.loads(
+                    (root / entry["path"] / entry["manifest"]).read_text(encoding="utf-8")
+                )
+                self.assertEqual(
+                    manifest["destination"], f"ryoku/ryotunes-skins/{entry['id']}"
                 )
 
 

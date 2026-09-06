@@ -21,6 +21,7 @@ index. An item is invisible to the desktop until it is listed in that registry.
 | `livewalls/` | Live (video) wallpapers | ryowalls -> Ryoku source |
 | `bundles/` | Curated sets of packages, scripts, and plugins installed together | Settings -> Extras |
 | `nautilus/` | Right-click file-manager script packs (installed by a bundle) | Files right-click menu |
+| `ryotunes-skins/` | Ryotunes skins: palette, type, radii and motion for the music player | Ryotunes -> Settings -> Appearance |
 
 `installers/` holds small, auditable curl/script installers that a bundle item
 can reference; it is not a browsable catalogue of its own.
@@ -38,8 +39,8 @@ Two guides, one job each:
 
 Deep, per-catalogue authoring references live beside each catalogue
 (`plugins/AUTHORING.md`, `rices/AUTHORING.md`, `colorschemes/AUTHORING.md`,
-`fastfetch/AUTHORING.md`, `nautilus/AUTHORING.md`, `bundles/README.md`,
-`installers/README.md`, `livewalls/README.md`).
+`fastfetch/AUTHORING.md`, `ryotunes-skins/AUTHORING.md`, `nautilus/AUTHORING.md`,
+`bundles/README.md`, `installers/README.md`, `livewalls/README.md`).
 
 ## The rules, briefly
 
@@ -51,6 +52,7 @@ Deep, per-catalogue authoring references live beside each catalogue
 - **Run the check before you push:** `tests/validate-catalogue.sh`. CI runs it on
   every push and pull request, so a dangling reference never reaches a user as a
   failed install.
-- **Plugins carry a per-file `product-manifest.json`.** After any change to a
-  plugin's files, regenerate it and its registry hash with
-  `tools/pack-product.py plugins/<id>`.
+- **Plugins and Ryotunes skins carry a per-file manifest.** After any change to
+  such a product's files, regenerate it and its registry hash with
+  `tools/pack-product.py <category>/<id>` (e.g. `plugins/obsidian` or
+  `ryotunes-skins/nord-light`).

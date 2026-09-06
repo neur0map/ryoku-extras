@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "gruvbox-light-medium",
+  "name": "Gruvbox Light Medium",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Gruvbox Light Medium for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "light",
+  "modes": {
+    "light": {
+      "paper": "#fbf1c7",
+      "paperLift": "#ebdbb2",
+      "ink": "#3c3836",
+      "inkDim": "#504945",
+      "bone": "#3c3836",
+      "inkOnBone": "#fbf1c7",
+      "sun": "#076678",
+      "alert": "#9d0006"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

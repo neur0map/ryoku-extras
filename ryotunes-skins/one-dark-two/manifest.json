@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "one-dark-two",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/one-dark-two",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "46e7ac06739efab048d4f96484966f229e84a208804988203afb8494ab59b92e",
+      "mode": "0644",
+      "size": 817,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "a5f8ad864a73388eb42a26643dd4e50c8df632d66a876844636644a7b7f0c4f8",
+      "mode": "0644",
+      "size": 189326,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "d4e95f043a2bceb4fca91c05dd23c379fa726388c622200411a704da7473dfd8",
+      "mode": "0644",
+      "size": 766,
+      "install": true
+    }
+  ]
+}

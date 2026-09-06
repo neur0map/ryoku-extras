@@ -14,7 +14,7 @@ from typing import Iterable
 
 CATEGORIES = (
     "rices", "lockscreens", "barstyles", "fastfetch", "plugins", "bundles",
-    "decors", "launcher-images", "fastfetch-emblems",
+    "decors", "launcher-images", "fastfetch-emblems", "ryotunes-skins",
 )
 REQUIRED_ENTRY_FIELDS = (
     "id", "name", "version", "path", "author", "summary", "description",
@@ -371,6 +371,64 @@ def validate_bundle_components(entry: dict, manifest: object, errors: list[str])
         errors.append(f"bundles/{entry.get('id', '?')}: components do not match manifest items")
 
 
+def validate_ryotunes_skin(entry: dict, product: Path, manifest: object, errors: list[str]) -> None:
+    """A ryotunes-skins product carries a Ryotunes skin.json (format 1). Check it
+    parses, is self-consistent with the folder and the registry entry, and that
+    the manifest installs skin.json but not the preview."""
+    label = f"ryotunes-skins/{entry.get('id', '?')}"
+    skin_path = product / "skin.json"
+    if not skin_path.is_file() or skin_path.is_symlink():
+        errors.append(f"{label}: skin.json missing")
+        return
+    skin = load_json(skin_path, errors, f"{label}: skin.json")
+    if skin is LOAD_FAILED:
+        return
+    if not isinstance(skin, dict):
+        errors.append(f"{label}: skin.json must be an object")
+        return
+
+    if type(skin.get("format")) is not int or skin.get("format") != 1:
+        errors.append(f"{label}: skin.json format must be 1")
+    if skin.get("id") != product.name:
+        errors.append(f"{label}: skin.json id must equal the folder name {product.name!r}")
+
+    modes = skin.get("modes")
+    if not isinstance(modes, dict) or not modes:
+        errors.append(f"{label}: skin.json needs a non-empty modes object")
+        modes = {}
+
+    def valid_colour(value: object) -> bool:
+        return isinstance(value, str) and bool(COLOR_PATTERN.fullmatch(value))
+
+    if not any(
+        isinstance(mode, dict) and valid_colour(mode.get("paper")) and valid_colour(mode.get("ink"))
+        for mode in modes.values()
+    ):
+        errors.append(f"{label}: skin.json needs a mode with paper and ink as #rrggbb")
+
+    default_mode = modes.get(skin.get("default", "dark")) if isinstance(modes, dict) else None
+    if not isinstance(default_mode, dict):
+        default_mode = next((m for m in modes.values() if isinstance(m, dict)), None)
+    if isinstance(default_mode, dict):
+        sun, paper = default_mode.get("sun"), default_mode.get("paper")
+        accent, surface = entry.get("accent"), entry.get("surface")
+        if valid_colour(sun) and valid_colour(accent) and accent.lower() != sun.lower():
+            errors.append(f"{label}: registry accent must equal the default mode's sun")
+        if valid_colour(paper) and valid_colour(surface) and surface.lower() != paper.lower():
+            errors.append(f"{label}: registry surface must equal the default mode's paper")
+
+    installs = {
+        row["source"]: row.get("install")
+        for row in (manifest.get("files") if isinstance(manifest, dict) else [])
+        if isinstance(row, dict) and isinstance(row.get("source"), str)
+    }
+    if installs.get("skin.json") is not True:
+        errors.append(f"{label}: skin.json must be declared with install true")
+    preview = entry.get("preview")
+    if isinstance(preview, str) and installs.get(preview) is not False:
+        errors.append(f"{label}: preview must be declared with install false")
+
+
 def validate_entry(category: str, entry: object, root: Path, errors: list[str], require_media: bool) -> None:
     if not isinstance(entry, dict):
         errors.append(f"{category}/?: registry entry must be an object")
@@ -432,6 +490,8 @@ def validate_entry(category: str, entry: object, root: Path, errors: list[str], 
         validate_manifest(category, entry, product, manifest, errors, require_media)
         if category == "bundles":
             validate_bundle_components(entry, manifest, errors)
+        elif category == "ryotunes-skins":
+            validate_ryotunes_skin(entry, product, manifest, errors)
 
 
 def validate_tree(

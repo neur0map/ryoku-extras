@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "everforest-dark-hard",
+  "name": "Everforest Dark Hard",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Everforest Dark Hard for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#1e2326",
+      "paperLift": "#2e383c",
+      "ink": "#d3c6aa",
+      "inkDim": "#9da9a0",
+      "bone": "#d3c6aa",
+      "inkOnBone": "#1e2326",
+      "sun": "#a7c080",
+      "alert": "#e67e80"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

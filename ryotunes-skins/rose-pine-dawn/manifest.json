@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "rose-pine-dawn",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/rose-pine-dawn",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "35911c8354aaeec8fadddea2670c53a1a6e922e52c32345a735a46ebca30bb96",
+      "mode": "0644",
+      "size": 821,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "4bd3e90095d2b819fcdc213b900a52edc4900b1e3064512bff970f8e2804a670",
+      "mode": "0644",
+      "size": 191804,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "790b235de254e203f216a07d8d6afea263f12469c534fc5f12a081b1b490f3e2",
+      "mode": "0644",
+      "size": 538,
+      "install": true
+    }
+  ]
+}

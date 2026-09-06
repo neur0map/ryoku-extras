@@ -1,0 +1,11 @@
+Skin: My Skin (my-skin)
+Author: You
+Source: (where the palette / design came from -- a repo, a scheme, your own work)
+License: CC0-1.0
+
+Describe here how the skin was made and where each part originates. If you
+derived the palette from an existing colour scheme, name it and link its source
+and licence. If a font is bundled under fonts/, say which family it is and that
+it is freely redistributable. Skins generated from the Ryoku colour-scheme
+catalogue are produced by tools/import-ryotunes-skins.py, which records the
+scheme id, provider and the eight-role mapping here automatically.

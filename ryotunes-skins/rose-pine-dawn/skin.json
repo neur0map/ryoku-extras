@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "rose-pine-dawn",
+  "name": "Rose Pine Dawn",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Rose Pine Dawn for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "light",
+  "modes": {
+    "light": {
+      "paper": "#faf4ed",
+      "paperLift": "#f2e9e1",
+      "ink": "#575279",
+      "inkDim": "#797593",
+      "bone": "#575279",
+      "inkOnBone": "#faf4ed",
+      "sun": "#907aa9",
+      "alert": "#b4637a"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

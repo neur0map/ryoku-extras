@@ -1,0 +1,53 @@
+{
+  // A Ryotunes skin, format 1. Copy this folder to ryotunes-skins/<id>/, rename
+  // the folder to your skin id, fill in the palette, and strip these // comments
+  // before you ship -- Ryotunes and `ryotunes-cli skin check` read strict JSON.
+  // Full reference: https://github.com/neur0map/ryotunes/blob/main/docs/SKINS.md
+  // Schema: https://raw.githubusercontent.com/neur0map/ryotunes/main/skins/skin.schema.json
+
+  "format": 1,                 // always 1
+  "id": "my-skin",             // lowercase kebab-case, EQUAL to the folder name
+  "name": "My Skin",           // shown in Ryotunes > Settings > Appearance
+  "author": "You",             // credited on the store card
+  "version": "1.0.0",
+  "license": "CC0-1.0",        // CC0-1.0 or MIT to ship; see LICENSE
+  "description": "One line describing the look; shown in Settings.",
+
+  "default": "dark",           // which mode "System" pins to: "dark" or "light"
+
+  // At least one mode, carrying at least `paper` and `ink`. The other six roles
+  // fall back to the Paper skin when omitted. All values are #rrggbb.
+  // Contrast (checked by `ryotunes-cli skin check`): ink/paper >= 4.5 and
+  // inkOnBone/bone >= 4.5 are errors; inkDim/paper >= 3.0 and sun/paper >= 3.0 warn.
+  "modes": {
+    "dark": {
+      "paper": "#050505",      // base surface
+      "paperLift": "#0d0d0c",  // a slightly lifted surface
+      "ink": "#d7cfc6",        // primary text on paper
+      "inkDim": "#b6aea5",     // secondary text on paper
+      "bone": "#d7cfc6",       // the inverse surface
+      "inkOnBone": "#090807",  // text on bone
+      "sun": "#e2342a",        // the accent / primary
+      "alert": "#d33b32"       // error / destructive
+    },
+    "light": {
+      "paper": "#c8c4bc",
+      "paperLift": "#d5d0c7",
+      "ink": "#211f1c",
+      "inkDim": "#403b35",
+      "bone": "#292620",
+      "inkOnBone": "#eee8de",
+      "sun": "#e2342a",
+      "alert": "#d33b32"
+    }
+  },
+
+  // Everything below is optional; omit a block to inherit Paper's defaults.
+  // "type":   { "display": "Fraunces", "ui": "Space Grotesk", "mono": "SpaceMono Nerd Font" },
+  // "shape":  { "radius": 8, "radiusCard": 12 },
+  // "motion": { "snap": 90, "move": 170, "swap": 210, "slow": 200 },
+  // "decor":  "rich",         // "rich" (full grain) or "calm" (flatter)
+
+  "accent": "artwork",         // "artwork" | "provider" | "sun" | "#rrggbb"
+  "wash": 1.0                  // cover-wash multiplier, 0..2 (0 keeps paper flat)
+}

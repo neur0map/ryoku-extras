@@ -1,0 +1,425 @@
+{
+  "schema": 1,
+  "ryotunes-skins": [
+    {
+      "id": "catppuccin-frappe",
+      "name": "Catppuccin Frappe",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/catppuccin-frappe",
+      "author": "Ryoku",
+      "summary": "Catppuccin Frappe colour scheme as a Ryotunes skin",
+      "description": "Catppuccin Frappe for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#babbf1",
+      "surface": "#303446",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "a2bc1c8b4cf0526f64f8859e1dd1448fcf4504ee073f1cbcf72914a6f7f23c2f",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "catppuccin-latte",
+      "name": "Catppuccin Latte",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/catppuccin-latte",
+      "author": "Ryoku",
+      "summary": "Catppuccin Latte colour scheme as a Ryotunes skin",
+      "description": "Catppuccin Latte for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "light",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#7287fd",
+      "surface": "#eff1f5",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "da9544c058d1c89fa8932a590eba49f18011f6d23783013d325739ee66a8f2d1",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "catppuccin-lavender",
+      "name": "Catppuccin Lavender",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/catppuccin-lavender",
+      "author": "Noctalia",
+      "summary": "Catppuccin Lavender colour scheme as a Ryotunes skin",
+      "description": "Catppuccin Lavender for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "noctalia",
+        "colorscheme"
+      ],
+      "accent": "#b4befe",
+      "surface": "#1e1e2e",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "fbec19f7db05e3df298a23209eaf0b869f4af954db7d46f39c51cacab25ffa88",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "catppuccin-macchiato",
+      "name": "Catppuccin Macchiato",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/catppuccin-macchiato",
+      "author": "Ryoku",
+      "summary": "Catppuccin Macchiato colour scheme as a Ryotunes skin",
+      "description": "Catppuccin Macchiato for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#b7bdf8",
+      "surface": "#24273a",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "d91c86959652da4aca5e873dbb85ab3d407bbd0a14b5e1f1095e72b11e142ba7",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "everforest-dark-hard",
+      "name": "Everforest Dark Hard",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/everforest-dark-hard",
+      "author": "Ryoku",
+      "summary": "Everforest Dark Hard colour scheme as a Ryotunes skin",
+      "description": "Everforest Dark Hard for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#a7c080",
+      "surface": "#1e2326",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "acb331cce0131221e331772ae232780abee603c5cd7e664e8c9bf912aecec2bb",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "github-dark",
+      "name": "GitHub Dark",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/github-dark",
+      "author": "Noctalia",
+      "summary": "GitHub Dark colour scheme as a Ryotunes skin",
+      "description": "GitHub Dark for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "noctalia",
+        "colorscheme"
+      ],
+      "accent": "#58a6ff",
+      "surface": "#010409",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "fd1de75357a6a592fa9067263ebfe163774a9cd8b27ce617ca74ad44f40c56eb",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "gruvbox-dark-hard",
+      "name": "Gruvbox Dark Hard",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/gruvbox-dark-hard",
+      "author": "Ryoku",
+      "summary": "Gruvbox Dark Hard colour scheme as a Ryotunes skin",
+      "description": "Gruvbox Dark Hard for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#83a598",
+      "surface": "#1d2021",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "ca5c299384d66bc0af86ae5df111ec0e9b5b005753bb3874b1b66fe9f41e19ee",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "gruvbox-light-medium",
+      "name": "Gruvbox Light Medium",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/gruvbox-light-medium",
+      "author": "Ryoku",
+      "summary": "Gruvbox Light Medium colour scheme as a Ryotunes skin",
+      "description": "Gruvbox Light Medium for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "light",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#076678",
+      "surface": "#fbf1c7",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "fca1e3409b431336b2b02592a21e77fbeb679aa17f5de29750dac1d54253b57c",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "hancore-blackgold",
+      "name": "Blackgold",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/hancore-blackgold",
+      "author": "HANCORE-linux",
+      "summary": "Blackgold colour scheme as a Ryotunes skin",
+      "description": "Blackgold for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "hancore-linux",
+        "colorscheme"
+      ],
+      "accent": "#6e6a58",
+      "surface": "#0d0d0d",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "406fed00e5ca9ab6752f65961e1901cfe11a636bdaa4945ccea8a225d13392cd",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "kanagawa-dragon",
+      "name": "Kanagawa Dragon",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/kanagawa-dragon",
+      "author": "Noctalia",
+      "summary": "Kanagawa Dragon colour scheme as a Ryotunes skin",
+      "description": "Kanagawa Dragon for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "noctalia",
+        "colorscheme"
+      ],
+      "accent": "#8a9a7b",
+      "surface": "#181616",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "e2ae8f4d1cfaded777bf7f7b5a5d1b652d573e573209bf60322d4e95f3328ca1",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "monokai-classic",
+      "name": "Monokai Classic",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/monokai-classic",
+      "author": "Ryoku",
+      "summary": "Monokai Classic colour scheme as a Ryotunes skin",
+      "description": "Monokai Classic for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#a9dc76",
+      "surface": "#221f22",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "9d37f1a65653569d633107564396ec52be700e11025e1b6bf79e35bd68e5706b",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "nord-light",
+      "name": "Nord Light",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/nord-light",
+      "author": "Ryoku",
+      "summary": "Nord Light colour scheme as a Ryotunes skin",
+      "description": "Nord Light for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "light",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#5e81ac",
+      "surface": "#eceff4",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "96e797ab41b5d29b3c3d5cfed851350b675fa8b69f0b7865dc4266910c2a1df8",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "oceanic-next",
+      "name": "Oceanic Next",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/oceanic-next",
+      "author": "Ryoku",
+      "summary": "Oceanic Next colour scheme as a Ryotunes skin",
+      "description": "Oceanic Next for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#6699cc",
+      "surface": "#1b2b34",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "936830af1839b307613a38f49ae1ca5886c92fcfdc6e06c889dbfd06b8210ff9",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "one-dark-two",
+      "name": "One Dark Two",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/one-dark-two",
+      "author": "Noctalia",
+      "summary": "One Dark Two colour scheme as a Ryotunes skin",
+      "description": "One Dark Two for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "noctalia",
+        "colorscheme"
+      ],
+      "accent": "#62bac6",
+      "surface": "#21252b",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "f6cca4ced200d339e24343765a003abb1b58beece7b2ff2ccc0432d5bfe48cc9",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "osaka-jade",
+      "name": "Osaka jade",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/osaka-jade",
+      "author": "Noctalia",
+      "summary": "Osaka jade colour scheme as a Ryotunes skin",
+      "description": "Osaka jade for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "noctalia",
+        "colorscheme"
+      ],
+      "accent": "#1e9177",
+      "surface": "#081512",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "b60e66ec99765bf0854d382f54185ca708376626b0e4747ac78e4cf1666e7936",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "poimandres",
+      "name": "Poimandres",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/poimandres",
+      "author": "Ryoku",
+      "summary": "Poimandres colour scheme as a Ryotunes skin",
+      "description": "Poimandres for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#add7ff",
+      "surface": "#1b1e28",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "49bfd8ecc3c608c2a2127e1f6f15a12075a66bb6cab93b875999f4741d5002f5",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "rose-pine-dawn",
+      "name": "Rose Pine Dawn",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/rose-pine-dawn",
+      "author": "Ryoku",
+      "summary": "Rose Pine Dawn colour scheme as a Ryotunes skin",
+      "description": "Rose Pine Dawn for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "light",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#907aa9",
+      "surface": "#faf4ed",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "08beb53e222606886423ae77fc703df98ca8e61e54d7f236ab36996002a708e8",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "rose-pine-moon",
+      "name": "Rose Pine Moon",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/rose-pine-moon",
+      "author": "Noctalia",
+      "summary": "Rose Pine Moon colour scheme as a Ryotunes skin",
+      "description": "Rose Pine Moon for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "noctalia",
+        "colorscheme"
+      ],
+      "accent": "#ea9a97",
+      "surface": "#232136",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "7b3395aaa58bf6b1a2472134134b9b0a5e09aa1686e4c22639e0df6bfdba6e65",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "solarized",
+      "name": "Solarized",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/solarized",
+      "author": "Noctalia",
+      "summary": "Solarized colour scheme as a Ryotunes skin",
+      "description": "Solarized for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "noctalia",
+        "colorscheme"
+      ],
+      "accent": "#b58900",
+      "surface": "#002b36",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "ab44d511bce02c236c9aabb2f324a41e509b2e62fbfe7e7300ba1663d846880d",
+      "lastUpdated": "2026-09-05"
+    },
+    {
+      "id": "tokyo-night-storm",
+      "name": "Tokyo Night Storm",
+      "version": "1.0.0",
+      "path": "ryotunes-skins/tokyo-night-storm",
+      "author": "Ryoku",
+      "summary": "Tokyo Night Storm colour scheme as a Ryotunes skin",
+      "description": "Tokyo Night Storm for Ryotunes, from the Ryoku colour-scheme catalogue.",
+      "tags": [
+        "dark",
+        "ryoku",
+        "colorscheme"
+      ],
+      "accent": "#7aa2f7",
+      "surface": "#24283b",
+      "preview": "preview.png",
+      "screenshots": [],
+      "manifest": "manifest.json",
+      "manifestSha256": "3703743a386085d0056e21ab070b789323d0e1cfda0743ebfe1b2ebc5cb60cae",
+      "lastUpdated": "2026-09-05"
+    }
+  ]
+}

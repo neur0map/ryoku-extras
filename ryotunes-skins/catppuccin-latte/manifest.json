@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "catppuccin-latte",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/catppuccin-latte",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "c207e4e19a40167074818237cfde055a9f9a3d0a3268d3ac2529c18b27927fa7",
+      "mode": "0644",
+      "size": 842,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "6a65cded1f14196f6dd63eb9a76a6714015978415d9db778170d0c102e46d06b",
+      "mode": "0644",
+      "size": 189926,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "98273516d16053c75565ed332eb07eefd1957660fb13a4b5a21e1913a9ad379d",
+      "mode": "0644",
+      "size": 544,
+      "install": true
+    }
+  ]
+}

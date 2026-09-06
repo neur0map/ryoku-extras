@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "poimandres",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/poimandres",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "49f6fdc980c5c9287e184cbbf64374b9b1210db25652b5df2cb0aab243d9726d",
+      "mode": "0644",
+      "size": 818,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "247ae5c5f94733de8ff8387bcffda205163a01c2ef6c6425c31c2bca90b6460b",
+      "mode": "0644",
+      "size": 192341,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "6213d741878513247abb2b585c3462a2d704b8f3f090202b31df04e509524c40",
+      "mode": "0644",
+      "size": 524,
+      "install": true
+    }
+  ]
+}

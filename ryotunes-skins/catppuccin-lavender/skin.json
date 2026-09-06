@@ -1,0 +1,34 @@
+{
+  "format": 1,
+  "id": "catppuccin-lavender",
+  "name": "Catppuccin Lavender",
+  "author": "Noctalia",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Catppuccin Lavender for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#1e1e2e",
+      "paperLift": "#313244",
+      "ink": "#cdd6f4",
+      "inkDim": "#a3b4eb",
+      "bone": "#cdd6f4",
+      "inkOnBone": "#1e1e2e",
+      "sun": "#b4befe",
+      "alert": "#f38ba8"
+    },
+    "light": {
+      "paper": "#eff1f5",
+      "paperLift": "#ccd0da",
+      "ink": "#4c4f69",
+      "inkDim": "#6c6f85",
+      "bone": "#4c4f69",
+      "inkOnBone": "#eff1f5",
+      "sun": "#1e66f5",
+      "alert": "#d20f39"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

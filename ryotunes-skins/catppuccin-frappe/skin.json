@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "catppuccin-frappe",
+  "name": "Catppuccin Frappe",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Catppuccin Frappe for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#303446",
+      "paperLift": "#414559",
+      "ink": "#c6d0f5",
+      "inkDim": "#b5bfe2",
+      "bone": "#c6d0f5",
+      "inkOnBone": "#303446",
+      "sun": "#babbf1",
+      "alert": "#e78284"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

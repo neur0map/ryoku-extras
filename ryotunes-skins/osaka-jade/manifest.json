@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "osaka-jade",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/osaka-jade",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "018fa2d4874bdba51049f1fb1580126bece62b605c6a96e98a47c0bc6fce489c",
+      "mode": "0644",
+      "size": 776,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "b8239bf91feadddae23b8a5a7663fd6e15a419c5320cfb20d6452191054eb9e8",
+      "mode": "0644",
+      "size": 183023,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "6b83c5e4abf0231a851a3125777c2e8d58ac39fa77c1ce396836793f7920284d",
+      "mode": "0644",
+      "size": 760,
+      "install": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "nord-light",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/nord-light",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "514d1de790558a2fb17abc093cff2c3159ba01a63152e91a7702efba4c3f06c7",
+      "mode": "0644",
+      "size": 797,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "d607a227c0ab4f303b705fb29c5ce8f7da21841c9e476c8a5a6c2e4f0b97ddc5",
+      "mode": "0644",
+      "size": 196819,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "8c7f5c734b6369ede4c95452da175ea87d60327477444bb506ec529518ad67fc",
+      "mode": "0644",
+      "size": 526,
+      "install": true
+    }
+  ]
+}

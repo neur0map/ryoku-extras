@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "catppuccin-frappe",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/catppuccin-frappe",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "05e68180bea2d5118cc573b0b8a2f4ea64208a80eaccc6952790ea8ea82c357a",
+      "mode": "0644",
+      "size": 846,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "8485848a1e999d28dea3011bcf3cacb406ffeb42da2e074047d7bc7aed4f5f72",
+      "mode": "0644",
+      "size": 191144,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "630ae432229714402f6e21b6f04c5316595561f635fd268274465c5ad83ba910",
+      "mode": "0644",
+      "size": 545,
+      "install": true
+    }
+  ]
+}

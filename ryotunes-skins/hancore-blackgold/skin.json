@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "hancore-blackgold",
+  "name": "Blackgold",
+  "author": "HANCORE-linux",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Blackgold for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "dark",
+  "modes": {
+    "dark": {
+      "paper": "#0d0d0d",
+      "paperLift": "#1b1d1b",
+      "ink": "#ebdbb2",
+      "inkDim": "#f6f1dd",
+      "bone": "#ebdbb2",
+      "inkOnBone": "#0d0d0d",
+      "sun": "#6e6a58",
+      "alert": "#d35f5f"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}

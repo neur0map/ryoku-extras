@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "id": "github-dark",
+  "category": "ryotunes-skins",
+  "version": "1.0.0",
+  "destination": "ryoku/ryotunes-skins/github-dark",
+  "files": [
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "mode": "0644",
+      "size": 7048,
+      "install": false
+    },
+    {
+      "source": "PROVENANCE.txt",
+      "destination": "PROVENANCE.txt",
+      "sha256": "fd030011a55a959f63dc759cbbdad1a1c339c23445c17759cc4fa521dafa1170",
+      "mode": "0644",
+      "size": 833,
+      "install": true
+    },
+    {
+      "source": "preview.png",
+      "destination": "preview.png",
+      "sha256": "5dd0c56090d2dc26c178a6e4397829658141ad2b8cfb36979129c7806a77cff1",
+      "mode": "0644",
+      "size": 186838,
+      "install": false
+    },
+    {
+      "source": "skin.json",
+      "destination": "skin.json",
+      "sha256": "3038563455ab6f942e5d351819d408998f5a97ab68b6f76ca65d1697990a48a0",
+      "mode": "0644",
+      "size": 763,
+      "install": true
+    }
+  ]
+}

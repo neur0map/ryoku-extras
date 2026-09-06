@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "id": "nord-light",
+  "name": "Nord Light",
+  "author": "Ryoku",
+  "version": "1.0.0",
+  "license": "CC0-1.0",
+  "description": "Nord Light for Ryotunes, from the Ryoku colour-scheme catalogue.",
+  "default": "light",
+  "modes": {
+    "light": {
+      "paper": "#eceff4",
+      "paperLift": "#d8dee9",
+      "ink": "#2e3440",
+      "inkDim": "#4c566a",
+      "bone": "#2e3440",
+      "inkOnBone": "#eceff4",
+      "sun": "#5e81ac",
+      "alert": "#bf616a"
+    }
+  },
+  "accent": "artwork",
+  "wash": 1.0
+}
